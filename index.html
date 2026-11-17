@@ -1,0 +1,1403 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>박세훈 포트폴리오 · 게임 사업 PM</title>
+<meta name="description" content="게임 사업 PM 지원자 박세훈 포트폴리오. 대표 프로젝트 4건과 사업 관리 기록, 산출물을 16:9 장표 27쪽으로 정리했습니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* v32 · 009 틀 · 토스 파랑 (2026-11-01) — v31 형광 연두 #B1FF00을 토스 adaptiveBlue로 바꿈(사용자 "야광 말고 토스 파랑으로")
+   파랑 쓰임: #3182F6(blue500) 면·큰 글자(18.66px 굵게 이상, 3:1) / #1B64DA(blue700) 작은 글자·작은 단추 바탕(흰 바탕 5.4:1) / #E8F3FF(blue50) 연한 면
+   이하 v31 주석
+   기준 쪽: v30 2쪽(프로필)·12쪽(서울영테크 기획) — 사용자 "심플안 디자인 좋아". 흰 면/회색 면 나눔, 큰 핵심 문장, 흰 카드.
+   색·간격: 토스 TDS 회색 체계(v1 portfolio/index.html의 adaptiveGrey 토큰) + 형광 연두 #B1FF00(R4c) 하나만 강조.
+   형광은 면·밑줄·꼬리표·번호에만 쓰고 글자색으로 쓰지 않는다(연두 위 글자는 항상 먹색).
+   격자: 1920 기준 좌우 여백 160, 글 열 x160 w680 / 그림 열 x976 w784, 3단 x160·704·1248 w512, 아래 끝 y960. */
+
+:root{
+  --ink:#191F28;     /* grey900 · 흰 바탕 16.9:1 */
+  --ink2:#333D4B;    /* grey800 */
+  --sub:#4E5968;     /* grey700 · 흰 7.4:1 / #F2F4F6 6.7:1 */
+  --mute:#6B7684;    /* grey600 · 흰 바탕 큰 글자에만 */
+  --line:#E5E8EB;    /* grey200 · 테두리 */
+  --line2:#D1D6DB;   /* grey300 */
+  --plane:#F2F4F6;   /* grey100 · 회색 면 */
+  --dot:#8B95A1;     /* grey500 · 장식 점 */
+  --blue:#3182F6; --blue-h:#2272EB; --blue-d:#1B64DA; --blue-50:#E8F3FF; --blue-100:#C9E2FF; --blue-on-ink:#90C2FF;  /* 토스 adaptiveBlue 500·600·700·50·100·200 */
+  --shot:0 0 0 1px rgba(0,27,55,.08), 0 14px 36px rgba(0,25,54,.13);
+  --gnb:64px;
+  --font:"Pretendard Variable","Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ background:#E5E8EB; scroll-behavior:smooth; scroll-padding-top:calc(var(--gnb) + 16px); }
+body{ margin:0; background:#E5E8EB; color:var(--ink); font-family:var(--font); -webkit-font-smoothing:antialiased; word-break:keep-all; }
+button{ font:inherit; color:inherit; }
+a{ color:inherit; }
+:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; border-radius:6px; }
+.sr{ position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; }
+.ico{ width:20px; height:20px; flex:0 0 auto; }
+.skip{ position:absolute; left:12px; top:-80px; z-index:100; display:inline-flex; align-items:center; min-height:44px; padding:0 16px; border-radius:12px; background:var(--ink); color:#fff; font-weight:700; text-decoration:none; }
+.skip:focus{ top:12px; }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+
+/* ── 장표 틀 ── */
+.deck{ max-width:1968px; margin:0 auto; padding:calc(var(--gnb) + 24px) 24px 104px; display:grid; gap:24px; }   /* 아래 104px: 마지막 쪽이 플로팅 버튼에 가리지 않게 */
+.pg{ position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:12px; background:#fff;
+  box-shadow:0 1px 2px rgba(0,25,54,.06), 0 6px 20px rgba(0,25,54,.06); }
+.sl{ position:absolute; left:0; top:0; width:1920px; height:1080px; overflow:hidden; background:#fff;
+  transform-origin:0 0; transform:scale(var(--s,.5)); font-size:18px; line-height:1.55; letter-spacing:-.01em; }
+.sl h1,.sl h2,.sl h3,.sl h4,.sl p,.sl ul,.sl ol,.sl dl,.sl dd,.sl figure{ margin:0; }
+.sl ul,.sl ol{ padding:0; list-style:none; }
+.ab{ position:absolute; }
+.sl b{ font-weight:700; color:var(--ink); }
+.sl em{ font-style:normal; font-weight:700; color:var(--blue); }   /* 3단 제목(28px 굵게)에만 쓰임 */
+.mk b,.mk em{ color:var(--blue-d); }
+
+/* 면 나눔 */
+.plane{ position:absolute; inset:0; background:var(--plane); }
+.plane--r{ left:493px; }                                               /* 2쪽 */
+.plane--diag{ clip-path:polygon(39.2% 0,100% 0,100% 100%,53.3% 100%); } /* 12쪽 */
+.plane--diag3{ clip-path:polygon(49.4% 0,100% 0,100% 100%,36.4% 100%); }/* 목차 */
+.plane--band{ top:560px; }
+.plane--tint{ left:976px; background:var(--blue-50); }
+
+/* 쪽 번호 */
+.pgno{ position:absolute; right:160px; bottom:40px; font-size:16px; line-height:20px; color:var(--sub); font-variant-numeric:tabular-nums; }
+
+/* ── 머리 ── */
+.runhd{ position:absolute; left:160px; right:160px; top:84px; display:flex; justify-content:space-between; font-size:18px; line-height:20px; font-weight:600; color:var(--sub); }
+.hd{ position:absolute; left:160px; top:84px; width:1200px; }
+.hd__k{ font-size:20px; line-height:24px; font-weight:700; color:var(--ink); }
+.hd__s{ margin-top:14px !important; font-size:20px; line-height:30px; color:var(--sub); }
+
+/* ── 꼬리표 ── */
+.tag{ display:inline-flex; align-items:center; height:34px; padding:0 13px; border-radius:8px; background:var(--blue-50); color:var(--blue-d);
+  font-size:16px; line-height:1; font-weight:700; white-space:nowrap; }
+.tag--ink{ background:var(--ink); color:#fff; }
+.tag--line{ background:#fff; color:var(--sub); box-shadow:inset 0 0 0 1.5px var(--line2); }
+.tag--grey{ background:var(--plane); color:var(--ink2); }
+
+/* ── 단추(토스 버튼 축: 색 × 강도 × 크기) ── */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:10px; height:56px; padding:0 24px; border:0; border-radius:16px;
+  font-family:inherit; font-size:19px; font-weight:700; letter-spacing:-.01em; line-height:1; text-decoration:none; white-space:nowrap; cursor:pointer;
+  transition:background-color .18s ease, box-shadow .18s ease; }
+.btn--primary{ background:var(--blue); color:#fff; }          /* 장표 안 19px 굵게 = 큰 글자 3.7:1 */
+.btn--primary:hover{ background:var(--blue-h); }
+.btn--bweak{ background:var(--blue-50); color:var(--blue-d); }
+.btn--bweak:hover{ background:var(--blue-100); }
+.btn--weak{ background:var(--plane); color:var(--ink); }
+.btn--weak:hover{ background:var(--line); }
+.btn--white{ background:#fff; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--line); }
+.btn--white:hover{ background:var(--plane); }
+.btn--sm{ height:44px; padding:0 16px; border-radius:12px; font-size:16px; gap:8px; }
+.btn .ico{ width:20px; height:20px; }
+.btn--sm .ico{ width:18px; height:18px; }
+.live{ position:relative; flex:0 0 8px; width:8px; height:8px; border-radius:50%; background:#fff; }
+.btn--bweak .live,.btn--weak .live,.btn--white .live{ background:var(--blue); }
+.live::after{ content:""; position:absolute; inset:0; border-radius:50%; background:inherit; animation:ping 1.9s cubic-bezier(0,0,.2,1) infinite; }
+@keyframes ping{ 0%{ transform:scale(1); opacity:.6; } 80%,100%{ transform:scale(2.8); opacity:0; } }
+
+/* ── 그림 칸: 칸 왼쪽 위에 맞춰 넣고 크기는 칸 안에서만(사용자가 다시 맞춤) ── */
+.fig{ position:absolute; display:flex; flex-direction:column; align-items:flex-start; gap:12px; }
+.fig__hd{ display:flex; align-items:center; gap:8px; }
+.fr{ position:relative; width:100%; display:flex; align-items:flex-start; justify-content:flex-start; }
+.fr img{ display:block; max-width:100%; max-height:100%; width:auto; height:auto; border-radius:12px; background:#fff; box-shadow:var(--shot); }
+.fr--c{ justify-content:center; align-items:center; }
+.fr--flat img{ box-shadow:0 0 0 1px var(--line); }
+.fr--empty{ width:100%; height:100%; border:2px dashed var(--line2); border-radius:16px; background:#F9FAFB; padding:24px; align-items:center; justify-content:center; }
+.fr--empty p{ max-width:540px; font-size:18px; line-height:1.6; color:var(--sub); text-align:center; }
+.fr--empty p::before{ content:""; display:block; width:30px; height:24px; margin:0 auto 12px; border:2px solid var(--dot); border-radius:5px; }
+/* 누르는 그림: 시연 화면 열기 / 문서 크게 보기 */
+.shot{ position:relative; display:block; max-width:100%; padding:0; border:0; border-radius:12px; background:none; cursor:pointer; }
+.shot--doc{ cursor:zoom-in; }
+.shot img{ transition:box-shadow .18s ease; }
+.shot:hover img{ box-shadow:var(--shot), 0 0 0 3px var(--blue); }
+.shot__go{ position:absolute; left:14px; bottom:14px; display:grid; place-items:center; width:52px; height:52px; border-radius:50%; background:var(--blue-d); color:#fff; box-shadow:0 6px 18px rgba(0,25,54,.28); }
+.po{ display:none !important; }
+
+/* 시연 화면 카드(바이브코딩): 이미지 파일이 없는 칸 = 눌러서 여는 시연 */
+.demo{ width:100%; height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:28px 30px; border:0; border-radius:16px;
+  background:var(--ink); color:#fff; text-align:left; cursor:pointer; transition:background-color .18s; }
+.demo:hover{ background:#2B3441; }
+.demo__k{ display:flex; align-items:center; gap:10px; font-size:16px; line-height:20px; font-weight:700; color:#D1D6DB; }
+.demo__t,.demo__d,.demo__pdf{ display:block; }
+.demo__pdf{ font-size:17px; line-height:26px; color:var(--blue-on-ink); }
+.demo__t{ margin-top:12px; font-size:26px; line-height:36px; font-weight:700; color:#fff; letter-spacing:-.02em; }
+.demo__d{ margin-top:8px; font-size:17px; line-height:26px; color:#D1D6DB; }
+.demo__go{ align-self:flex-start; display:inline-flex; align-items:center; gap:8px; height:44px; padding:0 18px; border-radius:12px; background:var(--blue); color:#fff; font-size:19px; font-weight:700; }
+
+/* ── 카드 ── */
+.col{ position:absolute; display:flex; flex-direction:column; gap:20px; }
+.key{ font-size:28px; line-height:42px; color:var(--ink); letter-spacing:-.02em; }
+.key b{ color:var(--blue); }   /* 28px 굵게 = 큰 글자 */
+.card{ background:#fff; border:1px solid var(--line); border-radius:24px; padding:30px 34px 32px; }
+.on-plane .card,.card--np{ border-color:transparent; }
+.card__t{ display:flex; align-items:center; gap:12px; font-size:20px; line-height:28px; font-weight:700; color:var(--ink); }
+.card__t::before{ content:""; width:10px; height:10px; border-radius:3px; background:var(--blue); flex:none; }
+.card__t small{ font-size:16px; font-weight:500; color:var(--sub); }
+.items{ margin-top:16px !important; display:grid; gap:8px; }
+.items li{ position:relative; padding-left:18px; font-size:18px; line-height:28px; color:var(--sub); }
+.items li::before{ content:""; position:absolute; left:3px; top:12px; width:5px; height:5px; border-radius:50%; background:var(--dot); }
+.items--2{ grid-template-columns:1fr 1fr; column-gap:24px; grid-auto-flow:column; grid-template-rows:repeat(3,auto); }
+.card--res .items b{ color:var(--blue-d); }
+
+/* ── 결과 수치 카드 ── */
+.mts{ display:grid; gap:16px; }
+.mts--row{ grid-template-columns:repeat(3, 512px); gap:32px; }
+.mt{ background:#fff; border-radius:24px; padding:26px 32px 28px; }
+.mt--plane{ background:var(--plane); }
+.mt--key{ background:var(--blue); }
+.mt--key .mt__k{ color:#fff; }
+.mt__k{ font-size:20px; line-height:28px; font-weight:700; color:var(--ink); }
+.mt__s{ margin-top:2px !important; font-size:17px; line-height:24px; color:var(--sub); }
+.mt--key .mt__s{ color:#fff; font-weight:700; }
+.mt__v{ margin-top:14px !important; display:flex; align-items:baseline; flex-wrap:wrap; gap:0 14px; font-size:44px; line-height:56px; font-weight:700; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+.mt__b{ color:var(--sub); font-weight:600; }
+.mt__ar{ color:var(--mute); font-weight:400; }
+.mt__a{ color:var(--blue); }   /* 44px 이상 */
+.mt--key .mt__b{ color:#fff; font-weight:500; }
+.mt--key .mt__ar{ color:#fff; }
+.mt--key .mt__a{ color:#fff; }
+.mt--key .mt__a{ background:none; padding:0; }
+.mts--big .mt{ display:flex; flex-direction:column; min-height:380px; padding:40px 40px 44px; border-radius:28px; }
+.mts--big .mt__k{ font-size:24px; line-height:34px; }
+.mts--big .mt__s{ font-size:18px; line-height:28px; }
+.mts--big .mt__v{ margin-top:auto !important; font-size:60px; line-height:74px; }
+
+/* ── 번호 목록(문제 · 목표) ── */
+.nl{ display:flex; flex-direction:column; align-items:flex-start; }
+.nl ol{ margin-top:18px !important; display:grid; gap:14px; counter-reset:n; }
+.nl li{ position:relative; padding-left:44px; font-size:20px; line-height:30px; color:var(--ink); counter-increment:n; }
+.nl li::before{ content:counter(n); position:absolute; left:0; top:1px; width:28px; height:28px; border-radius:8px; background:var(--plane);
+  display:grid; place-items:center; font-size:15px; line-height:1; font-weight:700; color:var(--ink2); }
+.nl--strong li{ font-weight:700; }
+.nl--strong li::before{ background:var(--blue-50); color:var(--blue-d); }
+.on-plane .nl li::before{ background:#fff; }
+
+/* ── 단계 알약(바뀌기 전 흐름) ── */
+.pills{ display:flex; align-items:center; gap:14px; }
+.pills li{ display:inline-flex; align-items:center; height:56px; padding:0 26px; border-radius:999px; background:#fff; font-size:20px; font-weight:700; color:var(--ink); }
+.pills li + li{ position:relative; margin-left:34px; }
+.pills li + li::before{ content:""; position:absolute; left:-40px; top:50%; width:26px; height:2px; background:var(--dot); }
+.pills li + li::after{ content:""; position:absolute; left:-18px; top:calc(50% - 5px); border:5px solid transparent; border-left:7px solid var(--dot); }
+.imp{ position:absolute; background:#fff; border-radius:24px; padding:26px 28px 28px; }
+.imp__n{ display:grid; place-items:center; width:32px; height:32px; border-radius:8px; background:var(--blue); color:#fff; font-size:19px; font-weight:700; }
+.imp h4{ margin-top:16px !important; font-size:21px; line-height:30px; font-weight:700; }
+.imp p{ margin-top:6px !important; font-size:18px; line-height:27px; color:var(--sub); }
+
+/* ── 흐름 비교 ── */
+.fbox{ position:absolute; left:160px; width:1600px; height:300px; border-radius:28px; background:#fff; display:flex; align-items:center; justify-content:center; padding:0 48px; }
+.fbox .tag{ position:absolute; left:32px; top:28px; }
+.fl{ display:flex; align-items:center; justify-content:center; }
+.nd{ position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; min-width:210px; max-width:320px; min-height:96px;
+  padding:18px 26px; border-radius:18px; background:var(--plane); text-align:center; }
+.nd + .nd{ margin-left:88px; }
+.nd + .nd::before{ content:""; position:absolute; left:-72px; top:50%; width:52px; height:2px; background:var(--dot); }
+.nd + .nd::after{ content:""; position:absolute; left:-22px; top:calc(50% - 6px); border:6px solid transparent; border-left:9px solid var(--dot); }
+.nd__tag{ font-size:16px; line-height:22px; color:var(--sub); }
+.nd__t{ font-size:20px; line-height:28px; font-weight:700; color:var(--ink); }
+.nd__f{ position:absolute; left:50%; top:-15px; transform:translateX(-50%); display:inline-flex; align-items:center; height:28px; padding:0 10px; border-radius:7px;
+  background:var(--blue-d); color:#fff; font-size:16px; font-weight:700; line-height:1; white-space:nowrap; }
+.nd--add{ background:var(--blue-50); box-shadow:inset 0 0 0 2px var(--blue); }
+.nd--add .nd__t{ color:var(--blue-d); }
+.nd--add .nd__tag{ color:var(--sub); }
+.nd--del{ background:#fff; box-shadow:inset 0 0 0 2px var(--line2); }
+.nd--del .nd__t{ font-weight:600; color:var(--sub); text-decoration:line-through; text-decoration-thickness:2px; }
+.nd--del .nd__f{ background:#fff; color:var(--sub); box-shadow:inset 0 0 0 1.5px var(--line2); }
+.nd--cond{ background:#fff; }
+.nd--res{ background:var(--ink); }
+.nd--res .nd__tag{ color:#D1D6DB; }
+.nd--res .nd__t{ color:#fff; }
+.nd--res .nd__t b{ color:var(--blue-on-ink); }
+.more{ display:flex; align-items:center; gap:10px; font-size:18px; line-height:26px; color:var(--ink2); }
+.more::before{ content:""; width:10px; height:10px; border-radius:3px; background:var(--blue); }
+
+/* ── 3단 ── */
+.c3{ position:absolute; top:220px; width:512px; }
+.c3__h{ min-height:84px; display:flex; align-items:flex-end; font-size:28px; line-height:42px; font-weight:700; color:var(--ink); letter-spacing:-.02em; }
+.c3__s{ margin-top:10px !important; min-height:60px; font-size:19px; line-height:30px; color:var(--sub); }
+.c3__card{ position:absolute; top:420px; width:512px; height:520px; border-radius:28px; background:var(--plane); padding:28px; display:flex; }
+.c3__card .fr{ height:100%; }
+.vflow{ width:100%; display:flex; flex-direction:column; justify-content:center; gap:44px; }
+.vflow li{ position:relative; padding:22px 20px; border-radius:16px; background:#fff; text-align:center; font-size:20px; line-height:28px; font-weight:700; color:var(--ink); }
+.vflow li small{ display:block; font-size:16px; font-weight:500; color:var(--sub); }
+.vflow li + li::before{ content:""; position:absolute; left:50%; top:-36px; width:2px; height:22px; background:var(--dot); }
+.vflow li + li::after{ content:""; position:absolute; left:calc(50% - 6px); top:-15px; border:6px solid transparent; border-top:9px solid var(--dot); }
+.vflow li:last-child{ background:var(--blue-50); color:var(--blue-d); box-shadow:inset 0 0 0 2px var(--blue); }
+
+/* ── 번호 주석 목록(그림 옆 설명) ── */
+.mkl{ display:grid; gap:12px; }
+.mkl--row{ grid-template-columns:repeat(3, 1fr); gap:16px; }
+.mkl li{ display:grid; grid-template-columns:32px 1fr; column-gap:14px; align-items:start; padding:18px 20px; border-radius:18px; background:#fff; }
+.mkl__n{ grid-row:1 / 3; display:grid; place-items:center; width:32px; height:32px; border-radius:8px; background:var(--blue); color:#fff; font-size:19px; font-weight:700; line-height:1; }
+.mkl b{ font-size:18px; line-height:28px; }
+.mkl span{ font-size:17px; line-height:26px; color:var(--sub); }
+
+/* ── 회고 ── */
+.rt__k{ font-size:20px; line-height:28px; font-weight:700; color:var(--ink); margin-bottom:14px !important; }
+.rt{ display:grid; gap:10px; }
+.rt div{ display:grid; grid-template-columns:108px 1fr; gap:12px; align-items:baseline; padding:16px 22px; border-radius:16px; background:var(--plane); }
+.on-plane .rt div,.rt--w div{ background:#fff; }
+.rt--g div{ background:var(--plane) !important; }
+.rt dt{ font-size:16px; line-height:26px; font-weight:700; color:var(--ink2); }
+.rt dd{ font-size:18px; line-height:28px; color:var(--ink); }
+.rt--row{ grid-template-columns:repeat(3, 1fr); gap:16px; }
+.rt--row2{ grid-template-columns:repeat(2, 1fr); gap:16px; }
+.rt--row div,.rt--row2 div{ grid-template-columns:1fr; gap:4px; padding:20px 24px; }
+
+/* ── 단계 표시(타임라인) ── */
+.stp{ position:absolute; display:grid; }
+.stp li{ position:relative; padding:60px 28px 0 0; }
+.stp li::before{ content:""; position:absolute; left:44px; right:0; top:19px; height:2px; background:var(--line2); }
+.stp li:last-child::before{ display:none; }
+.stp__n{ position:absolute; left:0; top:0; width:40px; height:40px; border-radius:12px; background:var(--blue); color:#fff;
+  display:grid; place-items:center; font-size:19px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums; }
+.stp__t{ font-size:21px; line-height:30px; font-weight:700; color:var(--ink); }
+.stp__d{ margin-top:8px !important; font-size:18px; line-height:27px; color:var(--sub); }
+.tm{ position:absolute; display:grid; gap:20px; }
+.tm li{ display:flex; flex-direction:column; align-items:flex-start; gap:12px; padding:24px 24px 28px; border-radius:22px; background:var(--plane); }
+.tm li.last{ background:var(--blue-50); box-shadow:inset 0 0 0 2px var(--blue); }
+.tm li.last .tm__t{ color:var(--blue-d); }
+.tm__t{ font-size:21px; line-height:30px; font-weight:700; color:var(--ink); }
+.tm__d{ margin-top:-4px !important; font-size:18px; line-height:27px; color:var(--sub); }
+.tm li.last .tm__d{ color:var(--sub); }
+.sub2{ position:absolute; font-size:20px; line-height:28px; font-weight:700; color:var(--ink); }
+.lbox{ position:absolute; border-radius:28px; background:var(--plane); display:flex; align-items:center; justify-content:center; }
+
+/* ── 문제 → 해결 → 성과 ── */
+.pcard{ position:absolute; background:#fff; border-radius:24px; padding:30px 34px; }
+.pcard .tag{ margin-bottom:16px; }
+.pcard h4{ font-size:22px; line-height:30px; font-weight:700; }
+.pcard .items{ margin-top:12px !important; }
+.pcard__sum{ margin-top:18px !important; padding-top:16px; border-top:1px solid var(--line); font-size:19px; line-height:28px; font-weight:700; color:var(--ink); }
+.pcard__sum b{ color:var(--blue-d); }
+.dl2{ display:grid; gap:10px; margin-top:12px !important; }
+.dl2 div{ display:grid; grid-template-columns:64px 1fr; gap:12px; font-size:19px; line-height:28px; }
+.dl2 dt{ font-weight:700; color:var(--sub); }
+.dl2 dd{ font-weight:700; color:var(--ink); }
+.arw{ position:absolute; display:grid; place-items:center; width:48px; height:48px; border-radius:50%; background:#fff; color:var(--ink); box-shadow:0 0 0 1px var(--line); }
+.arw svg{ width:22px; height:22px; }
+
+/* ── 해결 기능 소개 ── */
+.feat{ position:absolute; width:512px; display:flex; flex-direction:column; align-items:flex-start; }
+.feat h4{ margin-top:18px !important; font-size:32px; line-height:44px; font-weight:700; letter-spacing:-.02em; }
+.feat p{ margin-top:12px !important; font-size:22px; line-height:34px; color:var(--sub); }
+.feat .btn{ margin-top:28px; }
+
+/* ── 산출물 썸네일 ── */
+.note{ position:absolute; border-radius:24px; background:var(--plane); padding:30px 32px; }
+.note h4{ font-size:20px; line-height:28px; font-weight:700; }
+.note p{ position:relative; margin-top:12px !important; padding-left:18px; font-size:18px; line-height:28px; color:var(--sub); }
+.note p::before{ content:""; position:absolute; left:3px; top:12px; width:5px; height:5px; border-radius:50%; background:var(--dot); }
+.note .btn{ margin-top:22px; }
+
+/* ── 프로젝트 표지: 왼쪽 글 / 오른쪽 형광 면 위 운영 화면 ── */
+.cv__hdr{ position:absolute; left:160px; top:84px; font-size:18px; line-height:20px; font-weight:700; color:var(--ink); }
+.cv__grp{ position:absolute; left:160px; top:220px; width:720px; }
+.cv__per{ font-size:18px; line-height:26px; font-weight:600; color:var(--sub); }
+.cv__name{ margin-top:10px !important; font-size:64px; line-height:80px; font-weight:800; color:var(--ink); letter-spacing:-.035em; }
+.cv__role{ margin-top:10px !important; font-size:19px; line-height:28px; color:var(--sub); }
+.cv__goal{ position:absolute; left:160px; top:470px; width:720px; display:flex; flex-direction:column; align-items:flex-start; }
+.cv__goal ul{ margin-top:16px !important; display:grid; gap:10px; }
+.cv__goal li{ position:relative; padding-left:26px; font-size:24px; line-height:36px; font-weight:700; color:var(--ink); }
+.cv__goal li::before{ content:""; position:absolute; left:2px; top:13px; width:11px; height:11px; border-radius:3px; background:var(--blue); }
+.cv__intro{ position:absolute; left:160px; bottom:120px; width:700px; }
+.cv__lab{ font-size:16px; line-height:20px; font-weight:700; color:var(--sub); }
+.cv__intro p + p{ margin-top:10px !important; }
+.cv__intro .cv__lab + p{ margin-top:12px !important; }
+.cv__intro p:not(.cv__lab){ font-size:19px; line-height:30px; color:var(--ink2); }
+
+/* ── 표지 · 마무리 ── */
+.ident{ position:absolute; left:160px; top:232px; font-size:56px; line-height:80px; font-weight:400; color:var(--ink); letter-spacing:-.03em; }
+.ident span{ display:block; }
+.ident .b{ font-weight:700; }
+.ident .b i{ font-style:normal; color:var(--blue); }
+.band{ position:absolute; left:0; top:700px; width:1920px; height:8px; background:var(--blue); }
+.roles{ position:absolute; left:160px; top:768px; }
+.roles h2{ font-size:22px; line-height:30px; font-weight:700; }
+.roles ul{ margin-top:12px !important; display:grid; gap:2px; }
+.roles li{ font-size:20px; line-height:30px; color:var(--ink2); }
+.ct{ position:absolute; display:grid; gap:6px; font-size:22px; line-height:34px; }
+.ct a{ text-decoration:none; color:var(--ink); }
+.ct a:hover{ text-decoration:underline; text-decoration-color:var(--blue); text-decoration-thickness:2px; text-underline-offset:5px; color:var(--blue-d); }
+
+/* ── 프로필 · 목차 ── */
+.blk h2,.blk h3{ font-size:24px; line-height:30px; font-weight:700; color:var(--ink); }
+.blk ul{ margin-top:14px !important; display:grid; gap:4px; }
+.blk li{ position:relative; font-size:19px; line-height:28px; color:var(--ink2); }
+.blk a{ text-decoration:none; }
+.blk a:hover{ text-decoration:underline; }
+.blk--dot li{ padding-left:20px; }
+.blk--dot li::before{ content:""; position:absolute; left:4px; top:12px; width:5px; height:5px; border-radius:50%; background:var(--ink2); }
+.toc{ position:absolute; left:1104px; top:220px; width:660px; display:grid; gap:28px; }
+.toc a{ display:flex; align-items:center; gap:12px; text-decoration:none; font-size:24px; line-height:32px; font-weight:700; color:var(--ink); }
+.toc a .tag{ height:32px; padding:0 10px; }
+.toc a:hover span:last-child{ text-decoration:underline; text-decoration-color:var(--blue); text-decoration-thickness:2px; text-underline-offset:6px; }
+.toc ul{ margin-top:10px !important; display:grid; gap:2px; padding-left:56px !important; }
+.toc li{ position:relative; padding-left:18px; font-size:19px; line-height:28px; color:var(--ink2); }
+.toc li::before{ content:""; position:absolute; left:3px; top:12px; width:5px; height:5px; border-radius:50%; background:var(--ink2); }
+
+/* ── 정책 양식 표 ── */
+.doccard{ position:absolute; background:#fff; border-radius:24px; padding:34px 34px 30px; }
+.doccard h4{ display:flex; align-items:center; gap:12px; font-size:22px; line-height:30px; font-weight:700; }
+.doccard table{ margin-top:22px; width:100%; border-collapse:separate; border-spacing:0; font-size:17px; line-height:26px; }
+.doccard th,.doccard td{ border-bottom:1px solid var(--line); padding:16px 12px; text-align:left; vertical-align:top; }
+.doccard thead th{ background:var(--plane); border-bottom:0; font-size:16px; color:var(--ink2); font-weight:700; }
+.doccard thead th:first-child{ border-radius:12px 0 0 12px; }
+.doccard thead th:last-child{ border-radius:0 12px 12px 0; }
+.doccard tbody th{ font-weight:700; color:var(--ink); width:120px; }
+.doccard td{ color:var(--ink2); }
+.doccard tbody tr:last-child > *{ border-bottom:0; }
+
+/* ═══ 바깥 화면(장표 밖): 상단 바 · 플로팅 메뉴 · 시연 모달 · 문서 뷰어 ═══ */
+.gnb{ position:fixed; inset:0 0 auto; z-index:50; height:var(--gnb); background:rgba(255,255,255,.88);
+  -webkit-backdrop-filter:saturate(1.5) blur(14px); backdrop-filter:saturate(1.5) blur(14px); box-shadow:0 1px 0 var(--line); }
+.gnb__in{ max-width:1968px; height:100%; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:20px; }
+.gnb__nm{ flex:0 0 auto; display:flex; align-items:baseline; gap:10px; text-decoration:none; }
+.gnb__nm b{ font-size:18px; font-weight:800; letter-spacing:-.02em; }
+.gnb__nm span{ font-size:14px; font-weight:600; color:var(--sub); }
+.here{ flex:1 1 auto; min-width:0; display:flex; align-items:center; justify-content:flex-end; gap:10px; font-size:14px; font-weight:600; color:var(--ink2); white-space:nowrap; }
+.here__no{ flex:0 0 auto; display:inline-grid; place-items:center; min-width:64px; height:28px; padding:0 8px; border-radius:8px; background:var(--plane); color:var(--ink); font-weight:700; font-variant-numeric:tabular-nums; }
+.here__nm{ min-width:0; overflow:hidden; text-overflow:ellipsis; }
+@media (max-width:1000px){ .gnb__nm span{ display:none; } }
+
+/* 플로팅 버튼: 브레이크포인트와 상관없이 오른쪽 아래(사용자 11-05). 상단 바 · 표지 · 마무리 쪽의 버튼은 여기로 모음 */
+.fab{ position:fixed; right:24px; bottom:24px; z-index:60; }
+@media (max-width:720px){ .fab{ right:16px; bottom:16px; } }
+.fab__btn{ display:inline-flex; align-items:center; gap:10px; height:56px; padding:0 22px 0 18px; border:0; border-radius:18px; background:var(--ink); color:#fff;
+  font-size:16px; font-weight:700; cursor:pointer; box-shadow:0 10px 28px rgba(0,25,54,.28); }
+.fab__btn .ico{ color:var(--blue-on-ink); }
+.fab__btn:hover{ background:var(--ink2); }
+.fab__menu{ position:absolute; right:0; bottom:68px; min-width:250px; max-height:calc(100vh - 160px); overflow-y:auto; margin:0; padding:8px; list-style:none; border-radius:20px; background:#fff; box-shadow:0 18px 50px rgba(0,25,54,.22); }
+.fab__menu[hidden]{ display:none; }
+.fab__item{ display:flex; align-items:center; gap:12px; width:100%; min-height:48px; padding:0 14px; border:0; border-radius:12px; background:transparent;
+  color:var(--ink); font-size:16px; font-weight:600; text-align:left; text-decoration:none; cursor:pointer; }
+.fab__item:hover{ background:var(--plane); }
+.fab__item .ico{ color:var(--sub); }
+
+.lvmodal,.docmodal{ position:fixed; inset:0; z-index:200; display:flex; align-items:center; justify-content:center; padding:24px; }
+.lvmodal[hidden],.docmodal[hidden]{ display:none; }
+.mscrim{ position:fixed; inset:0; background:rgba(0,12,30,.62); }
+.mpanel{ position:relative; z-index:1; display:flex; flex-direction:column; width:min(1320px,100%); height:100%; max-height:92vh; overflow:hidden;
+  background:#fff; border-radius:28px; box-shadow:0 30px 80px rgba(0,12,30,.4); }
+.mbar{ flex:0 0 auto; display:flex; align-items:center; gap:20px; padding:0 20px 0 28px; border-bottom:1px solid var(--line); }
+.mx{ flex:0 0 auto; width:44px; height:44px; display:grid; place-items:center; border:0; border-radius:12px; background:var(--plane); color:var(--ink); cursor:pointer; }
+.mx:hover{ background:var(--line); }
+.lvtabs{ flex:1 1 auto; min-width:0; display:flex; gap:32px; overflow-x:auto; scrollbar-width:none; }
+.lvtabs::-webkit-scrollbar{ display:none; }
+.lvtab{ flex:0 0 auto; padding:18px 0 15px; border:0; border-bottom:3px solid transparent; margin-bottom:-1px; background:none; cursor:pointer; text-align:left;
+  font-size:17px; font-weight:700; letter-spacing:-.02em; color:var(--sub); transition:color .18s, border-color .18s; }
+.lvtab small{ display:block; margin-top:3px; font-size:14px; font-weight:500; color:var(--mute); }
+.lvtab:hover{ color:var(--ink); }
+.lvtab[aria-selected="true"]{ color:var(--blue-d); border-bottom-color:var(--blue); }
+.lvtab[aria-selected="true"] small{ color:var(--ink2); }
+.mstage{ position:relative; flex:1 1 auto; min-height:0; background:var(--plane); }
+.mstage iframe{ display:block; width:100%; height:100%; border:0; background:#fff; }
+.mfoot{ flex:0 0 auto; display:flex; align-items:center; gap:16px; flex-wrap:wrap; padding:12px 24px; border-top:1px solid var(--line); font-size:14px; line-height:1.6; color:var(--sub); }
+.mfoot a{ color:var(--ink); font-weight:700; }
+.mfoot .btn{ margin-left:auto; }
+.dmhead{ flex:1 1 auto; min-width:0; padding:16px 0 14px; }
+.dmhead p{ margin:0; font-size:14px; font-weight:700; color:var(--sub); }
+.dmhead h3{ margin:2px 0 0; font-size:19px; line-height:1.4; font-weight:700; }
+.dmcount{ flex:0 0 auto; font-size:15px; color:var(--sub); font-variant-numeric:tabular-nums; }
+.dmcount b{ color:var(--ink); }
+.mstage--doc{ display:flex; align-items:center; justify-content:center; padding:16px 84px; }
+.mstage--doc img{ display:block; max-width:100%; max-height:100%; border-radius:8px; background:#fff; box-shadow:var(--shot); }
+.dmarrow{ position:absolute; top:50%; transform:translateY(-50%); z-index:2; width:52px; height:52px; display:grid; place-items:center; border:0; border-radius:16px;
+  background:#fff; color:var(--ink); box-shadow:0 4px 14px rgba(0,25,54,.14); cursor:pointer; }
+.dmarrow:hover:not(:disabled){ background:var(--blue-50); color:var(--blue-d); }
+.dmarrow:disabled{ opacity:.35; cursor:default; }
+.dmarrow--p{ left:16px; } .dmarrow--n{ right:16px; }
+@media (max-width:760px){
+  .lvmodal,.docmodal{ padding:0; }
+  .mpanel{ max-height:100%; border-radius:0; }
+  .mbar{ padding:0 12px 0 16px; gap:12px; }
+  .lvtabs{ gap:20px; }
+  .lvtab{ font-size:15px; padding:14px 0 12px; }
+  .mstage--doc{ padding:12px; }
+  .dmarrow{ width:44px; height:44px; }
+}
+
+@media (max-width:720px){ .deck{ padding:calc(var(--gnb) + 8px) 8px 88px; gap:8px; } .pg{ border-radius:6px; } }
+
+/* ── 인쇄(PDF) : 쪽 = 1920×1080 한 장 ── */
+@page{ size:1920px 1080px; margin:0; }
+@media print{
+  html,body{ background:#fff; }
+  .gnb,.fab,.lvmodal,.docmodal,.skip,.np{ display:none !important; }
+  .po{ display:block !important; }
+  .deck{ max-width:none; padding:0; gap:0; display:block; }
+  .pg{ width:1920px; height:1080px; aspect-ratio:auto; border-radius:0; box-shadow:none; break-after:page; page-break-after:always; }
+  .sl{ transform:none; }
+  .live::after{ animation:none; }
+}
+
+/* v32 보정: 번호 칸 글자(.mkl span 규칙에 덮이던 것) · 큰 수치 첫 칸 기준 글을 큰 글자로 */
+.mkl .mkl__n{ color:#fff; font-size:19px; line-height:1; }
+.mts--big .mt--key .mt__s{ font-size:19px; }
+
+/* ── v35 기획서 모음: 목록 표 · 전 쪽 흐림 격자(10쪽 산출물 꼴, 쪽이 많으면 꼬리표만 작게) ── */
+.fig--sm{ gap:8px; }
+.tag--sm{ height:28px; padding:0 10px; border-radius:7px; font-size:15px; }
+.blnote{ position:absolute; right:160px; display:inline-flex; align-items:center; gap:8px; font-size:17px; line-height:24px; font-weight:600; color:var(--sub); }
+.blnote .ico{ width:20px; height:20px; color:var(--sub); }
+.note h4 .ico{ width:20px; height:20px; margin-right:8px; vertical-align:-3px; color:var(--sub); }
+.note--cell{ padding:22px 26px; }
+.note--cell h4{ font-size:18px; line-height:26px; }
+.note--cell p{ margin-top:8px !important; font-size:17px; line-height:25px; }
+.note--cell p::before{ top:10px; }
+.dlist{ position:absolute; table-layout:fixed; border-collapse:separate; border-spacing:0; font-size:17px; line-height:24px; color:var(--ink2); }
+.dlist thead th{ background:var(--plane); padding:12px 14px; text-align:left; font-size:16px; font-weight:700; color:var(--ink2); }
+.dlist thead th:first-child{ border-radius:12px 0 0 12px; }
+.dlist thead th:last-child{ border-radius:0 12px 12px 0; }
+.dlist td,.dlist tbody th{ padding:9px 14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:middle; }
+.dlist tbody th{ vertical-align:top; padding-top:13px; font-size:18px; font-weight:700; color:var(--ink); }
+.dlist tbody th small{ display:block; margin-top:2px; font-size:16px; font-weight:600; color:var(--sub); }
+.dlist tr.gtop:not(:first-child) > *{ border-top:1px solid var(--line2); }
+.dl__no a{ display:inline-grid; place-items:center; min-width:44px; height:32px; border-radius:8px; background:var(--blue-50); color:var(--blue-d);
+  font-weight:700; text-decoration:none; transition:background-color .2s; }
+.dl__no a:hover{ background:var(--blue-100); }
+.dl__no a:focus-visible{ outline:3px solid var(--blue); outline-offset:2px; }
+.dl__k{ font-weight:700; color:var(--ink); }
+.dl__n,.dl__v{ white-space:nowrap; color:var(--sub); }
+.nw{ white-space:nowrap; }
+
+/* ── v35 최초 포폴 요소(11-02): 프로필 도구 아이콘 · 표지 개요 4칸 ── */
+/* 도구: index_최초디자인.html .tools · .tool 꼴(아이콘 → 이름 → 숙련도 막대), 회색 면 위라 막대 바탕은 흰색 */
+.blk .tools{ margin-top:20px !important; display:grid; grid-template-columns:repeat(4, 1fr); gap:28px 20px; }
+.tool{ display:flex; flex-direction:column; align-items:flex-start; }
+.blk .tool{ padding:0; }
+.tool img{ width:40px; height:40px; object-fit:contain; }
+.tool__n{ margin-top:12px; flex:1 0 auto; font-size:17px; line-height:24px; font-weight:700; color:var(--ink); word-break:keep-all; }
+.tool__lv{ margin-top:10px; width:100%; display:flex; align-items:center; gap:10px; }
+.tool__m{ flex:1; height:7px; border-radius:99px; background:#fff; box-shadow:inset 0 0 0 1px var(--line); overflow:hidden; }
+.tool__m i{ display:block; width:var(--lv); height:100%; border-radius:99px; background:var(--blue-d); }
+.tool--mid .tool__m i{ background:var(--blue); opacity:.55; }
+.tool__lv b{ font-size:15px; line-height:20px; font-weight:600; color:var(--sub); white-space:nowrap; }
+/* 표지 개요: index_최초디자인.html .pj__meta 꼴(위·아래 선 + 칸 사이 선, 업무 비중 막대) */
+.cv__grp{ top:200px; }
+.cvm{ position:absolute; left:160px; top:356px; width:792px; display:grid; grid-template-columns:172px 180px 180px 1fr;
+  border-top:1px solid var(--line2); border-bottom:1px solid var(--line2); }
+.cvm > div{ padding:16px 18px 18px; }
+.cvm > div:first-child{ padding-left:0; }
+.cvm > div + div{ border-left:1px solid var(--line); }
+.cvm dt{ font-size:15px; line-height:20px; font-weight:700; color:var(--sub); }
+.cvm dd{ margin-top:8px !important; font-size:17px; line-height:25px; font-weight:600; color:var(--ink2); word-break:keep-all; }
+/* 세 칸(이름 · 막대 · 값) 격자를 한 묶음으로 — 이름 칸 폭은 그 프로젝트의 가장 긴 이름에 맞춤 */
+.share{ display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:7px 10px; font-size:15px; line-height:22px; font-weight:600; color:var(--ink2); }
+.share__r{ display:contents; }
+.share__r span:first-child{ white-space:nowrap; }
+.share__b{ height:7px; border-radius:99px; background:var(--plane); overflow:hidden; }
+.share__b i{ display:block; width:var(--v); height:100%; border-radius:99px; background:var(--blue); }
+.share__r b{ text-align:right; font-variant-numeric:tabular-nums; color:var(--ink); }
+.cv__goal{ top:560px; }
+/* 연락처 · 생년월일 · 이메일 앞 아이콘(11-02) */
+.li-ic{ display:flex; align-items:center; gap:10px; }
+.li-ic .ico{ width:20px; height:20px; flex:none; color:var(--sub); }
+.ct .li-ic{ gap:12px; }
+.ct .li-ic .ico{ width:22px; height:22px; }
+
+/* ── 소개 영역(11-02): 소개 · 경력 · 역량 ── */
+.intro__h{ position:absolute; left:160px; top:172px; width:900px; font-size:46px; line-height:62px; font-weight:800; letter-spacing:-.035em; color:var(--ink); }
+.intro__h em{ font-style:normal; color:var(--blue); }   /* 46px 굵게 = 큰 글자 */
+.intro__lead{ position:absolute; left:160px; top:384px; width:840px; }
+.intro__lead p{ font-size:21px; line-height:34px; color:var(--ink2); }
+.intro__lead p + p{ margin-top:6px !important; }
+.sub3{ font-size:20px; line-height:28px; font-weight:700; color:var(--ink); }
+.ikps{ margin-top:16px !important; display:grid; gap:12px; }
+.ikp{ display:flex; align-items:center; justify-content:space-between; gap:20px; background:var(--plane); border-radius:20px; padding:16px 26px; }
+.ikp__k{ display:flex; align-items:center; gap:12px; font-size:19px; line-height:28px; font-weight:700; color:var(--ink); }
+.ikp__k .tag{ height:28px; padding:0 10px; font-size:15px; }
+.ikp__s{ margin-top:4px !important; font-size:15px; line-height:22px; color:var(--sub); }
+.ikp__v{ display:flex; align-items:baseline; gap:10px; font-size:38px; line-height:48px; font-weight:700; letter-spacing:-.03em; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.ikp__v .mt__b{ font-size:30px; }
+.card__d{ margin-top:12px !important; font-size:18px; line-height:28px; color:var(--sub); word-break:keep-all; }
+/* 경력: 시간 줄 + 흰 판 3장 */
+.cline{ position:absolute; left:160px; right:160px; top:248px; height:2px; background:var(--line2); }
+.ccard{ background:#fff; border-radius:24px; padding:34px 34px 30px; display:flex; flex-direction:column; }
+.ccard__co{ font-size:24px; line-height:32px; font-weight:800; color:var(--ink); letter-spacing:-.02em; }
+.ccard__co small{ display:block; margin-top:4px; font-size:17px; line-height:24px; font-weight:600; color:var(--sub); letter-spacing:0; }
+.ccard__h{ margin-top:22px !important; padding-top:22px; border-top:1px solid var(--line); font-size:23px; line-height:33px; font-weight:700; color:var(--ink); word-break:keep-all; }
+.ccard__d{ margin-top:12px !important; font-size:19px; line-height:31px; color:var(--sub); word-break:keep-all; }
+.ccard__chips{ margin-top:auto !important; padding-top:20px; display:flex; flex-wrap:wrap; gap:8px; }
+.ccard__chips li{ height:32px; display:inline-flex; align-items:center; padding:0 12px; border-radius:8px; background:var(--blue-50); color:var(--blue-d); font-size:15px; font-weight:700; }
+/* 역량: 회색 판 3×2 */
+.skc{ background:var(--plane); border-radius:24px; padding:28px 34px; display:flex; align-items:flex-start; gap:28px; }
+.skc__e{ flex:none; align-self:center; width:56px; height:56px; color:var(--ink2); stroke-width:1.5; }
+.skc__n{ font-size:16px; line-height:20px; font-weight:800; color:var(--blue-d); }
+.skc__t{ margin-top:10px !important; font-size:26px; line-height:34px; font-weight:800; color:var(--ink); letter-spacing:-.02em; }
+.skc__d{ margin-top:14px !important; font-size:24px; line-height:36px; color:var(--ink2); word-break:keep-all; }
+.skc__d b{ color:var(--blue-d); }
+.dcard{ padding:30px 32px 30px; }
+.dcard__i{ display:grid; place-items:center; width:52px; height:52px; border-radius:14px; background:var(--blue-50); color:var(--blue-d); }
+.dcard__i .ico{ width:26px; height:26px; }
+.dcard__t{ margin-top:18px !important; font-size:22px; line-height:30px; font-weight:700; color:var(--ink); }
+/* 목차 v35(11-02): 묶음 제목 + 항목 링크 + 쪽 번호 */
+.toc{ gap:26px; }
+.toc h3{ display:flex; align-items:center; gap:12px; font-size:24px; line-height:32px; font-weight:700; color:var(--ink); }
+.toc h3 .tag{ height:32px; padding:0 10px; }
+.toc ul{ margin-top:8px !important; }
+.toc li a{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; font-size:19px; line-height:30px; font-weight:500; color:var(--ink2); }
+.toc li a:hover span:last-child{ text-decoration:none; }
+.toc li a:hover span:first-child{ text-decoration:underline; text-decoration-color:var(--blue); text-decoration-thickness:2px; text-underline-offset:5px; }
+.toc li a:focus-visible{ outline:3px solid var(--blue); outline-offset:2px; border-radius:4px; }
+.toc__p{ flex:none; font-weight:700; color:var(--sub); font-variant-numeric:tabular-nums; }
+
+/* ── v36 2쪽 프로필: 그림 ↔ 실물 사진(index_최초디자인.html .cover__photo와 같은 동작) ── */
+.face{ padding:0; border:0; border-radius:12px; background:#fff; box-shadow:0 0 0 1px var(--line); cursor:pointer; -webkit-appearance:none; appearance:none; touch-action:manipulation; }
+.face img{ position:absolute; inset:0; display:block; width:100%; height:100%; border-radius:12px; background:#fff; transition:opacity .25s ease; }
+.face__char{ object-fit:cover; }
+.face__real{ object-fit:contain; opacity:0; }   /* 흰 배경 증명사진이라 자르지 않고 칸 안에 전부 보임 */
+.face:focus-visible{ outline:3px solid var(--blue); outline-offset:4px; }
+.face.is-real .face__char{ opacity:0; }
+.face.is-real .face__real{ opacity:1; }
+@media (hover:hover){
+  .face:hover .face__char{ opacity:0; }
+  .face:hover .face__real{ opacity:1; }
+}
+@media (max-width:1000px){     /* 작은 화면은 장표가 줄어드므로 안내만 크게 */
+}
+@media print{
+  .face__char{ opacity:0 !important; }
+  .face__real{ opacity:1 !important; }
+}
+
+/* ── v36 유형 › 작업 내용 › 작업물 ── */
+.hier{ position:absolute; table-layout:fixed; border-collapse:separate; border-spacing:0; font-size:18px; line-height:26px; color:var(--ink2); }
+.hier thead th{ padding:10px 14px; background:var(--plane); text-align:left; font-size:16px; line-height:24px; font-weight:700; color:var(--ink2); }
+.hier thead th:first-child{ border-radius:12px 0 0 12px; }
+.hier thead th:last-child{ border-radius:0 12px 12px 0; }
+.hier td,.hier tbody th{ padding:8px 14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:middle; word-break:keep-all; }
+.hier tbody th{ vertical-align:top; padding-top:12px; font-size:18px; font-weight:700; color:var(--ink); }
+.hier tbody th small{ display:block; margin-top:2px; font-size:15px; line-height:22px; font-weight:600; color:var(--sub); }
+.hier tr.gtop:not(:first-child) > *{ border-top:1px solid var(--line2); }
+.hier .h-type{ vertical-align:top; padding-top:10px; }
+.hier .h-work{ font-weight:600; color:var(--ink); }
+.hier .h-step{ position:relative; padding-left:34px; }
+.hier .h-step::before{ content:""; position:absolute; left:10px; top:50%; width:8px; height:8px; margin-top:-4px; border-top:2px solid var(--dot); border-right:2px solid var(--dot); transform:rotate(45deg); }
+.hier td[rowspan] + .h-step::before{ top:50%; }
+.hier a,.hl{ color:var(--blue-d); font-weight:600; text-decoration:none; }
+.hl{ padding:0; border:0; background:none; font:inherit; font-weight:600; cursor:pointer; }
+.hier a:hover,.hl:hover{ text-decoration:underline; text-underline-offset:4px; }
+.hier a:focus-visible,.hl:focus-visible{ outline:3px solid var(--blue); outline-offset:2px; border-radius:4px; }
+.hier tbody th a{ color:var(--ink); font-weight:700; }
+.h-sep{ color:var(--sub); }
+.hier--cv{ left:160px; top:530px; width:792px; font-size:17px; line-height:24px; }
+.hier--cv thead th{ padding:7px 12px; font-size:15px; line-height:22px; }
+.hier--cv td{ padding:7px 12px; }
+.hier--cv .h-step{ padding-left:30px; }
+.hier--cv .h-step::before{ left:9px; }
+.hier--cv .h-type{ padding:9px 8px 7px 0; }
+.hier--cv .tag{ height:32px; padding:0 10px; font-size:15px; }
+/* 기획서 모음 표: 작업 내용 칸 */
+.dlist .dl__w{ vertical-align:top; padding-top:13px; font-size:16px; line-height:23px; font-weight:600; color:var(--ink); word-break:keep-all; border-bottom:1px solid var(--line); }
+@media print{
+  .hl{ color:var(--ink2); }
+}
+
+/* ── v36 11-04 형광펜: 유형 태그([구축][유지보수][재구축][운영])에만(사용자 "구축 유지보수 이런것만"). 나머지 라벨 · 강조 단어는 v35 그대로 ── */
+:root{ --pen:#B1FF00; }
+.tag--pen{ padding:0 6px; border-radius:0; box-shadow:none; color:var(--ink); background-color:transparent;
+  background-image:linear-gradient(transparent 62%,var(--pen) 62%,var(--pen) 86%,transparent 86%); background-repeat:no-repeat; background-position:0 0; background-size:100% 100%; }
+.tag--pen + .tag--pen{ margin-left:8px; }
+.hier--cv .tag--pen{ padding:0 6px; }
+.dl__t{ display:flex !important; flex-wrap:wrap; gap:4px 0; margin-top:6px !important; }
+.dl__t .tag{ height:26px; font-size:15px; }
+.sub2 .tag{ height:28px; font-size:17px; }
+.h-crumb{ margin-left:4px; }
+
+/* ── 쪽 진입 애니메이션: 자전거행복나눔 시연(bkIn)과 같은 올라오기 + 형광펜 긋기. 스크립트가 .anim을 켤 때만 ── */
+@keyframes pgIn{ from{ opacity:0; translate:0 18px; } to{ opacity:1; translate:0 0; } }
+.anim .pg:not(.is-in) .sl > :not(.plane):not(.pgno){ opacity:0; }
+.anim .pg.is-in .sl > :not(.plane):not(.pgno){ animation:pgIn .45s ease both; }
+.anim .pg.is-in .sl > :nth-child(3){ animation-delay:.05s; }
+.anim .pg.is-in .sl > :nth-child(4){ animation-delay:.1s; }
+.anim .pg.is-in .sl > :nth-child(5){ animation-delay:.15s; }
+.anim .pg.is-in .sl > :nth-child(n+6){ animation-delay:.2s; }
+.anim .pg .tag--pen{ background-size:0% 100%; transition:background-size .6s cubic-bezier(.22,.8,.3,1) .35s; }
+.anim .pg .tag--pen + .tag--pen{ transition-delay:.7s; }
+.anim .pg.is-pen .tag--pen{ background-size:100% 100%; }
+@media print{
+  .anim .pg .sl > *{ opacity:1 !important; animation:none !important; translate:none !important; }
+  .anim .pg .tag--pen{ background-size:100% 100% !important; transition:none !important; }
+}
+
+/* ── 목차(사용자 11-04: 크게 · 이모티콘 · 유형 태그) ── */
+.ntoc__big{ position:absolute; left:160px; top:172px; font-size:112px; line-height:128px; font-weight:800; letter-spacing:-.04em; color:var(--ink); }
+.ntoc__g{ position:absolute; }
+.ntoc__g h3{ display:flex; align-items:center; gap:14px; font-size:32px; line-height:44px; font-weight:800; color:var(--ink); }
+.ntoc__g h3 .tag{ height:44px; font-size:26px; }
+.ntoc ul{ margin-top:12px !important; display:grid; }
+.ntoc a{ display:grid; grid-template-columns:52px 1fr auto 56px; align-items:center; column-gap:10px; min-height:66px; border-bottom:1px solid var(--line); text-decoration:none; font-size:25px; line-height:34px; font-weight:600; color:var(--ink2); }
+.ntoc__g--pj ul{ margin-top:16px !important; }
+.ntoc__g--pj a{ grid-template-columns:64px 1fr auto 64px; min-height:113px; border-bottom-color:var(--line2); font-size:32px; line-height:42px; font-weight:700; color:var(--ink); }
+.emo{ flex:none; width:32px; height:32px; color:var(--ink2); stroke-width:1.75; }
+.ntoc__g--pj .emo{ width:40px; height:40px; stroke-width:1.6; }
+.ntoc__y{ display:inline-flex; align-items:center; }
+.ntoc .ntoc__y .tag{ height:34px; font-size:20px; }
+.ntoc__t{ grid-column:2; }
+.ntoc__y{ grid-column:3; }
+.ntoc__p{ grid-column:4; text-align:right; font-variant-numeric:tabular-nums; font-weight:700; color:var(--sub); }
+.ntoc a:hover .ntoc__t{ text-decoration:underline; text-decoration-color:var(--blue); text-decoration-thickness:3px; text-underline-offset:8px; }
+.ntoc a:focus-visible{ outline:3px solid var(--blue); outline-offset:2px; }
+
+/* ── v37 프로젝트 목록 ── */
+.plist{ font-size:18px; line-height:26px; }
+.plist td,.plist tbody th{ padding:7px 14px; vertical-align:middle; }
+.plist tbody th{ font-weight:600; font-size:18px; color:var(--ink); }
+.plist tbody th a{ font-weight:700; }
+.plist .tag--pen{ height:26px; font-size:16px; }
+.pl__rep{ margin-left:10px; font-size:14px; font-weight:700; color:var(--blue-d); }
+.pl__when{ white-space:nowrap; color:var(--sub); font-variant-numeric:tabular-nums; }
+
+/* ── v38 문제 · 대응 · 성과 1쪽: 기존 번호 목록(.nl) · 수치 색(.mt__*) · 회고(.rt) 재사용, 새 카드 없음 ── */
+.sum__doc{ padding:20px 24px; }
+.sum__doc table{ margin-top:10px; font-size:16px; line-height:24px; }
+.sum__doc th,.sum__doc td{ padding:12px; }
+.sum__doc tbody th{ width:150px; white-space:nowrap; }
+/* 작게 넣은 시연 화면에서 버튼이 내용을 가리지 않도록 꼬리표 줄 오른쪽으로 */
+
+/* ── v39 작업물 1쪽: 3단 머리 · 회색 칸(.c3) 재사용, 문서마다 대표 2쪽 ── */
+.wk{ width:100%; display:flex; flex-direction:column; justify-content:center; gap:16px; }
+
+/* ── v39 프로젝트 1쪽: 이름 · 한 문장 · 문제 / 대응 / 성과 · 화면 2장(표지 + 요약을 합침) ── */
+
+
+/* ── v40 대표 프로젝트: 제원 · 사용 툴 · 진행 이유 및 성과 · 산출물 ── */
+.c3__form{ position:absolute; top:420px; padding:24px 28px; }
+.c3__h em{ font-style:normal; color:var(--blue); }
+
+/* 프로필 클릭 유도(사용자 11-05): 클릭 미 버튼처럼 사진 칸이 흔들림. 테두리 강조 없음. 올리거나 누르면 멈춤
+   쪽 진입 애니메이션 규칙과 움직임 줄이기 규칙이 .sl > * 전체를 덮어써 #face + !important로 지정. 사용자가 직접 요청한 움직임이라 움직임 줄이기 환경에서도 유지 */
+@keyframes faceShake{ 0%,32%,100%{ transform:rotate(0); } 5%{ transform:rotate(-3deg); } 11%{ transform:rotate(3deg); } 17%{ transform:rotate(-2.5deg); } 23%{ transform:rotate(2.5deg); } 28%{ transform:rotate(-1deg); } }
+#face{ animation:faceShake 2.4s ease-in-out infinite !important; }
+#face:hover,#face.is-real{ animation:none !important; }
+@media print{ #face{ animation:none !important; } }
+
+/* v43 프로젝트 쪽: 왼쪽 내용 + 오른쪽 회색 면 위 운영 화면. 서브 타이틀 없이 회색 칸 · 아이콘 · 태그로 구분 */
+.pn__name{ position:absolute; left:160px; top:106px; width:720px; font-size:44px; line-height:56px; font-weight:800; color:var(--ink); letter-spacing:-.035em; }
+.pn__tags{ position:absolute; left:160px; top:170px; display:flex; gap:6px; }
+/* 제원 · 사용 툴은 회색 칸을 따로 둔다(사용자 11-05 "영역 분리") */
+.pn__box{ left:160px; top:224px; width:720px; display:grid; gap:12px; }
+.pn__box dl{ margin:0; padding:18px 24px; border-radius:16px; background:var(--plane); display:grid; grid-template-columns:repeat(3, 1fr); column-gap:20px; }
+.pn__box dt{ display:flex; align-items:center; gap:8px; min-height:24px; font-size:15px; line-height:20px; font-weight:700; color:var(--sub); white-space:nowrap; }
+.pn__box dt .ico{ flex:none; width:20px; height:20px; color:var(--sub); }
+.pn__box dd{ margin-top:4px !important; font-size:17px; line-height:24px; font-weight:600; color:var(--ink2); word-break:keep-all; }
+.spec__ic{ display:flex; gap:4px; }
+.spec__ic img{ width:22px; height:22px; object-fit:contain; }
+.prs{ left:160px; top:468px; width:720px; display:grid; gap:14px; }
+.pr{ display:grid; grid-template-columns:64px 1fr; column-gap:16px; padding-bottom:14px; border-bottom:1px solid var(--line); }
+.pr:last-child{ padding-bottom:0; border-bottom:0; }
+.pr .tag{ justify-self:start; }
+.pr ul{ margin:0; padding:0; list-style:none; display:grid; gap:6px; align-content:start; }
+.pr li{ font-size:19px; line-height:28px; color:var(--ink); word-break:keep-all; }
+.pr .pr__m{ grid-template-columns:repeat(3, 1fr); column-gap:14px; }
+.pm__v{ display:flex; align-items:baseline; gap:0 6px; font-size:25px; line-height:32px; font-weight:700; letter-spacing:-.03em; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.pm__k{ margin-top:2px !important; font-size:15px; line-height:20px; font-weight:700; color:var(--ink); word-break:keep-all; }
+.pm__k span{ display:block; font-weight:400; color:var(--sub); }
+.pn__shot{ position:absolute; left:1000px; top:0; width:760px; height:1080px; display:flex; flex-direction:column; justify-content:center; align-items:stretch; }
+.pn__note{ margin-top:12px !important; font-size:16px; line-height:22px; color:var(--sub); text-align:right; }
+.pn__shot img{ display:block; width:100%; height:auto; border-radius:12px; background:#fff; box-shadow:var(--shot); }
+
+.shot__go .ico{ width:26px; height:26px; stroke-width:2.25; }
+
+/* 문서 모달: 문서 전체를 한 화면에(사용자 11-05). 열 수는 스크립트가 쪽 수 · 화면 크기에 맞춰 정함 */
+.dmgrid{ position:absolute; inset:0; display:none; align-content:center; justify-content:center; gap:12px; padding:16px; }
+.mstage--doc.is-grid .dmgrid{ display:grid; }
+.mstage--doc.is-grid > img,.mstage--doc.is-grid > .dmarrow{ display:none; }
+.dmthumb{ position:relative; display:block; width:100%; aspect-ratio:16 / 9; padding:0; border:0; border-radius:6px; background:#fff; box-shadow:0 1px 4px rgba(0,25,54,.14); cursor:zoom-in; transition:box-shadow .15s ease; }
+.dmthumb:hover{ box-shadow:0 0 0 3px var(--blue); }
+.dmthumb img{ display:block; width:100%; height:100%; border-radius:6px; object-fit:contain; }
+.dmthumb b{ position:absolute; left:6px; bottom:6px; min-width:24px; height:24px; padding:0 6px; border-radius:6px; background:rgba(25,31,40,.82); color:#fff; font-size:13px; line-height:24px; font-weight:700; text-align:center; }
+.dmcount[hidden],#dm-all[hidden]{ display:none; }
+
+/* 펼침 효과(사용자 11-05 "전부다"). 사용자가 직접 요청한 움직임이라 움직임 줄이기 환경에서도 유지 */
+/* 문제 · 해결 · 결과 · 성과: 쪽에 들어오면 위에서 아래로 차례로 */
+@keyframes prUnfold{ from{ opacity:0; clip-path:inset(0 0 100% 0); transform:translateY(-10px); } to{ opacity:1; clip-path:inset(0 0 0 0); transform:none; } }
+.anim .pg.is-in .pr{ animation:prUnfold .5s cubic-bezier(.22,.8,.3,1) backwards; }
+.anim .pg.is-in .pr:nth-child(2){ animation-delay:.12s; }
+.anim .pg.is-in .pr:nth-child(3){ animation-delay:.24s; }
+.anim .pg.is-in .pr:nth-child(4){ animation-delay:.36s; }
+/* 사용 툴 칸: 툴 이름을 접어 두고 누르거나 마우스를 올리면 펼침. PDF는 펼친 상태 */
+.pn__toolw{ position:relative; cursor:pointer; }
+.pn__box .pn__tools dd{ margin-top:0 !important; display:grid; grid-template-rows:0fr; transition:grid-template-rows .3s cubic-bezier(.22,.8,.3,1); }
+.pn__tools dd > span{ display:block; min-height:0; overflow:hidden; padding-top:0; transition:padding-top .3s cubic-bezier(.22,.8,.3,1); }
+.pn__toolw.is-open .pn__tools dd{ grid-template-rows:1fr; }
+.pn__toolw.is-open .pn__tools dd > span{ padding-top:4px; }
+.pn__toolbtn{ position:absolute; right:10px; top:10px; display:grid; place-items:center; width:40px; height:40px; padding:0; border:0; border-radius:10px; background:none; color:var(--sub); cursor:pointer; }
+.pn__toolbtn .ico{ width:20px; height:20px; transition:transform .3s cubic-bezier(.22,.8,.3,1); }
+.pn__toolw.is-open .pn__toolbtn .ico{ transform:rotate(180deg); }
+@media (hover:hover){
+  .pn__toolw:hover .pn__tools dd{ grid-template-rows:1fr; }
+  .pn__toolw:hover .pn__tools dd > span{ padding-top:4px; }
+  .pn__toolw:hover .pn__toolbtn .ico{ transform:rotate(180deg); }
+}
+/* 문서 모달: 격자 가운데에서 각 쪽 자리로 */
+@keyframes thumbUnfold{ from{ opacity:0; transform:translate(var(--dx,0),var(--dy,0)) scale(.55); } 40%{ opacity:1; } to{ opacity:1; transform:none; } }
+.dmthumb.is-unfold{ animation:thumbUnfold .55s cubic-bezier(.22,.8,.3,1) var(--dl,0ms) backwards; }
+/* 자료모음 메뉴: 버튼 쪽에서 위로 차례로 */
+@keyframes fabUnfold{ from{ clip-path:inset(100% 0 0 0 round 20px); } to{ clip-path:inset(0 0 0 0 round 20px); } }
+@keyframes fabItem{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
+.fab__menu:not([hidden]){ animation:fabUnfold .3s cubic-bezier(.22,.8,.3,1) backwards; }
+.fab__menu:not([hidden]) li{ animation:fabItem .28s ease backwards; }
+.fab__menu:not([hidden]) li:nth-last-child(1){ animation-delay:.02s; }
+.fab__menu:not([hidden]) li:nth-last-child(2){ animation-delay:.05s; }
+.fab__menu:not([hidden]) li:nth-last-child(3){ animation-delay:.08s; }
+.fab__menu:not([hidden]) li:nth-last-child(4){ animation-delay:.11s; }
+.fab__menu:not([hidden]) li:nth-last-child(5){ animation-delay:.14s; }
+.fab__menu:not([hidden]) li:nth-last-child(6){ animation-delay:.17s; }
+@media print{
+  .anim .pg .pr{ animation:none !important; opacity:1 !important; clip-path:none !important; transform:none !important; }
+  .pn__box .pn__tools dd{ grid-template-rows:1fr; transition:none; }
+  .pn__tools dd > span{ padding-top:4px; }
+}
+
+/* ── 슈퍼진 형식 공통(09 sz.css 사본, sf.css) ── */
+/* 09 슈퍼진 UXUI 기획 · deck043.css 뒤에 붙는 추가 규칙. 토큰은 deck043.css 그대로 쓴다(새 색 없음) */
+
+/* 오른쪽 회색 면: 세로 문서는 높이에 맞추고, 그림 여러 장은 간격을 두고 쌓는다 */
+.pn__shot img.is-v{ width:auto; max-width:100%; max-height:900px; align-self:center; }
+.pn__shot--n{ gap:24px; }
+
+/* ── 목차 오른쪽 배치(2026-11-09 사용자: "목차는 오른쪽에 배치, 왼쪽은 여백과 index 폰트로만") ──
+   왼쪽 = 흰 여백 + '목차' 큰 글자만(머리 줄 '목차' 숨김), 오른쪽 회색 면 = 모든 묶음을 2열로 흘려 배치.
+   묶음 위치는 생성기의 인라인 좌표를 무시하고 흐름 배치로 바꾼다. 줄 모양은 모든 포트폴리오에서 같은 크기로 맞춘다. */
+.pg[data-type="목차"] .plane{ left:640px !important; clip-path:none !important; }
+.pg[data-type="목차"] .runhd p:first-child{ visibility:hidden; }
+.pg[data-type="목차"] .ntoc__big{ position:absolute !important; left:160px !important; top:172px !important; margin:0 !important; font-size:112px !important; line-height:128px !important; }
+.pg[data-type="목차"] .ntoc{ position:absolute; left:720px; top:150px; width:1040px; height:850px; column-count:2; column-gap:56px; column-fill:balance; }
+.pg[data-type="목차"] .ntoc .ntoc__g{ position:relative !important; inset:auto !important; width:auto !important; height:auto !important; margin:0 0 32px !important; padding:0 !important; break-inside:avoid; }
+.pg[data-type="목차"] .ntoc .ntoc__g h3{ display:flex; align-items:center; gap:12px; font-size:26px; line-height:36px; font-weight:800; break-after:avoid; }
+.pg[data-type="목차"] .ntoc .ntoc__g h3 .tag{ height:36px; font-size:21px; }
+.pg[data-type="목차"] .ntoc ul{ margin-top:8px !important; display:grid !important; grid-template-columns:1fr !important; gap:0 !important; }
+.pg[data-type="목차"] .ntoc li{ break-inside:avoid; }
+.pg[data-type="목차"] .ntoc a{ display:grid !important; grid-template-columns:36px 1fr auto 44px !important; column-gap:8px !important; align-items:center !important; min-height:52px !important; height:auto !important; padding:0 !important; border-bottom:1px solid var(--line) !important; font-size:20px !important; line-height:26px !important; font-weight:600 !important; color:var(--ink2) !important; background:none !important; }
+.pg[data-type="목차"] .ntoc .emo{ width:24px !important; height:24px !important; stroke-width:1.8 !important; }
+.pg[data-type="목차"] .ntoc .ntoc__y .tag{ height:24px; font-size:15px; }
+.pg[data-type="목차"] .ntoc .ntoc__p{ font-size:20px; }
+/* PC · 태블릿(721px 이상): 목차 줄은 1줄(2026-11-09 사용자 "폰트를 줄이더라도 1줄로, mo는 기존 유지"). 모바일(720px 이하)은 줄바꿈 허용 그대로 */
+@media (min-width:721px){
+  .pg[data-type="목차"] .ntoc a{ grid-template-columns:36px minmax(0,1fr) auto 44px !important; }
+  .pg[data-type="목차"] .ntoc a > *, .pg[data-type="목차"] .ntoc h3 > *{ white-space:nowrap; }
+}
+
+/* ── 2026-11-09 Animates 역기획 쪽(sz_pages_animates.py) ──
+   오른쪽 회색 면: 세로 휴대전화 캡처 2장을 나란히. 태그 줄: '고칠 점'(3자 + 띄어쓰기)이 들어가게 태그 칸을 64 → 84px */
+.pn__pair{ display:flex; gap:24px; justify-content:center; align-items:flex-start; }
+.pn__pair img.is-v{ width:calc((100% - 24px) / 2); max-width:none; max-height:none; align-self:flex-start; }
+.prs--w .pr{ grid-template-columns:84px 1fr; }
+
+/* ── 2026-11-09 간지(sz_div.py): 최상위 묶음 앞 구분 쪽 ──
+   왼쪽 흰 면 = 묶음 번호(형광펜, 쪽에 들어오면 그어짐) · 이름 · 한 줄, 오른쪽 회색 면 = 이 묶음의 쪽 목록(목차 줄과 같은 꼴) */
+.dv__n{ position:absolute; left:148px; top:200px; margin:0; font-size:220px; line-height:1; font-weight:800; letter-spacing:-.05em; color:var(--ink); }
+.dv__n span{ padding:0 12px; background-image:linear-gradient(transparent 64%,var(--pen) 64%,var(--pen) 88%,transparent 88%); background-repeat:no-repeat; background-size:100% 100%; }
+.anim .pg .dv__n span{ background-size:0% 100%; transition:background-size .6s cubic-bezier(.22,.8,.3,1) .3s; }
+.anim .pg.is-pen .dv__n span{ background-size:100% 100%; }
+.dv__h{ position:absolute; left:160px; top:476px; width:740px; margin:0; font-size:72px; line-height:88px; font-weight:800; letter-spacing:-.035em; color:var(--ink); }
+.dv__s{ position:absolute; left:160px; top:592px; width:700px; margin:0; font-size:24px; line-height:36px; color:var(--sub); }
+.dv__l{ position:absolute; left:1040px; top:120px; bottom:120px; width:720px; display:flex; flex-direction:column; justify-content:center; }
+.dv__l ul{ margin:0; padding:0; list-style:none; }
+.dv__l a{ display:grid; grid-template-columns:40px minmax(0,1fr) auto; column-gap:12px; align-items:center; min-height:72px; border-bottom:1px solid var(--line2); text-decoration:none;
+  font-size:24px; line-height:32px; font-weight:700; color:var(--ink); }
+.dv__l li:first-child a{ border-top:1px solid var(--line2); }
+.dv__l a:hover .dv__t2{ text-decoration:underline; text-underline-offset:5px; }
+.dv__l a:focus-visible{ outline:3px solid var(--blue); outline-offset:2px; }
+.dv__l .emo{ width:28px; height:28px; color:var(--ink2); }
+.dv__p{ font-size:22px; font-weight:700; color:var(--sub); font-variant-numeric:tabular-nums; }
+@media (prefers-reduced-motion:reduce){ .anim .pg .dv__n span{ background-size:100% 100% !important; transition:none !important; } }
+
+/* ── 2026-11-09 AOi 대화 모드 산출물 쪽: 세 번째 열(휴대전화 화면 2장 + 새 탭 열기) ── */
+.wk--ph{ align-items:center; }
+.wk__row{ display:flex; gap:16px; justify-content:center; height:372px; }
+.wk__ph{ position:relative; padding:0; border:0; background:none; cursor:zoom-in; border-radius:12px; }
+.wk__ph img{ display:block; height:372px; width:auto; border-radius:12px; box-shadow:var(--shot); }
+.wk__ph:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; }
+.wk__open{ align-self:center; }
+
+/* ── 2026-11-10 대표 프로젝트 쪽: 왼쪽 = 제원(규모 · 기간) + 담당 파트 5칸(모두 100%), 오른쪽 화면 아래 = 사용 툴 카드(툴마다 한 장) ──
+   사용자: "사용툴 더욱 크게 · 툴별 카드레이어, 담당파트 기획 · 구현(퍼블/디자인/개발) · 고객사CS 5가지 · 전부 100%"
+   툴 카드를 왼쪽에 두면 문제 · 해결 글과 겹쳐 오른쪽 회색 면(화면 그림 아래 빈 곳)으로 옮김 */
+.pn__box--v2{ gap:12px; }
+.pn__box--v2 dl{ grid-template-columns:repeat(2, 1fr); padding:14px 24px; }
+.pn__lab{ display:flex; align-items:center; gap:8px; margin:0 0 10px !important; font-size:15px; line-height:20px; font-weight:700; color:var(--sub); }
+.pn__lab .ico{ width:20px; height:20px; color:var(--sub); }
+.pn__parts{ padding:14px 24px 16px; border-radius:16px; background:var(--plane); }
+.pn__parts ul{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(5, 1fr); column-gap:18px; }
+.pn__parts li{ display:grid; grid-template-columns:1fr auto; grid-template-rows:auto 7px; column-gap:6px; row-gap:8px; align-items:end; }
+.pp__k{ font-size:16px; line-height:22px; font-weight:700; color:var(--ink); white-space:nowrap; }
+.pp__k small{ display:block; font-size:15px; line-height:18px; font-weight:700; color:var(--blue-d); }   /* 장표 최소 글자 15px에 맞춤 */
+.pn__parts b{ font-size:15px; line-height:22px; font-weight:800; color:var(--blue-d); font-variant-numeric:tabular-nums; }
+.pp__b{ grid-column:1 / -1; height:7px; border-radius:99px; background:#fff; overflow:hidden; }
+.pp__b i{ display:block; width:100%; height:100%; border-radius:99px; background:var(--blue); }
+.pn__shot .pn__tcards{ margin-top:32px; }
+.pn__tcards ul{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(6, 1fr); gap:12px; }
+.pn__tcards li{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; min-width:0; padding:14px; border-radius:16px; background:#fff;
+  box-shadow:0 0 0 1px var(--line2), 0 8px 20px rgba(0,25,54,.08); }
+.pn__tcards img{ display:block; width:40px; height:40px; object-fit:contain; }
+.tc__n{ font-size:16px; line-height:20px; font-weight:800; color:var(--ink); white-space:nowrap; letter-spacing:-.02em; }
+.tc__c{ font-size:15px; line-height:19px; font-weight:600; color:var(--sub); white-space:nowrap; }
+.prs--v2{ top:468px; }
+
+/* ── 2026-11-10 소개 1쪽(소개 · 경력 · 역량 합침): 오른쪽 경력 목록 · 경험한 일 4칸 · 역량 5가지 목록 ── */
+.icar{ position:absolute; left:1104px; top:172px; width:656px; }
+.icar__h{ display:flex; align-items:baseline; gap:12px; font-size:20px; line-height:28px; font-weight:700; color:var(--ink); }
+.icar__h small{ font-size:16px; line-height:24px; font-weight:600; color:var(--sub); }
+.icar ol{ margin:14px 0 0 !important; padding:0; list-style:none; }
+.icar li{ display:grid; grid-template-columns:1fr auto; align-items:center; column-gap:16px; row-gap:4px; padding:15px 0; border-top:1px solid var(--line); }
+.icar li:last-child{ border-bottom:1px solid var(--line); }
+.icar__co{ font-size:20px; line-height:28px; font-weight:800; color:var(--ink); letter-spacing:-.02em; }
+.icar__co small{ margin-left:10px; font-size:16px; font-weight:600; color:var(--sub); letter-spacing:0; }
+.icar__t{ grid-column:1 / -1; font-size:17px; line-height:26px; color:var(--ink2); word-break:keep-all; }
+.xcard{ width:376px; height:180px; background:#fff; border:1px solid var(--line); border-radius:20px; padding:22px 26px 24px; }
+.xcard__h{ display:flex; align-items:center; gap:12px; font-size:20px; line-height:28px; font-weight:700; color:var(--ink); }
+.xcard__h .dcard__i{ flex:none; width:40px; height:40px; border-radius:12px; }
+.xcard__h .dcard__i .ico{ width:22px; height:22px; }
+.xcard p{ margin-top:12px !important; font-size:17px; line-height:26px; color:var(--sub); word-break:keep-all; }
+.iskl{ position:absolute; left:160px; top:860px; width:1600px; margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(5, 1fr); column-gap:24px; }
+.iskl li{ padding-top:14px; border-top:2px solid var(--line2); }
+.iskl__t{ display:flex; align-items:center; gap:8px; font-size:19px; line-height:26px; font-weight:800; color:var(--ink); letter-spacing:-.02em; }
+.iskl__t .ico{ flex:none; width:22px; height:22px; color:var(--blue-d); }
+.iskl__d{ margin-top:8px !important; font-size:16px; line-height:25px; color:var(--ink2); word-break:keep-all; }
+
+/* ── 2026-11-10 빈 영역 장식(sz_deco.py): 키워드 띠 · 외곽선 글자. 모두 aria-hidden · 클릭 안 받음 ── */
+.deco{ position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.rbn{ position:absolute; left:-260px; width:2440px; height:84px; display:flex; align-items:center; gap:30px; padding-left:40px; white-space:nowrap; overflow:hidden;
+  font-size:36px; line-height:1; font-weight:800; letter-spacing:.04em; transform-origin:50% 50%; }
+.rbn i{ font-style:normal; font-weight:900; }
+.rbn--ink{ background:var(--ink); color:#fff; }
+.rbn--ink i{ color:var(--pen); }
+.rbn--pen{ height:72px; background:var(--pen); color:var(--ink); font-size:32px; }
+.rbn--pen i{ color:var(--ink); }
+.ghost{ position:absolute; margin:0; white-space:nowrap; font-family:"Arial Black","Arial Bold",Arial,sans-serif; font-weight:900; line-height:1; letter-spacing:-.01em; color:transparent;   /* 가변 글꼴은 윤곽이 겹쳐 외곽선 안쪽 선이 비침 → 고정 글꼴 */
+  -webkit-text-stroke:2px var(--line2); }
+.ghost i{ font-style:normal; color:var(--pen); -webkit-text-stroke:0; }
+.ghost--idx{ font-size:104px; }
+.ghost--dv{ left:154px; bottom:92px; width:780px; white-space:normal; font-size:92px; line-height:96px; }
+.ghost--yr{ right:160px; bottom:110px; font-size:136px; }
+.ghost--thx{ right:160px; top:478px; font-size:112px; }
+.ghost--pf{ left:556px; top:168px; font-size:196px; -webkit-text-stroke-color:#C5CCD3; }   /* 회색 면 위라 외곽선을 한 단계 진하게 */
+.rbn--flat{ height:60px; font-size:24px; gap:24px; padding-left:64px; }
+
+/* ── 2026-11-10 MO(720px 이하) 다시 흘리기(sz_mo.js가 html.mo와 요소 표시를 붙임). 최소 글자 14px ── */
+@media screen and (max-width:720px){
+  html.mo .deck{ gap:12px; grid-template-columns:minmax(0,1fr); }
+  html.mo .pg, html.mo .sl, html.mo .sl *{ min-width:0; }
+  html.mo .pg{ aspect-ratio:auto; height:auto; overflow:visible; border-radius:12px; }
+  html.mo .sl{ position:relative; width:auto; height:auto; transform:none; overflow:visible; padding:28px 20px 22px; display:flex; flex-direction:column; gap:16px; }
+  html.mo .sl, html.mo .sl *:not(svg):not(svg *){ font-size:var(--mofs, 15px) !important; line-height:var(--molh, 1.6) !important; }
+  html.mo .mo-flow{ position:relative !important; left:auto !important; top:auto !important; right:auto !important; bottom:auto !important;
+    width:auto !important; max-width:100% !important; height:auto !important; min-height:0 !important; transform:none !important; margin:0 !important; }
+  html.mo .mo-flow + .mo-flow{ margin-top:12px !important; }
+  html.mo .sl > .mo-flow + .mo-flow{ margin-top:0 !important; }
+  html.mo .mo-hide, html.mo .face__real{ display:none !important; }
+  html.mo .sl img, html.mo .sl video{ max-width:100% !important; height:auto !important; }
+  html.mo .sl [style*="width"]{ max-width:100%; }
+  html.mo .mo-g1{ grid-template-columns:minmax(0,1fr) !important; }
+  html.mo .mo-g2{ grid-template-columns:repeat(2, minmax(0,1fr)) !important; }
+  html.mo .mo-wrap{ flex-wrap:wrap !important; }
+  html.mo .mo-ws{ white-space:normal !important; }
+  html.mo .sl .pgno{ align-self:flex-end; color:var(--sub); }
+  html.mo .sl .runhd{ display:flex; justify-content:space-between; }
+  /* 표(프로젝트 목록 · 대표 프로젝트 구성): 행마다 세로로 쌓음 */
+  html.mo .sl table, html.mo .sl tbody, html.mo .sl tr, html.mo .sl td, html.mo .sl th{ display:block; width:auto !important; }
+  html.mo .sl thead, html.mo .sl colgroup{ display:none; }
+  html.mo .sl tr{ padding:12px 0; border-bottom:1px solid var(--line); }
+  html.mo .sl td, html.mo .sl th{ padding:2px 0 !important; border:0 !important; height:auto !important; text-align:left !important; }
+  html.mo .sl tr > :first-child{ font-weight:700; color:var(--ink); }
+  html.mo .sl .h-step{ padding-left:22px !important; } html.mo .sl .h-step::before{ left:4px; }
+  /* 목차: 한 칸, 줄은 아이콘 · 제목 · 쪽 번호, 유형 꼬리표는 제목 아래 */
+  html.mo .pg[data-type="목차"] .ntoc__big{ position:relative !important; left:auto !important; top:auto !important; font-size:var(--mofs) !important; line-height:1.25 !important; }
+  html.mo .pg[data-type="목차"] .ntoc{ column-count:1; }
+  html.mo .pg[data-type="목차"] .ntoc .ntoc__g{ margin:0 0 20px !important; }
+  html.mo .pg[data-type="목차"] .ntoc a{ grid-template-columns:28px minmax(0,1fr) auto !important; row-gap:2px !important; min-height:48px !important; padding:8px 0 !important; }
+  html.mo .pg[data-type="목차"] .ntoc .ntoc__t{ grid-column:2; grid-row:1; }
+  html.mo .pg[data-type="목차"] .ntoc .ntoc__p{ grid-column:3; grid-row:1; }
+  html.mo .pg[data-type="목차"] .ntoc .ntoc__y{ grid-column:2; grid-row:2; }
+  html.mo .pg[data-type="목차"] .ntoc a > *, html.mo .pg[data-type="목차"] .ntoc h3 > *{ white-space:normal; }
+  /* 소개 쪽 경력: 기간 꼬리표를 회사 아래로 */
+  html.mo .icar li{ grid-template-columns:minmax(0,1fr) !important; }
+  html.mo .icar li .tag{ justify-self:start; }
+  /* 2026-11-10 MO 누름 영역: 표 안 링크 · 산출물 줄 단추 · 연락처를 44px 높이로 */
+  html.mo .sl td a, html.mo .sl th a, html.mo .sl .hl, html.mo .sl .ct a, html.mo .sl .li-ic a{ display:inline-flex; align-items:center; min-height:44px; min-width:44px; }
+}
+/* 2026-11-10 MO 시연 팝업 아래 줄: 여백을 줄여 시연 화면을 넓히고, 단추 · 링크는 44px */
+@media (max-width:720px){
+  .mfoot{ padding:8px 16px; gap:2px 12px; }
+  .mfoot > span{ flex:1 1 100%; line-height:1.45; }
+  .mfoot .btn{ margin-left:0; min-height:44px; }
+  .mfoot a{ display:inline-flex; align-items:center; min-height:44px; margin-left:auto; }
+}
+
+/* ── 2026-11-10 제목 ↔ 내용 크기 구분(사용자: "경력과 그 하위 내용 폰트 크기가 같아서 구분이 안 가 · 타이틀과 내용이 구분되어야 해, 전체 검수")
+   단계: 쪽 제목 · 구역 제목 28 ~ 30px 800 > 항목 제목 20px > 본문 17px 안팎 > 이름표 15px. 상자 안 구역 이름(담당 파트 · 사용 툴)은 항목(16px)보다 크게 */
+.hd__k{ font-size:30px; line-height:38px; font-weight:800; letter-spacing:-.02em; }   /* 쪽 머리 제목(프로젝트 · 산출물 · 대표 프로젝트 …) 20 → 30, 설명 20px과 구분 */
+.sub2--lg{ font-size:28px; line-height:36px; font-weight:800; letter-spacing:-.02em; }   /* 소개 쪽 구역 제목(경험한 일 · 역량 5가지) */
+.icar__h{ font-size:28px; line-height:36px; font-weight:800; letter-spacing:-.02em; }   /* 소개 쪽 '경력' 20 → 28, 회사명 20px과 구분 */
+.icar__h small{ font-size:18px; line-height:26px; letter-spacing:0; }
+.iskl__t{ font-size:20px; }
+.pn__lab{ font-size:18px; line-height:24px; color:var(--ink); }   /* 프로젝트 쪽 '담당 파트' · '사용 툴' 15 → 18(항목 16px보다 크게) */
+.pn__lab .ico{ width:22px; height:22px; color:var(--ink2); }
+
+/* ── 2026-11-10 마지막 장: THANK YOU(형광 연두 밑줄, 간지 번호와 같은 방식) + 끝 문장 + 연락처 30px ── */
+.end__en{ position:absolute; left:144px; top:176px; margin:0; font-size:196px; line-height:1; font-weight:900; letter-spacing:-.045em; color:var(--ink); }
+.end__en span{ padding:0 14px; background-image:linear-gradient(transparent 64%,var(--pen) 64%,var(--pen) 88%,transparent 88%); background-repeat:no-repeat; background-size:100% 100%; }
+.anim .pg .end__en span{ background-size:0% 100%; transition:background-size .7s cubic-bezier(.22,.8,.3,1) .3s; }
+.anim .pg.is-pen .end__en span{ background-size:100% 100%; }
+@media (prefers-reduced-motion:reduce){ .anim .pg .end__en span{ background-size:100% 100% !important; transition:none !important; } }
+@media print{ .end__en span{ background-size:100% 100% !important; } }
+.end__h{ position:absolute; left:160px; top:430px; margin:0; font-size:44px; line-height:60px; font-weight:800; letter-spacing:-.03em; color:var(--blue); }
+.end__ct{ position:absolute; left:160px; top:574px; }
+.end__ct h3{ margin:0; font-size:22px; line-height:30px; font-weight:700; color:var(--sub); }
+.end__list{ margin:14px 0 0 !important; padding:0; list-style:none; display:grid; gap:10px; }
+.end__list li{ display:flex; align-items:center; gap:16px; font-size:30px; line-height:44px; font-weight:700; color:var(--ink); }
+.end__list .ico{ flex:none; width:30px; height:30px; color:var(--ink2); }
+.end__list a{ display:inline-flex; align-items:center; min-height:44px; color:var(--ink); text-decoration:none; }
+.end__list a:hover{ color:var(--blue-d); text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:6px; }
+.end__list a:focus-visible{ outline:3px solid var(--blue); outline-offset:3px; border-radius:6px; }
+
+/* ── 2026-11-10 PDF(인쇄) 전용 '산출물 펼쳐 보기' 쪽(sz_print.py). 웹 화면에서는 .po로 숨김 ── */
+@media print{
+  .pgp{ position:relative; width:1920px; height:1080px; overflow:hidden; background:#fff; break-after:page; page-break-after:always; }
+  .pgp .sl{ transform:none; }
+  .wk__open{ display:none !important; }   /* 웹에서만 동작하는 '프로토타입 실행' */
+}
+.pgp__g{ position:absolute; left:160px; top:214px; width:1600px; display:grid; justify-content:start; gap:20px 24px; }
+.pgp__c{ margin:0; min-width:0; }
+.pgp__f{ display:grid; place-items:center; border-radius:10px; background:var(--plane); box-shadow:0 0 0 1px var(--line); overflow:hidden; }
+.pgp__f img{ display:block; max-width:100%; max-height:100%; object-fit:contain; }
+.pgp figcaption{ margin-top:8px; font-size:15px; line-height:22px; color:var(--sub); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.pgp figcaption b{ margin-right:8px; color:var(--ink); font-weight:800; font-variant-numeric:tabular-nums; }
+.prn{ position:absolute; right:160px; top:84px; margin:0; font-size:18px; line-height:24px; font-weight:700; color:var(--blue-d); }
+
+/* ── 04 게임 사업 PM 전용(gpm_sf.css) ── */
+/* ═══ 04 게임 사업 PM 전용(슈퍼진 형식 2026-11-11). v43 gpm_v43.css 사본. deck043.css(09) → sf.css(09 sz.css 사본) 뒤에 붙는다. 색 · 글꼴은 deck043.css 토큰만 쓴다
+   v43에서 뺀 것: 목차 오른쪽 배치 블록(sf.css와 같은 규칙이라 하나만) · 목차 묶음 줄 크기(sf.css 목차 블록이 덮음) · 소개 경험한 분야 dcard--d · 경력 카드 ccard(쪽이 없어짐) ·
+   신세계DF 그림 표기 pn__shot--cap · pn__capnote(09 .pn__note로) · 마무리 gc__end(문장 삭제) ═══ */
+.hd--w{ width:1600px; }
+
+/* AI 활용 6칸 */
+.skc--ai{ align-items:center; }
+.skc--ai .skc__t{ margin-top:6px !important; }
+
+/* 대표 프로젝트 구성표 */
+.gp__tbl{ font-size:19px; line-height:30px; }
+.gp__tbl td,.gp__tbl tbody th{ padding:26px 16px; vertical-align:top; }
+.gp__tbl tbody th{ font-size:21px; line-height:30px; }
+.gp__tbl tbody th small{ margin-top:6px; font-size:16px; line-height:24px; }
+.gp__tbl .h-type{ padding-top:24px; }
+.gp__live{ display:block; margin-top:8px; font-size:17px; line-height:26px; color:var(--sub); }
+.gp__live .hl{ font-size:17px; }
+
+/* 프로젝트 쪽: 신세계DF 그림 아래 표기 */
+.pr__m{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(3,1fr); column-gap:14px; }
+.pn__shot--btn .shot{ width:100%; }
+.pn__shot--btn{ flex-direction:column; justify-content:center; align-items:flex-start; gap:14px; }
+.pn__shot--btn .shot img{ max-height:800px; object-fit:contain; }
+.gm__cap{ font-size:17px; line-height:26px; color:var(--sub); word-break:keep-all; }
+
+/* 프로젝트 상세 쪽: 배경 · 판단 · 위험 · 회고 · 게임 사업 */
+.dsum{ display:grid; grid-template-columns:repeat(3,512px); column-gap:32px; }
+.dsum__c{ display:grid; grid-template-columns:auto 1fr; column-gap:14px; align-items:start; min-height:96px; padding:16px 18px; border-radius:14px; background:var(--plane); }
+.dsum__c .tag{ height:30px; padding:0 10px; font-size:15px; }
+.dsum__t{ font-size:18px; line-height:27px; font-weight:600; color:var(--ink); word-break:keep-all; }
+.dgrid{ display:grid; grid-template-columns:repeat(3,512px); column-gap:32px; }
+.dcol{ display:flex; flex-direction:column; min-height:0; }
+.dcol__h{ font-size:20px; line-height:28px; font-weight:700; color:var(--ink); margin-bottom:12px !important; }
+.dtr,.drs,.drt{ margin:0; padding:0; list-style:none; display:flex; flex-direction:column; }
+.dtr{ flex:1; gap:8px; }
+.dtr li{ flex:1; display:grid; grid-template-columns:62px 1fr; column-gap:12px; align-items:center; padding:7px 14px; border-radius:12px; background:var(--plane); }
+.dtr .tag,.drt .tag{ height:30px; padding:0 8px; justify-content:center; font-size:15px; }
+.dt__t{ font-size:18px; line-height:26px; font-weight:700; color:var(--ink); word-break:keep-all; }
+.dt__d{ font-size:16px; line-height:24px; color:var(--sub); word-break:keep-all; }
+.drs{ flex:1; gap:8px; }
+.drs li{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:10px 18px; border-radius:12px; background:var(--plane); }
+.dr__k{ font-size:15px; line-height:20px; font-weight:700; color:var(--blue-d); }
+.drs .dt__t{ margin-top:2px !important; }
+.drs .dt__d{ margin-top:2px !important; }
+.drt{ gap:8px; }
+.drt li{ display:grid; grid-template-columns:82px 1fr; column-gap:12px; align-items:center; padding:7px 14px; border-radius:12px; background:var(--plane); }
+.dg{ margin-top:auto; padding:12px 18px 14px; border-radius:12px; background:var(--blue-50); }
+.dg__k{ display:flex; align-items:center; gap:8px; font-size:17px; line-height:24px; font-weight:700; color:var(--blue-d); }
+.dg__k .ico{ width:22px; height:22px; }
+.dg__t{ margin-top:6px !important; font-size:16px; line-height:24px; color:var(--ink); word-break:keep-all; }
+.dg__m{ margin-top:6px !important; font-size:16px; line-height:24px; color:var(--ink2); word-break:keep-all; }
+.dg__m b{ margin-right:6px; color:var(--blue-d); }
+/* 표가 없는 쪽: 칸 높이를 채운다 */
+.dgrid--lg .dtr,.dgrid--lg .drs,.dgrid--lg .drt{ gap:10px; }
+.dgrid--lg .drt{ flex:1; }
+.dgrid--lg .drt li{ flex:1; }
+.dgrid--lg .drs li{ padding:12px 20px; }
+.dgrid--lg .dg{ margin-top:10px; padding:16px 20px 18px; }
+.dgrid--lg .dt__t{ font-size:20px; line-height:29px; }
+.dgrid--lg .dt__d{ font-size:18px; line-height:27px; }
+.dgrid--lg .dr__k{ font-size:16px; }
+.dgrid--lg .dg__k{ font-size:18px; }
+.dgrid--lg .dg__t,.dgrid--lg .dg__m{ font-size:18px; line-height:27px; }
+/* 표 넉넉하게 */
+.hier--lg td,.hier--lg tbody th{ padding:14px 14px; }
+/* 지표 표 */
+.fw{ font-size:17px; line-height:25px; }
+.fw .tag{ height:30px; padding:0 10px; font-size:15px; }
+.fw__v{ font-weight:700; color:var(--blue-d); white-space:nowrap; }
+
+/* 사업 관리 */
+.gm__lead{ font-size:20px; line-height:32px; color:var(--ink2); word-break:keep-all; }
+.gm__lead--s{ font-size:18px; line-height:28px; color:var(--sub); }
+.gm__flow{ display:flex; flex-direction:column; gap:26px; }
+.sl .gm__m{ padding:20px 24px; border-radius:16px; background:var(--plane); }
+.gm__m .pm__v{ font-size:28px; line-height:36px; }
+.gm__nav{ display:flex; align-items:center; gap:16px; padding:0 24px; border-radius:16px; background:var(--plane); text-decoration:none; color:var(--ink); transition:background-color .18s ease; }
+.gm__nav:hover{ background:var(--line); }
+.gm__nav b{ display:block; font-size:21px; line-height:30px; }
+.gm__nav small{ display:block; font-size:16px; line-height:24px; color:var(--sub); }
+.pst{ margin:0; padding:0; list-style:none; display:grid; gap:18px; }
+.pst li{ display:grid; grid-template-columns:32px 1fr; column-gap:14px; }
+.pst__n{ display:grid; place-items:center; width:32px; height:32px; border-radius:8px; background:var(--blue-d); color:#fff; font-size:16px; font-weight:700; line-height:1; }
+.pst__t{ font-size:21px; line-height:30px; font-weight:700; color:var(--ink); }
+.pst__d{ font-size:18px; line-height:27px; color:var(--sub); word-break:keep-all; }
+.gm__c{ padding:30px 34px; }
+.gm__ct{ margin-top:8px !important; font-size:24px; line-height:34px; font-weight:700; color:var(--ink); word-break:keep-all; }
+.gm__c .card__d{ font-size:19px; line-height:30px; }
+
+/* 산출물: 갈래 3칸 */
+.c3--d{ top:150px; }
+.c3--d .c3__s{ min-height:0; margin-top:6px !important; }
+.c3__k{ margin-top:6px !important; font-size:16px; line-height:24px; color:var(--sub); word-break:keep-all; }
+.c3__card--d{ top:400px; height:540px; }
+
+/* 인쇄: 장표 그대로 */
+@media print{
+  .gm__nav{ background:var(--plane); }
+}
+
+/* ═══ 슈퍼진 형식 소개 1쪽(2026-11-11): '경험한 분야' 6칸을 09 경험한 일 카드(.xcard)로. 09 xcard는 4칸 376px이라 6칸 248px에 맞춰 아이콘을 제목 위로 ═══ */
+.xcard--d{ width:248px; padding:22px 24px 24px; }
+.xcard--d .xcard__h{ flex-direction:column; align-items:flex-start; gap:12px; }
+.xcard--d p{ margin-top:8px !important; }
+
+/* ═══ 슈퍼진 형식 G(제목 ↔ 내용 크기, 09 README 21절): 고유 쪽 구역 제목 28px 800(sf.css .sub2--lg와 같은 값), 상자 제목은 내용보다 2px 이상 ═══ */
+.dcol__h{ font-size:28px; line-height:36px; font-weight:800; letter-spacing:-.02em; }   /* 상세 쪽 '막힌 지점 n번, 결정 n번' · '위험 3가지' · '회고' 20 → 28(항목 제목 18 ~ 20px보다 크게) */
+.dg__k,.dgrid--lg .dg__k{ font-size:20px; line-height:28px; }   /* '게임 사업에 쓰면' 17 · 18 → 20(내용 16 · 18px보다 크게) */
+/* MO(720px 이하): sf_mo.js가 h1 ~ h5 등 제목 요소만 +2px 하므로, 이 포트폴리오에서 p로 된 항목 제목(단계 · 판단 흐름 · 위험 · 게임 사업 상자)과 고유 쪽 구역 제목도 +2px(sf.css MO 블록과 같은 방식) */
+@media screen and (max-width:720px){
+  html.mo .sl .pst__t, html.mo .sl .dt__t, html.mo .sl .dg__k{ font-size:calc(var(--mofs, 15px) + 2px) !important; }
+  html.mo .pg:not([data-type="소개"]) .sl .sub2--lg{ font-size:calc(var(--mofs, 15px) + 2px) !important; }
+}
+
+/* 산출물 쪽: 쪽 머리 제목 30px(키트 G)로 머리 줄이 길어져 갈래 제목 칸 위쪽 빈 부분이 머리 설명과 겹치지 않게 칸만 내림(제목 글자 위치는 그대로: 150+84 = 170+64) */
+.c3--d{ top:170px; }
+.c3--d .c3__h{ min-height:64px; }
+/* MO: 회색 면 위 화살표(→)와 단계 번호는 장표에서 큰 글자라 통과하던 대비가, 글자가 작아지는 MO에서 4.5:1 아래로 내려가 한 단계 진한 색으로 */
+@media screen and (max-width:720px){
+  html.mo .gm__m .mt__ar{ color:var(--sub); }
+  html.mo .stp__n{ background:var(--blue-d); }
+  html.mo .dgrid{ row-gap:28px !important; }   /* 상세 쪽 3칸이 1칸으로 쌓일 때 칸 사이 간격 */
+}
+
+</style>
+<noscript><style>.pg{aspect-ratio:auto;height:1080px;overflow-x:auto;} .sl{transform:none;}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#p01">본문 바로가기</a>
+<header class="gnb">
+  <div class="gnb__in">
+    <a class="gnb__nm" href="#p01"><b>박세훈</b><span>게임 사업 PM 포트폴리오</span></a>
+    <p class="here" id="here"><span class="here__no" id="here-no">01 / 27</span><span class="here__nm" id="here-nm">표지</span></p>
+  </div>
+</header>
+<main class="deck" id="main">
+<section class="pg" id="p01" aria-label="1쪽 · 표지" data-type="표지" data-label="표지"><div class="sl"><div class="runhd"><p>포트폴리오</p><p>2026</p></div><h1 class="ident"><span class="b"><i>생각하고 정의하며</i></span><span class="b"><i>설계에 임하는</i></span><span>박세훈입니다.</span></h1><div class="blk ab" style="left:160px;top:540px;width:1400px;"><h2>게임 사업 PM</h2><ul data-list="표지 소개"><li>이노디스 기획 PL로 기관 사업 4건을 동시에 맡았습니다.</li><li>계약 문서를 직접 쓰고, 일정표로 작업자와 협력사 일정을 맞췄습니다.</li><li>경력 4년 8개월 · 사업 규모 5,000만 원 ~ 1억 원</li></ul></div><div class="deco" aria-hidden="true" data-nc><div class="rbn rbn--ink" style="top:800px;transform:rotate(-4deg);" aria-hidden="true"><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i></div><div class="rbn rbn--pen" style="top:832px;transform:rotate(3deg);" aria-hidden="true"><span>GAME BUSINESS PM</span><i>×</i><span>PORTFOLIO 2026</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>PORTFOLIO 2026</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>PORTFOLIO 2026</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>PORTFOLIO 2026</span><i>×</i></div></div><p class="pgno" data-nc>01 / 27</p></div></section>
+<section class="pg" id="p02" aria-label="2쪽 · 프로필" data-type="프로필" data-label="프로필"><div class="sl"><div class="plane plane--r" aria-hidden="true"></div><div class="runhd"><p>프로필</p><p>2026</p></div><button type="button" class="face ab" id="face" style="left:159px;top:155px;width:290px;height:290px;" aria-pressed="false" aria-label="프로필 그림과 실물 사진 바꿔 보기"><img class="face__char" src="images/%EC%84%B8%ED%9B%88%20%EA%B7%B8%EB%A6%BC.jpg" alt="박세훈 프로필 그림" width="1024" height="1024"><img class="face__real" src="images/photo.jpg" alt="" aria-hidden="true" width="413" height="532"></button><div class="blk ab" style="left:179px;top:540px;width:300px;"><h2>인적사항</h2><ul data-list="인적사항"><li>박세훈 / 게임 사업 PM · 라이브 옵스</li><li class="li-ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg><span><span class="sr">생년월일 </span>1993. 6. 1.</span></li><li class="li-ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:01072220473">010-7222-0473</a></li><li class="li-ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:sun8070vvv20@gmail.com">sun8070vvv20@gmail.com</a></li></ul></div><div class="blk blk--dot ab" style="left:560px;top:540px;width:520px;"><h3>학력 · 병역</h3><ul data-list="학력"><li>2012. 3. – 2020. 2. 울산대학교 졸업</li><li>2013. 4. – 2015. 1. 육군 만기전역</li></ul></div><div class="blk blk--dot ab" style="left:560px;top:700px;width:520px;"><h3>경력 · 4년 8개월</h3><ul data-list="경력"><li>2025. 2. – 2026. 10. 31. 이노디스 / 웹서비스팀 기획 PL</li><li>2024. 1. – 11. 그라비티 네오싸이언 / 운영 기획 · 대리</li><li>2021. 7. – 2023. 6. 이노컴즈 / 서비스 기획 · 주임</li></ul></div><div class="blk ab" style="left:1120px;top:540px;width:640px;"><h3>도구</h3><ul class="tools" data-list="도구"><li class="tool"><img src="images/icons/ppt.png" alt="" width="40" height="40"><span class="tool__n">PowerPoint · Slides</span><span class="tool__lv"><span class="tool__m" aria-hidden="true"><i style="--lv:90%"></i></span><b>숙련도 상</b></span></li><li class="tool"><img src="images/icons/hwp.png" alt="" width="40" height="40"><span class="tool__n">한글 · Word</span><span class="tool__lv"><span class="tool__m" aria-hidden="true"><i style="--lv:90%"></i></span><b>숙련도 상</b></span></li><li class="tool"><img src="images/icons/slack.png" alt="" width="40" height="40"><span class="tool__n">Slack</span><span class="tool__lv"><span class="tool__m" aria-hidden="true"><i style="--lv:90%"></i></span><b>숙련도 상</b></span></li><li class="tool tool--mid"><img src="images/icons/excel.png" alt="" width="40" height="40"><span class="tool__n">Excel · Sheets</span><span class="tool__lv"><span class="tool__m" aria-hidden="true"><i style="--lv:65%"></i></span><b>숙련도 중</b></span></li><li class="tool tool--mid"><img src="images/icons/figma.png" alt="" width="40" height="40"><span class="tool__n">Figma</span><span class="tool__lv"><span class="tool__m" aria-hidden="true"><i style="--lv:65%"></i></span><b>숙련도 중</b></span></li><li class="tool tool--mid"><img src="images/icons/vscode.png" alt="" width="40" height="40"><span class="tool__n">VS Code</span><span class="tool__lv"><span class="tool__m" aria-hidden="true"><i style="--lv:65%"></i></span><b>숙련도 중</b></span></li><li class="tool tool--mid"><img src="images/icons/claude.png" alt="" width="40" height="40"><span class="tool__n">생성형 AI</span><span class="tool__lv"><span class="tool__m" aria-hidden="true"><i style="--lv:65%"></i></span><b>숙련도 중</b></span></li></ul></div><div class="deco" aria-hidden="true" data-nc><p class="ghost ghost--pf">PROFILE</p><div class="rbn rbn--ink rbn--flat" style="top:404px;left:493px;width:1427px;" aria-hidden="true"><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i></div></div><p class="pgno" data-nc>02 / 27</p></div></section>
+<section class="pg" id="p03" aria-label="3쪽 · 목차" data-type="목차" data-label="목차"><div class="sl"><div class="plane" style="left:880px;" aria-hidden="true"></div><div class="runhd"><p>목차</p><p>2026</p></div><h2 class="ntoc__big" style="top:112px;">목차</h2><nav class="ntoc" aria-label="목차"><div class="ntoc__g ntoc__g--c" style="left:160px;top:262px;width:620px;"><h3><span class="tag">01</span><span>소개</span></h3><ul data-list="목차 01"><li><a href="#p05"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span class="ntoc__t">소개 · 경력 · 역량</span><span class="ntoc__p">05</span></a></li></ul></div><div class="ntoc__g ntoc__g--c" style="left:160px;top:540px;width:620px;"><h3><span class="tag">02</span><span>사업 관리</span></h3><ul data-list="목차 02"><li><a href="#p07"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg><span class="ntoc__t">지표와 후속 조치</span><span class="ntoc__p">07</span></a></li><li><a href="#p08"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg><span class="ntoc__t">계약 관리</span><span class="ntoc__p">08</span></a></li><li><a href="#p09"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg><span class="ntoc__t">일정 · 요청 관리</span><span class="ntoc__p">09</span></a></li><li><a href="#p10"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg><span class="ntoc__t">월간 관리 사이클 · 직군별 착수</span><span class="ntoc__p">10</span></a></li></ul></div><div class="ntoc__g ntoc__g--pj ntoc__g--pj2" style="left:960px;top:110px;width:800px;"><h3><span class="tag">03</span><span>프로젝트</span></h3><ul data-list="목차 03"><li><a href="#p12"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg><span class="ntoc__t">이노디스 8건</span><span class="ntoc__p">12</span></a></li><li><a href="#p13"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg><span class="ntoc__t">이노컴즈 8건</span><span class="ntoc__p">13</span></a></li><li><a href="#p14"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg><span class="ntoc__t">대표 프로젝트 구성</span><span class="ntoc__p">14</span></a></li><li><a href="#p15"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span class="ntoc__t">01. 서울영화센터</span><span class=ntoc__y><span class="tag tag--pen">구축</span><span class="tag tag--pen">유지보수</span></span><span class="ntoc__p">15</span></a></li><li><a href="#p17"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg><span class="ntoc__t">02. 서울영테크</span><span class=ntoc__y><span class="tag tag--pen">재구축</span></span><span class="ntoc__p">17</span></a></li><li><a href="#p19"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><span class="ntoc__t">03. 국립부여박물관</span><span class=ntoc__y><span class="tag tag--pen">유지보수</span></span><span class="ntoc__p">19</span></a></li><li><a href="#p22"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="ntoc__t">04. 신세계DF</span><span class=ntoc__y><span class="tag tag--pen">운영</span></span><span class="ntoc__p">22</span></a></li></ul></div><div class="ntoc__g ntoc__g--pj ntoc__g--pj2" style="left:960px;top:730px;width:800px;"><h3><span class="tag">04</span><span>산출물</span></h3><ul data-list="목차 04"><li><a href="#p25"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg><span class="ntoc__t">산출물</span><span class="ntoc__p">25</span></a></li><li><a href="#p26"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg><span class="ntoc__t">AI 활용</span><span class="ntoc__p">26</span></a></li></ul></div></nav><p class="pgno" data-nc>03 / 27</p></div></section>
+<section class="pg" id="p04" aria-label="4쪽 · 01 소개" data-type="간지" data-label="01 소개"><div class="sl"><div class="deco" aria-hidden="true" data-nc><p class="ghost ghost--dv">ABOUT ME</p></div><div class="plane" style="left:960px;" aria-hidden="true"></div><div class="runhd"><p>소개</p><p>2026</p></div><p class="dv__n" aria-hidden="true"><span>01</span></p><h2 class="dv__h">소개</h2><p class="dv__s">계약 · 일정 · 외부 협력사 관리를 게임 사업 운영으로 잇는 PM</p><nav class="dv__l" aria-label="소개 쪽 목록"><ul data-list="간지 01"><li><a href="#p05"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg><span class="dv__t2">소개 · 경력 · 역량</span><span class="dv__p">05</span></a></li></ul></nav><p class="pgno" data-nc>04 / 27</p></div></section>
+<section class="pg" id="p05" aria-label="5쪽 · 소개 · 경력 · 역량" data-type="소개" data-label="소개 · 경력 · 역량"><div class="sl"><div class="plane plane--band" style="top:520px;" aria-hidden="true"></div><div class="runhd"><p>소개</p><p>2026</p></div><h2 class="intro__h">웹과 앱, 그 너머까지<br><em>다양한 경험을 하고 싶은</em><br>기획자입니다</h2><div class="icar"><h3 class="icar__h">경력<small>회사 3곳에서 4년 8개월</small></h3><ol data-list="경력"><li><p class="icar__co">이노컴즈<small>서비스 기획 · 주임</small></p><p class="tag tag--sm tag--line">2021. 7. – 2023. 6.(2년)</p><p class="icar__t">수시로 들어오던 요구사항을 기간을 정해 한 번에 받게 했습니다</p></li><li><p class="icar__co">그라비티 네오싸이언<small>운영 기획 · 대리</small></p><p class="tag tag--sm tag--line">2024. 1. – 11.(11개월)</p><p class="icar__t">이벤트 오픈일에 맞춰 관리자 화면 작업 일정을 잡았습니다</p></li><li><p class="icar__co">이노디스<small>웹서비스팀 기획 PL</small></p><p class="tag tag--sm tag--ink">2025. 2. – 2026. 10. 31.(1년 9개월)</p><p class="icar__t">기관 사업 PL로 일정과 계약, 유지보수 운영을 맡았습니다</p></li></ol></div><h3 class="sub2 sub2--lg" style="left:160px;top:552px;">경험한 분야</h3><div data-list="경험한 분야"><div class="xcard xcard--d ab" style="left:160px;top:600px;width:248px;"><h4 class="xcard__h"><span class="dcard__i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>문화·예술 포털</h4><p>서울영화센터</p></div><div class="xcard xcard--d ab" style="left:430px;top:600px;width:248px;"><h4 class="xcard__h"><span class="dcard__i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></span>청년 정책 · 재무상담</h4><p>서울영테크</p></div><div class="xcard xcard--d ab" style="left:701px;top:600px;width:248px;"><h4 class="xcard__h"><span class="dcard__i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>박물관 누리집</h4><p>국립부여박물관</p></div><div class="xcard xcard--d ab" style="left:971px;top:600px;width:248px;"><h4 class="xcard__h"><span class="dcard__i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></span>면세 이커머스</h4><p>신세계DF</p></div><div class="xcard xcard--d ab" style="left:1242px;top:600px;width:248px;"><h4 class="xcard__h"><span class="dcard__i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span>출입증 · 전자결재 업무 시스템</h4><p>이노컴즈</p></div><div class="xcard xcard--d ab" style="left:1512px;top:600px;width:248px;"><h4 class="xcard__h"><span class="dcard__i"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>기관 홈페이지</h4><p>이노컴즈</p></div></div><h3 class="sub2 sub2--lg" style="left:160px;top:808px;">역량 5가지</h3><ul class="iskl" data-list="역량"><li><h4 class="iskl__t"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg>계약 · 정산</h4><p class="iskl__d">맡은 사업의 착수계 · 업무보고 · 대금청구 · 완료계를 직접 작성하고 정산까지 진행</p></li><li><h4 class="iskl__t"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>일정 · 협력사 조율</h4><p class="iskl__d">일정표로 작업 착수 시점을 나누고, 키오스크사 · 예매사와 연결 일정을 조율</p></li><li><h4 class="iskl__t"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>운영 · 고도화</h4><p class="iskl__d">구축 뒤 유지보수 계약으로 운영을 이어 가고, 운영 데이터로 고도화를 제안해 계약</p></li><li><h4 class="iskl__t"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 1 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 1 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M9 9h.01"/><path d="m15 9-6 6"/><path d="M15 15h.01"/></svg>이벤트 운영 규칙</h4><p class="iskl__d">이벤트 참여 조건 · 회차 제한 · 지급 예외를 표준 양식으로 정리하고 오픈일에 맞춰 일정을 조정</p></li><li><h4 class="iskl__t"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>AI 활용</h4><p class="iskl__d">하네스 · skill을 적용하고 Git · Vercel로 배포하며, 로컬 파일을 연결한 대시보드를 구성해 정리</p></li></ul><p class="pgno" data-nc>소개 · 05 / 27</p></div></section>
+<section class="pg" id="p06" aria-label="6쪽 · 02 사업 관리" data-type="간지" data-label="02 사업 관리"><div class="sl"><div class="deco" aria-hidden="true" data-nc><p class="ghost ghost--dv">BUSINESS MANAGEMENT</p></div><div class="plane" style="left:960px;" aria-hidden="true"></div><div class="runhd"><p>사업 관리</p><p>2026</p></div><p class="dv__n" aria-hidden="true"><span>02</span></p><h2 class="dv__h">사업 관리</h2><p class="dv__s">기관 사업 4건을 동시에 맡아 대금청구 누락 0건으로 운영했습니다</p><nav class="dv__l" aria-label="사업 관리 쪽 목록"><ul data-list="간지 02"><li><a href="#p07"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg><span class="dv__t2">지표와 후속 조치</span><span class="dv__p">07</span></a></li><li><a href="#p08"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg><span class="dv__t2">계약 관리</span><span class="dv__p">08</span></a></li><li><a href="#p09"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg><span class="dv__t2">일정 · 요청 관리</span><span class="dv__p">09</span></a></li><li><a href="#p10"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg><span class="dv__t2">월간 관리 사이클 · 직군별 착수</span><span class="dv__p">10</span></a></li></ul></nav><p class="pgno" data-nc>06 / 27</p></div></section>
+<section class="pg" id="p07" aria-label="7쪽 · 사업 관리 지표와 후속 조치" data-type="사업 관리" data-label="사업 관리 · 지표와 후속 조치"><div class="sl"><div class="runhd"><p>사업 관리</p><p>2026</p></div><h2 class="intro__h" style="width:1500px;top:140px;">기관 사업 4건을 동시에 맡아<br><em>대금청구 누락 0건으로 운영했습니다</em></h2><p class="gm__lead ab" style="left:160px;top:284px;width:1600px;">관리 대상은 계약, 일정, 요청으로 나눴습니다. 사업마다 같은 방식으로 기록했고, 결과는 지표와 후속 조치로 정리했습니다. 업데이트·이벤트 일정과 외부 계약이 맞물리는 게임 사업 운영에도 같은 틀을 쓸 수 있습니다.</p><h3 class="sub2 sub2--lg" style="left:160px;top:384px;">성공과 모니터링을 나눈 지표 3개</h3><p class="gm__lead gm__lead--s ab" style="left:160px;top:428px;width:1600px;">결과가 나온 지표와 계속 지켜볼 지표를 나눴습니다. 지켜볼 지표는 다음 주간 회의의 첫 안건으로 올렸습니다.</p><table class="hier fw" style="left:160px;top:476px;width:1600px;" data-list="지표와 후속 조치"><colgroup><col style="width:300px"><col style="width:140px"><col style="width:220px"><col><col></colgroup><thead><tr><th scope="col">지표</th><th scope="col">구분</th><th scope="col">결과</th><th scope="col">해석</th><th scope="col">후속 조치</th></tr></thead><tbody><tr><th scope="row">대금청구 누락</th><td><span class="tag">성공</span></td><td class="fw__v">0건</td><td>사업별 청구 일정표를 월말에 점검</td><td>착수 시점에 청구 일정표 작성</td></tr><tr><th scope="row">정산 처리 기간</th><td><span class="tag">성공</span></td><td class="fw__v">10일 → 4일</td><td>완료계 서류를 미리 준비</td><td>완료계 서류 목록을 착수계와 함께 확정</td></tr><tr><th scope="row">요청사항 처리율</th><td><span class="tag tag--line">모니터링</span></td><td class="fw__v">95% (114 / 120건)</td><td>미처리 6건은 다음 달로 이월</td><td>이월 건을 주간 회의 첫 안건으로</td></tr></tbody></table><a class="gm__nav ab" href="#p08" style="left:160px;top:800px;width:512px;height:112px;"><span class="tag">01</span><span><b>계약 관리</b><small>착수계 → 완료계 · 정산</small></span></a><a class="gm__nav ab" href="#p09" style="left:704px;top:800px;width:512px;height:112px;"><span class="tag">02</span><span><b>일정 · 요청 관리</b><small>일정표 · 주간 회의</small></span></a><a class="gm__nav ab" href="#p10" style="left:1248px;top:800px;width:512px;height:112px;"><span class="tag">02</span><span><b>월간 관리 사이클</b><small>직군별 착수 방식</small></span></a><p class="pgno" data-nc>사업 관리 · 07 / 27</p></div></section>
+<section class="pg" id="p08" aria-label="8쪽 · 사업 관리 계약 관리" data-type="사업 관리" data-label="사업 관리 · 계약 관리"><div class="sl"><div class="plane" style="left:940px;" aria-hidden="true"></div><p class="cv__hdr">사업 관리 01 · 계약 관리</p><h2 class="pn__name">착수계에서 완료계 · 정산까지</h2><div class="gm__flow ab" style="left:160px;top:176px;width:720px;"><p class="gm__lead">계약 문서는 직접 써서 내부 기안으로 올리고 고객사에 제출했습니다. 사업이 시작되면 착수계를, 끝나면 완료계를 내고 정산했습니다. 업무보고와 대금청구 주기는 사업마다 달랐습니다. 국립부여박물관과 자전거행복나눔은 월별, 서울영화센터는 분기별입니다.</p><ul class="gm__m pr__m" data-list="관리 수치"><li><p class="pm__v"><span class="mt__a">4건</span></p><p class="pm__k">동시 운영 사업<span>연 계약 합계 약 3억 원</span></p></li><li><p class="pm__v"><span class="mt__a">0건</span></p><p class="pm__k">대금청구 누락<span>사업별 청구 일정표로 월말 점검</span></p></li><li><p class="pm__v"><span class="mt__b">10일</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">4일</span></p><p class="pm__k">정산 처리 기간<span>완료계 서류를 착수 시점에 미리 준비</span></p></li></ul><ol class="pst" data-list="관리 단계"><li><span class="pst__n" aria-hidden="true">1</span><div><p class="pst__t">착수 · 계약 문서</p><p class="pst__d">착수계 제출, 과업 범위 확정, 완료계 서류 목록 미리 작성</p></div></li><li><span class="pst__n" aria-hidden="true">2</span><div><p class="pst__t">월별 · 분기별 업무보고</p><p class="pst__d">사업별 보고 주기에 맞춰 수행 내역 정리</p></div></li><li><span class="pst__n" aria-hidden="true">3</span><div><p class="pst__t">대금청구 기안</p><p class="pst__d">내부 결재 뒤 고객사에 세금계산서 요청</p></div></li><li><span class="pst__n" aria-hidden="true">4</span><div><p class="pst__t">수정기안 · 재상신</p><p class="pst__d">범위나 금액이 바뀌면 수정기안으로 다시 결재</p></div></li><li><span class="pst__n" aria-hidden="true">5</span><div><p class="pst__t">완료계 · 정산</p><p class="pst__d">검수 확인 뒤 완료계 제출, 정산 마감</p></div></li></ol></div><div class="pn__shot pn__shot--btn"><button type="button" class="shot shot--doc" data-doc-open="mgmt" data-doc-page="2" aria-haspopup="dialog" aria-label="내부 기안 목록 발췌. 사업별 월 업무보고와 대금청구 기안 목록이며 문서 제목과 기안자는 흐리게 가림 · 문서 전체 보기"><img src="img/images_pm-contract.webp" alt="내부 기안 목록 발췌. 사업별 월 업무보고와 대금청구 기안 목록이며 문서 제목과 기안자는 흐리게 가림" width="802" height="887" loading="lazy" decoding="async"><span class="shot__go np" data-nc><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span></button><p class="gm__cap">사업별 월 업무보고와 대금청구 기안을 내부 결재로 올렸습니다. 문서 제목과 기안자는 흐리게 가림</p></div><p class="pgno" data-nc>사업 관리 · 08 / 27</p></div></section>
+<section class="pg" id="p09" aria-label="9쪽 · 사업 관리 일정 · 요청 관리" data-type="사업 관리" data-label="사업 관리 · 일정 · 요청 관리"><div class="sl"><div class="plane" style="left:940px;" aria-hidden="true"></div><p class="cv__hdr">사업 관리 02 · 일정 · 요청 관리</p><h2 class="pn__name">여러 사업을 동시에, 일정표와 주간 회의로</h2><div class="gm__flow ab" style="left:160px;top:176px;width:720px;"><p class="gm__lead">에이전시에서는 한 사람이 여러 사업을 동시에 맡습니다. 기획 산출물이 나오는 순서에 맞춰 디자이너와 개발자의 착수 시점을 일정표로 정했습니다. 요청사항 처리 현황은 주간 회의에서 확인했습니다.</p><ul class="gm__m pr__m" data-list="관리 수치"><li><p class="pm__v"><span class="mt__a">40회</span></p><p class="pm__k">주간 회의 운영<span>회의록 공유 · 일정표 갱신</span></p></li><li><p class="pm__v"><span class="mt__a">114 / 120건</span></p><p class="pm__k">요청사항 처리 · 95%<span>미처리 6건은 다음 달로 이월</span></p></li><li><p class="pm__v"><span class="mt__a">100%</span></p><p class="pm__k">이벤트 일정 준수 · 12건<span>오픈일 기준으로 역산한 일정</span></p></li></ul><ol class="pst" data-list="관리 단계"><li><span class="pst__n" aria-hidden="true">1</span><div><p class="pst__t">주간 계획 수립</p><p class="pst__d">사업별 마감일을 기준으로 주간 작업 확정</p></div></li><li><span class="pst__n" aria-hidden="true">2</span><div><p class="pst__t">직군별 배분</p><p class="pst__d">산출물 순서에 맞춘 디자인·개발 착수 시점</p></div></li><li><span class="pst__n" aria-hidden="true">3</span><div><p class="pst__t">진행 점검</p><p class="pst__d">담당자별 현황판 확인, 겹치는 일정 조율</p></div></li><li><span class="pst__n" aria-hidden="true">4</span><div><p class="pst__t">검수 · 공유</p><p class="pst__d">검수 결과와 회의록을 고객사와 작업자에 공유</p></div></li></ol></div><div class="pn__shot pn__shot--btn"><button type="button" class="shot shot--doc" data-doc-open="mgmt" data-doc-page="3" aria-haspopup="dialog" aria-label="주간 업무 현황판 발췌. 담당자별 프로젝트와 날짜별 작업 배분 · 문서 전체 보기"><img src="img/images_pm-schedule.webp" alt="주간 업무 현황판 발췌. 담당자별 프로젝트와 날짜별 작업 배분" width="1162" height="724" loading="lazy" decoding="async"><span class="shot__go np" data-nc><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span></button><p class="gm__cap">주간 업무 현황판 발췌. 담당자별 프로젝트와 날짜별 작업 배분</p></div><p class="pgno" data-nc>사업 관리 · 09 / 27</p></div></section>
+<section class="pg" id="p10" aria-label="10쪽 · 사업 관리 월간 관리 사이클 · 직군별 착수" data-type="사업 관리" data-label="사업 관리 · 월간 관리 사이클 · 직군별 착수"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">사업 관리 02 · 월간 관리 사이클</h3><p class="hd__s">한 달을 4주로 나눈 직군별 관리 사이클입니다.</p></header><table class="hier hier--lg" style="left:160px;top:190px;width:1600px;" data-list="월간 사이클"><colgroup><col style="width:180px"><col style="width:480px"><col><col><col style="width:260px"></colgroup><thead><tr><th scope="col">주차</th><th scope="col">PL(본인)</th><th scope="col">디자인 · 퍼블리싱</th><th scope="col">개발</th><th scope="col">산출물</th></tr></thead><tbody><tr><th scope="row">1주 · 접수</th><td>요청사항 접수 · 우선순위 · 담당 배분</td><td>전월 이월 시안 마감</td><td>전월 이월 과업 처리</td><td>요청사항 목록</td></tr><tr><th scope="row">2주 · 착수</th><td>주간 회의 · 일정표 갱신 · 화면 정의</td><td>컨셉 시안 먼저 제출</td><td>착수 · 구현</td><td>회의록 · 일정표</td></tr><tr><th scope="row">3주 · 점검</th><td>진척 점검 · 겹치는 일정 조율</td><td>시안 수정 · 퍼블리싱</td><td>구현 · 테스트</td><td>진행 현황표</td></tr><tr><th scope="row">4주 · 마감</th><td>검수 · 월 업무보고 · 대금청구 기안</td><td>검수 반영</td><td>검수 반영 · 개발 반영</td><td>업무보고 · 청구 기안</td></tr></tbody></table><h4 class="sub2 sub2--lg" style="left:160px;top:552px;">직군마다 다르게 잡은 착수 시점</h4><div class="card gm__c ab" style="left:160px;top:604px;width:784px;height:270px;"><p class="dr__k">디자인 · 퍼블리싱</p><h4 class="gm__ct">필요할 때는 기획서보다 컨셉 시안을 먼저 요청했습니다</h4><p class="card__d">고객사가 가장 빨리 이해하는 산출물이 시안입니다. 시안을 놓고 고객사와 협의하면서 기획을 같이 진행했습니다.</p></div><div class="card gm__c ab" style="left:976px;top:604px;width:784px;height:270px;"><p class="dr__k">개발</p><h4 class="gm__ct">착수는 앞당기고 마감에는 여유를 두었습니다</h4><p class="card__d">고객사가 결과를 바로 체감하기는 어렵지만, 꼼꼼하게 만들고 테스트를 자주 해야 하는 작업입니다. 그래서 착수를 최대한 앞당겼습니다.</p></div><p class="pgno" data-nc>사업 관리 · 10 / 27</p></div></section>
+<section class="pg" id="p11" aria-label="11쪽 · 03 프로젝트" data-type="간지" data-label="03 프로젝트"><div class="sl"><div class="deco" aria-hidden="true" data-nc><p class="ghost ghost--dv">PROJECTS</p></div><div class="plane" style="left:960px;" aria-hidden="true"></div><div class="runhd"><p>프로젝트</p><p>2026</p></div><p class="dv__n" aria-hidden="true"><span>03</span></p><h2 class="dv__h">프로젝트</h2><p class="dv__s">이노디스 8건 · 이노컴즈 8건과 2024~2026년에 맡은 대표 프로젝트 4건</p><nav class="dv__l" aria-label="프로젝트 쪽 목록"><ul data-list="간지 03"><li><a href="#p12"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg><span class="dv__t2">이노디스 8건</span><span class="dv__p">12</span></a></li><li><a href="#p13"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg><span class="dv__t2">이노컴즈 8건</span><span class="dv__p">13</span></a></li><li><a href="#p14"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg><span class="dv__t2">대표 프로젝트 구성</span><span class="dv__p">14</span></a></li><li><a href="#p15"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span class="dv__t2">01. 서울영화센터</span><span class="dv__p">15</span></a></li><li><a href="#p17"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg><span class="dv__t2">02. 서울영테크</span><span class="dv__p">17</span></a></li><li><a href="#p19"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg><span class="dv__t2">03. 국립부여박물관</span><span class="dv__p">19</span></a></li><li><a href="#p22"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="dv__t2">04. 신세계DF</span><span class="dv__p">22</span></a></li></ul></nav><p class="pgno" data-nc>11 / 27</p></div></section>
+<section class="pg" id="p12" aria-label="12쪽 · 프로젝트 이노디스" data-type="프로젝트 목록" data-label="프로젝트 · 이노디스"><div class="sl"><header class="hd"><h3 class="hd__k">프로젝트</h3><p class="hd__s">이노디스 2025. 2. – 2026. 10. · 8건</p></header><table class="hier plist hier--lg" style="left:160px;top:216px;width:1600px;" data-list="프로젝트 이노디스"><colgroup><col style="width:440px"><col style="width:210px"><col><col style="width:250px"></colgroup><thead><tr><th scope="col">프로젝트</th><th scope="col">유형</th><th scope="col">작업 내용</th><th scope="col">시기</th></tr></thead><tbody><tr><th scope="row"><a href="#p15">서울영화센터</a><span class="pl__rep">대표</span></th><td class="pl__ty"><span class="tag tag--pen">구축</span><span class="tag tag--pen">유지보수</span></td><td>회원 · 대관 · 교육 신청 시스템 구축 · 쿠폰 관리 화면 · 관람 통계 3종</td><td class="pl__when">2025. 3. – 2026. 10. 31.</td></tr><tr><th scope="row"><a href="#p17">서울영테크</a><span class="pl__rep">대표</span></th><td class="pl__ty"><span class="tag tag--pen">재구축</span></td><td>상담 신청 · 배정 시스템 재구축 · 유형 분류 · 그룹 강의</td><td class="pl__when">2025. 4. – 2026. 10. 31.</td></tr><tr><th scope="row"><a href="#p19">국립부여박물관</a><span class="pl__rep">대표</span></th><td class="pl__ty"><span class="tag tag--pen">유지보수</span></td><td>키오스크 발권현황 API 연결 · 실시간 관람 현황</td><td class="pl__when">2025. 5. – 2026. 10. 31.</td></tr><tr><th scope="row">화성시문화관광재단</th><td class="pl__ty"><span class="tag tag--pen">구축</span></td><td>공연장 5개소 통합 홈페이지 · 대관 신청 · 관리</td><td class="pl__when">2025. – 2026. 10. 31.</td></tr><tr><th scope="row">NABO 국회예산정책처 홈페이지</th><td class="pl__ty"><span class="tag tag--pen">재구축</span></td><td>국 · 영문 화면설계서 4종 · 검토의견 관리</td><td class="pl__when">2025. 5. – 11.</td></tr><tr><th scope="row">자전거행복나눔</th><td class="pl__ty"><span class="tag tag--pen">유지보수</span></td><td>기능 개선 · 개인정보 실태점검 대응 · 시연 화면</td><td class="pl__when">2026.</td></tr><tr><th scope="row">서울아트마켓 · 서울국제공연예술제</th><td class="pl__ty"><span class="tag tag--pen">구축</span><span class="tag tag--pen">유지보수</span></td><td>통합 웹사이트 산출물 · 정보보안 점검 문서</td><td class="pl__when">2025 – 2026</td></tr><tr><th scope="row">임대차분쟁조정위원회</th><td class="pl__ty"><span class="tag tag--pen">유지보수</span></td><td>월간 운영 · 보안 점검 · 요청사항 관리</td><td class="pl__when">2025.</td></tr></tbody></table><div class="deco" aria-hidden="true" data-nc><p class="ghost ghost--yr">2025 — 2026</p></div><p class="pgno" data-nc>프로젝트 · 12 / 27</p></div></section>
+<section class="pg" id="p13" aria-label="13쪽 · 프로젝트 이노컴즈" data-type="프로젝트 목록" data-label="프로젝트 · 이노컴즈"><div class="sl"><header class="hd"><h3 class="hd__k">프로젝트</h3><p class="hd__s">이노컴즈 2021. 7. – 2023. 6. · 8건</p></header><table class="hier plist hier--lg" style="left:160px;top:216px;width:1600px;" data-list="프로젝트 이노컴즈"><colgroup><col style="width:440px"><col style="width:210px"><col><col style="width:250px"></colgroup><thead><tr><th scope="col">프로젝트</th><th scope="col">유형</th><th scope="col">작업 내용</th><th scope="col">시기</th></tr></thead><tbody><tr><th scope="row">울주도서관 누리집</th><td class="pl__ty"><span class="tag tag--pen">유지보수</span></td><td>월별 점검 · 통합로그인 · 기능 개선 완료보고</td><td class="pl__when">2022 – 2023</td></tr><tr><th scope="row">석유공사</th><td class="pl__ty"><span class="tag tag--pen">유지보수</span></td><td>월별 용역수행 보고 · 준공 문서</td><td class="pl__when">2021 – 2022</td></tr><tr><th scope="row">현대성우캐스팅 출입 관리 사이트</th><td class="pl__ty"><span class="tag tag--pen">유지보수</span></td><td>월별 유지보수 보고서 · 유지보수 제안서</td><td class="pl__when">2022 – 2023</td></tr><tr><th scope="row">데이로그 앱</th><td class="pl__ty"><span class="tag tag--pen">리뉴얼</span></td><td>심박수 화면 정의 · 오류 점검표 · 개인정보 처리실태 개선보고서</td><td class="pl__when">2022 – 2023</td></tr><tr><th scope="row">부산진구 하트키 앱</th><td class="pl__ty"><span class="tag tag--pen">유지보수</span></td><td>기능 추가 화면정의서</td><td class="pl__when">2023</td></tr><tr><th scope="row">울산테크 홈페이지</th><td class="pl__ty"><span class="tag tag--pen">구축</span></td><td>화면정의서 · 관리자 화면 · 브로슈어</td><td class="pl__when">2021 – 2022</td></tr><tr><th scope="row">도아기업 홈페이지</th><td class="pl__ty"><span class="tag tag--pen">재구축</span></td><td>메뉴구조도 · 사업 안내 문구 · 자료 요청</td><td class="pl__when">2022</td></tr><tr><th scope="row">부산진구정신건강복지센터 홈페이지</th><td class="pl__ty"><span class="tag tag--pen">유지보수</span></td><td>재구성 스토리보드</td><td class="pl__when">2021</td></tr></tbody></table><div class="deco" aria-hidden="true" data-nc><p class="ghost ghost--yr">2021 — 2023</p></div><p class="pgno" data-nc>프로젝트 · 13 / 27</p></div></section>
+<section class="pg" id="p14" aria-label="14쪽 · 대표 프로젝트 구성" data-type="대표 프로젝트 구성" data-label="대표 프로젝트 · 구성"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">대표 프로젝트</h3><p class="hd__s">2024~2026년에 맡은 프로젝트 4건입니다. 기관 사업 3건과 면세 이커머스 운영 1건입니다. 팀은 2~3명이었고, 기획과 일정 관리는 직접 맡았습니다.</p></header><table class="hier gp__tbl" style="left:160px;top:200px;width:1600px;" data-list="프로젝트 구성"><colgroup><col style="width:340px"><col style="width:190px"><col><col style="width:440px"></colgroup><thead><tr><th scope="col">대표 프로젝트</th><th scope="col">유형</th><th scope="col">프로젝트 요약</th><th scope="col">관리 관점 · 대표 수치</th></tr></thead><tbody><tr class="gtop"><th scope="row"><a href="#p15">01. 서울영화센터 포털</a><small>예술 포털 · 연간 유지보수 · 분기 청구</small></th><td class="h-type"><span class="tag tag--pen">구축</span><span class="tag tag--pen">유지보수</span></td><td class="h-work">회원 · 신청 시스템을 구축하고, 유지보수로 쿠폰 발급 규칙을 운영자가 직접 바꾸게 해 혜택 반영 시간을 평균 5영업일에서 당일로 줄였습니다</td><td>분기 청구 유지보수 · 쿠폰 반영 5영업일 → 당일<span class="gp__live">시연 화면: <button type="button" class="hl" data-live-open data-live-tab="0" aria-haspopup="dialog">공유오피스 대관 화면</button><span class="h-sep"> · </span><button type="button" class="hl" data-live-open data-live-tab="1" aria-haspopup="dialog">쿠폰 관리 화면</button></span></td></tr><tr class="gtop"><th scope="row"><a href="#p17">02. 서울영테크 청년 재무상담 포털</a><small>청년 정책 포털 · 운영</small></th><td class="h-type"><span class="tag tag--pen">재구축</span></td><td class="h-work">상담 신청 · 배정 시스템을 재구축해 신청을 5개 유형으로 나눠 받고 상담 배정 시간을 평균 3일에서 1일로 줄였습니다</td><td>회의록 · 일정표 과업 관리 · 상담 배정 3일 → 1일</td></tr><tr class="gtop"><th scope="row"><a href="#p19">03. 국립부여박물관 누리집</a><small>박물관 누리집 · 유지보수 · 고도화 2건</small></th><td class="h-type"><span class="tag tag--pen">유지보수</span></td><td class="h-work">운영 중인 누리집에 키오스크 발권 현황을 연결하면서 3사 연결 일정을 내부 일정표로 묶어 연결 지연을 예상 6주에서 0일로 줄였습니다</td><td>3사 연결 일정 · 지연 0일, 고도화 2건<span class="gp__live">시연 화면: <button type="button" class="hl" data-live-open data-live-tab="2" aria-haspopup="dialog">실시간 관람 현황</button></span></td></tr><tr class="gtop"><th scope="row"><a href="#p22">04. 신세계DF 면세 이커머스</a><small>이커머스 · 운영 기획 실무</small></th><td class="h-type"><span class="tag tag--pen">운영</span></td><td class="h-work">이벤트 규칙을 표준 양식으로 정하고 오픈일에서 일정을 역산해 이벤트 준비 기간을 2주에서 1주로 줄였습니다</td><td>이벤트 일정 · 준비 기간 2주 → 1주</td></tr></tbody></table><p class="pgno" data-nc>대표 프로젝트 · 14 / 27</p></div></section>
+<section class="pg" id="p15" aria-label="15쪽 · 서울영화센터 프로젝트" data-type="프로젝트" data-label="서울영화센터 · 프로젝트"><div class="sl"><div class="plane" style="left:940px;" aria-hidden="true"></div><p class="cv__hdr">대표 프로젝트 01 · 예술 포털 · 연간 유지보수 · 분기 청구</p><h2 class="pn__name">서울영화센터 포털</h2><div class="pn__tags"><span class="tag tag--pen">구축</span><span class="tag tag--pen">유지보수</span></div><div class="pn__box pn__box--v2 ab"><dl><div><dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>규모 · 계약</dt><dd>연 8,000만&nbsp;원<br>대관·교육·메인·예매 4개 영역</dd></div><div><dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>기간</dt><dd>2025. 3. – 2026. 10. 31.<br>(1년 8개월)</dd></div></dl><div class="pn__parts"><p class="pn__lab"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>담당 파트</p><ul data-list="담당 파트"><li><span class="pp__k"><small aria-hidden=true>&nbsp;</small>기획</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>퍼블리싱</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>디자인</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>개발</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small aria-hidden=true>&nbsp;</small>고객사 CS</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li></ul></div></div><div class="prs prs--v2 ab"><div class="pr"><p class="tag tag--ink">문제</p><ul data-list="문제"><li>회원가입 기능 없음</li><li>대관 · 교육 등 신청 시스템 전무</li><li>구축 후 쿠폰 변경마다 개발 작업 · 예매처 데이터 불일치</li></ul></div><div class="pr"><p class="tag">해결</p><ul data-list="해결"><li>SNS 로그인(네이버 · 카카오) · 자체 회원가입 구축</li><li>대관 · 교육 등 신청 시스템 구축</li><li>유지보수로 쿠폰 관리 화면 · 30분 자동 반영 추가</li><li>유지보수는 분기별 업무보고 · 대금청구로 운영</li></ul></div><div class="pr"><p class="tag">결과</p><ul data-list="결과"><li>회원 시스템, 대관 · 공유오피스 · 교육 신청 시스템</li><li>유지보수: 쿠폰 관리 · 관람 통계 3종 · 기획전 패스</li></ul></div><div class="pr"><p class="tag">성과</p><ul class="pr__m" data-list="결과 수치"><li><p class="pm__v"><span class="mt__b">5영업일</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">당일</span></p><p class="pm__k">쿠폰 혜택 반영 시간 (평균)<span>개편 전후 비교 평균</span></p></li><li><p class="pm__v"><span class="mt__b">30건</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">6건</span></p><p class="pm__k">쿠폰 불일치 문의 · 월<span>적용 후 3개월 평균</span></p></li><li><p class="pm__v"><span class="mt__a">+50%</span></p><p class="pm__k">포털 유입 인원<span>2025년 대비 · 통계 · 기획전 효과 포함</span></p></li></ul></div></div><div class="pn__shot"><img src="img/images_%EC%84%9C%EC%9A%B8%EC%98%81%ED%99%94%EC%84%BC%ED%84%B0.webp" alt="서울영화센터 포털의 멤버십 안내 화면" width="1400" height="578" loading="lazy" decoding="async"><div class="pn__tcards"><p class="pn__lab"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>사용 툴</p><ul data-list="사용 툴"><li><img src="images/icons/ppt.png" alt="" width="36" height="36"><span class="tc__n">PowerPoint</span><span class="tc__c">문서</span></li><li><img src="images/icons/excel.png" alt="" width="36" height="36"><span class="tc__n">Excel</span><span class="tc__c">문서</span></li><li><img src="images/icons/hwp.png" alt="" width="36" height="36"><span class="tc__n">한글</span><span class="tc__c">문서</span></li><li><img src="images/icons/claude.png" alt="" width="36" height="36"><span class="tc__n">Claude</span><span class="tc__c">AI · skill</span></li><li><img src="images/icons/vscode.png" alt="" width="36" height="36"><span class="tc__n">VS Code</span><span class="tc__c">AI 코딩</span></li><li><img src="images/icons/figma.png" alt="" width="36" height="36"><span class="tc__n">Figma</span><span class="tc__c">디자인 · 시안</span></li></ul></div></div><p class="pgno" data-nc>서울영화센터 · 15 / 27</p></div></section>
+<section class="pg" id="p16" aria-label="16쪽 · 서울영화센터 배경과 판단" data-type="프로젝트 상세" data-label="서울영화센터 · 배경과 판단"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">서울영화센터 · 배경과 판단</h3><p class="hd__s">대관·교육·메인·예매 4개 영역을 구축하고 연간 유지보수를 맡았습니다. 업무보고와 대금청구는 분기마다 했습니다. 유지보수의 관리 대상은 개발 반영을 해야만 바뀌던 쿠폰 발급 규칙과, 내부 데이터와 어긋나던 외부 예매처 쿠폰이었습니다.</p></header><div class="dsum ab" style="left:160px;top:208px;width:1600px;"><div class="dsum__c"><p class="tag tag--ink">문제</p><p class="dsum__t">쿠폰 혜택 하나를 바꾸는 데 평균 5영업일이 걸렸습니다</p></div><div class="dsum__c"><p class="tag">판단</p><p class="dsum__t">운영자가 바꾸는 값만 골라 관리자 화면에서 설정하게 했습니다</p></div><div class="dsum__c"><p class="tag tag--line">팀 구성</p><p class="dsum__t">PM 1 · 기획 PL 1(본인) · 개발 1</p></div></div><div class="dgrid ab" style="left:160px;top:326px;width:1600px;height:470px;"><div class="dcol"><h4 class="dcol__h">막힌 지점 2번, 결정 3번</h4><ol class="dtr" data-list="판단 흐름"><li><p class="tag tag--ink">막힘</p><div><p class="dt__t">프로그램에 고정된 규칙</p><p class="dt__d">혜택을 바꿀 때마다 개발 반영, 평균 5영업일</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">바꿀 값 목록화</p><p class="dt__d">운영자가 바꾸는 값만 관리자 화면 범위로 확정</p></div></li><li><p class="tag tag--ink">막힘</p><div><p class="dt__t">예매처 시스템 제약</p><p class="dt__d">조회만 된다는 것을 착수 3주 차에 확인</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">반영 주기 합의</p><p class="dt__d">즉시 반영 대신 30분마다 반영하기로 범위 조정</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">승인 단계 · 기존 자료 대조</p><p class="dt__d">발급 전 승인 단계, 기존 2,400건 대조 후 전환</p></div></li></ol></div><div class="dcol"><h4 class="dcol__h">판단마다 걸린 위험 3가지</h4><ul class="drs" data-list="위험"><li><p class="dr__k">위험 1 · 외부 연결</p><p class="dt__t">예매처 시스템은 조회만 가능</p><p class="dt__d">즉시 반영이 안 돼 30분마다 자동 반영하도록 범위를 줄이고 고객사와 합의했습니다.</p></li><li><p class="dr__k">위험 2 · 운영 오입력</p><p class="dt__t">운영자가 쿠폰을 잘못 발급할 수 있음</p><p class="dt__d">발급 전에 미리보기와 승인 단계를 두어 잘못된 쿠폰이 노출되지 않게 했습니다.</p></li><li><p class="dr__k">위험 3 · 기존 자료 옮기기</p><p class="dt__t">기존 발급분 2,400건</p><p class="dt__d">옮길 대상을 확인 목록으로 만들고 개발·고객사와 함께 대조한 뒤 전환했습니다.</p></li></ul></div><div class="dcol"><h4 class="dcol__h">회고</h4><ul class="drt" data-list="회고"><li><p class="tag">잘한 점</p><p class="dt__d">운영자가 바꿀 값을 먼저 목록으로 만들어 관리자 화면 범위를 정했습니다.</p></li><li><p class="tag tag--ink">아쉬운 점</p><p class="dt__d">예매처 시스템 제약을 착수 3주 차에야 알아 일정이 2주 밀렸습니다.</p></li><li><p class="tag tag--line">다음엔</p><p class="dt__d">착수 첫 주에 외부 시스템 제약부터 확인합니다.</p></li></ul><div class="dg"><p class="dg__k"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>게임 사업에 쓰면</p><p class="dg__t">운영자가 바꿀 값만 관리자 화면에서 설정하게 해 개발 반영 없이 바로 반영하는 방식을 라이브 이벤트 보상 운영에 쓸 수 있습니다.</p><p class="dg__m"><b>볼 지표</b> 이벤트 참여율 · 보상 미지급 문의</p></div></div></div><table class="hier fw" style="left:160px;top:816px;width:1600px;" data-list="지표와 후속 조치"><colgroup><col style="width:300px"><col style="width:140px"><col style="width:220px"><col><col></colgroup><thead><tr><th scope="col">지표</th><th scope="col">구분</th><th scope="col">결과</th><th scope="col">해석</th><th scope="col">후속 조치</th></tr></thead><tbody><tr><th scope="row">쿠폰 혜택 반영 시간 (평균)</th><td><span class="tag">성공</span></td><td class="fw__v">5영업일 → 당일</td><td>개발 반영 대기 없이 운영자가 직접 반영</td><td>변경 이력을 분기 업무보고에 포함</td></tr><tr><th scope="row">쿠폰 불일치 문의 · 월</th><td><span class="tag tag--line">모니터링</span></td><td class="fw__v">30건 → 6건</td><td>30분 주기 안에서 남는 시차</td><td>원인별로 나눈 뒤 반영 주기 재협의 안건으로 올림</td></tr></tbody></table><p class="pgno" data-nc>서울영화센터 · 16 / 27</p></div></section>
+<section class="pg" id="p17" aria-label="17쪽 · 서울영테크 프로젝트" data-type="프로젝트" data-label="서울영테크 · 프로젝트"><div class="sl"><div class="plane" style="left:940px;" aria-hidden="true"></div><p class="cv__hdr">대표 프로젝트 02 · 청년 정책 포털 · 운영</p><h2 class="pn__name">서울영테크 청년 재무상담 포털</h2><div class="pn__tags"><span class="tag tag--pen">재구축</span></div><div class="pn__box pn__box--v2 ab"><dl><div><dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>규모</dt><dd>연 1억&nbsp;원</dd></div><div><dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>기간</dt><dd>2025. 4. – 2026. 10. 31.<br>(1년 7개월)</dd></div></dl><div class="pn__parts"><p class="pn__lab"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>담당 파트</p><ul data-list="담당 파트"><li><span class="pp__k"><small aria-hidden=true>&nbsp;</small>기획</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>퍼블리싱</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>디자인</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>개발</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small aria-hidden=true>&nbsp;</small>고객사 CS</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li></ul></div></div><div class="prs prs--v2 ab"><div class="pr"><p class="tag tag--ink">문제</p><ul data-list="문제"><li>상담 신청 · 배정이 시스템화되어 있지 않아 상담사가 직접 분류</li><li>그룹 강의 모집을 엑셀로 수기 관리</li></ul></div><div class="pr"><p class="tag">해결</p><ul data-list="해결"><li>상담 신청 · 배정 시스템 재구축, 신청할 때 유형 자동 분류</li><li>실제 신청 6개월분을 분석해 유형 5개 정의</li><li>그룹 강의 모집 · 출석을 관리 화면으로 전환</li><li>진행 현황을 회의록 · 과업표와 함께 보고</li></ul></div><div class="pr"><p class="tag">결과</p><ul data-list="결과"><li>상담 신청 · 배정 시스템(유형 5개 · 상태 4단계)</li><li>그룹 강의 모집 · 출석 관리 화면</li></ul></div><div class="pr"><p class="tag">성과</p><ul class="pr__m" data-list="결과 수치"><li><p class="pm__v"><span class="mt__b">3일</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">1일</span></p><p class="pm__k">상담 배정 시간 (평균)<span>운영 6개월 기준</span></p></li><li><p class="pm__v"><span class="mt__b">4회</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">8회</span></p><p class="pm__k">그룹 강의 운영 · 월<span>운영 6개월 기준</span></p></li><li><p class="pm__v"><span class="mt__b">62%</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">78%</span></p><p class="pm__k">강의 참석률<span>운영 6개월 기준</span></p></li></ul></div></div><div class="pn__shot"><img src="img/images_%EC%98%81%ED%85%8C%ED%81%AC.webp" alt="서울영테크 맞춤 재무 상담 신청 양식 중 직업, 상담 유입 경로, 상담 가능 시간, 관심 분야, 금융 지식, 투자 경험 입력 영역" width="1400" height="1107" loading="lazy" decoding="async"><div class="pn__tcards"><p class="pn__lab"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>사용 툴</p><ul data-list="사용 툴"><li><img src="images/icons/ppt.png" alt="" width="36" height="36"><span class="tc__n">PowerPoint</span><span class="tc__c">문서</span></li><li><img src="images/icons/excel.png" alt="" width="36" height="36"><span class="tc__n">Excel</span><span class="tc__c">문서</span></li><li><img src="images/icons/hwp.png" alt="" width="36" height="36"><span class="tc__n">한글</span><span class="tc__c">문서</span></li><li><img src="images/icons/figma.png" alt="" width="36" height="36"><span class="tc__n">Figma</span><span class="tc__c">디자인</span></li></ul></div></div><p class="pgno" data-nc>서울영테크 · 17 / 27</p></div></section>
+<section class="pg" id="p18" aria-label="18쪽 · 서울영테크 배경과 판단" data-type="프로젝트 상세" data-label="서울영테크 · 배경과 판단"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">서울영테크 · 배경과 판단</h3><p class="hd__s">상담 신청 · 배정이 시스템화되어 있지 않아 상담사가 직접 나눠 배정하던 포털을 재구축했습니다. 신청을 직종·연령·상담 주제로 나누고, 같은 유형끼리 그룹 강의로 이어지게 운영 구조를 바꿨습니다. 회의가 끝나면 회의록을 공유했고, 과업별 진행 현황은 따로 관리했습니다.</p></header><div class="dsum ab" style="left:160px;top:208px;width:1600px;"><div class="dsum__c"><p class="tag tag--ink">문제</p><p class="dsum__t">신청이 한 창구로 들어와 상담사가 배정하기까지 평균 3일이 걸렸습니다</p></div><div class="dsum__c"><p class="tag">판단</p><p class="dsum__t">실제 신청 6개월 치로 유형을 정하고 일정표로 구현 순서를 잡았습니다</p></div><div class="dsum__c"><p class="tag tag--line">팀 구성</p><p class="dsum__t">기획 1(본인) · 개발 1</p></div></div><div class="dgrid dgrid--lg ab" style="left:160px;top:326px;width:1600px;height:650px;"><div class="dcol"><h4 class="dcol__h">막힌 지점 2번, 결정 3번</h4><ol class="dtr" data-list="판단 흐름"><li><p class="tag tag--ink">막힘</p><div><p class="dt__t">단일 접수 창구</p><p class="dt__d">상담사가 직접 배정, 평균 3일</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">데이터로 유형 정의</p><p class="dt__d">신청 6개월 치로 5개 유형 확정</p></div></li><li><p class="tag tag--ink">막힘</p><div><p class="dt__t">기준 합의 지연</p><p class="dt__d">상담사와 늦게 맞춰 화면 2회 수정</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">요구 조건 조정</p><p class="dt__d">구현 환경과 맞지 않는 요구를 조정한 뒤 착수</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">4단계 상태 공유</p><p class="dt__d">진행 현황을 회의록·과업표와 함께 보고</p></div></li></ol></div><div class="dcol"><h4 class="dcol__h">함께 맞춘 이해관계자 3곳</h4><ul class="drs" data-list="이해관계자"><li><p class="dr__k">이해관계자 1 · 고객사</p><p class="dt__t">요구 조건과 구현 환경이 맞지 않음</p><p class="dt__d">구현할 수 있는 범위로 조정안을 먼저 제시하고, 합의한 뒤 작업을 시작했습니다.</p></li><li><p class="dr__k">이해관계자 2 · 상담사</p><p class="dt__t">유형 기준을 실제로 쓰는 사람</p><p class="dt__d">분류 기준을 상담 현장과 대조해 배정 규칙으로 확정했습니다.</p></li><li><p class="dr__k">이해관계자 3 · 개발</p><p class="dt__t">상담 흐름이 복잡함</p><p class="dt__d">일정표로 상태 단계별 구현 순서를 나누고, 진척은 회의록으로 공유했습니다.</p></li></ul></div><div class="dcol"><h4 class="dcol__h">회고</h4><ul class="drt" data-list="회고"><li><p class="tag">잘한 점</p><p class="dt__d">추측 대신 실제 신청 데이터로 유형 기준을 세웠습니다.</p></li><li><p class="tag tag--ink">아쉬운 점</p><p class="dt__d">유형 기준을 상담사와 늦게 맞춰 화면을 두 번 고쳤습니다.</p></li><li><p class="tag tag--line">다음엔</p><p class="dt__d">기준을 정하는 단계에서 실사용자 검토를 받습니다.</p></li></ul><div class="dg"><p class="dg__k"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>게임 사업에 쓰면</p><p class="dg__t">실제 신청 데이터로 유형을 먼저 정하고 유형별로 배정·모집하는 방식을 유저 세그먼트별 이벤트·혜택 운영에 쓸 수 있습니다.</p><p class="dg__m"><b>볼 지표</b> 세그먼트별 리텐션 · ARPPU</p></div></div></div><p class="pgno" data-nc>서울영테크 · 18 / 27</p></div></section>
+<section class="pg" id="p19" aria-label="19쪽 · 국립부여박물관 프로젝트" data-type="프로젝트" data-label="국립부여박물관 · 프로젝트"><div class="sl"><div class="plane" style="left:940px;" aria-hidden="true"></div><p class="cv__hdr">대표 프로젝트 03 · 박물관 누리집 · 유지보수 · 고도화 2건</p><h2 class="pn__name">국립부여박물관 누리집</h2><div class="pn__tags"><span class="tag tag--pen">유지보수</span></div><div class="pn__box pn__box--v2 ab"><dl><div><dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>규모 · 계약</dt><dd>5,000만&nbsp;원<br>고도화 2건 2,000만&nbsp;원</dd></div><div><dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>기간</dt><dd>2025. 5. – 2026. 10. 31.<br>(1년 6개월)</dd></div></dl><div class="pn__parts"><p class="pn__lab"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>담당 파트</p><ul data-list="담당 파트"><li><span class="pp__k"><small aria-hidden=true>&nbsp;</small>기획</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>퍼블리싱</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>디자인</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>개발</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small aria-hidden=true>&nbsp;</small>고객사 CS</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li></ul></div></div><div class="prs prs--v2 ab"><div class="pr"><p class="tag tag--ink">문제</p><ul data-list="문제"><li>운영 중인 누리집에서 발권 현황을 볼 수 없음</li><li>3자 일정 · 창구가 달라 연결 지연 예상 6주</li><li>고객사·협력사의 참여가 적어 과업이 멈출 우려</li></ul></div><div class="pr"><p class="tag">해결</p><ul data-list="해결"><li>운영 중인 누리집에 키오스크 발권 현황 연결</li><li>연결 대상 확정 전에 필요 데이터 · 저장 구조 먼저 정의</li><li>일정표로 마감일을 먼저 알리고 주 1회 진척 점검</li><li>기존 발권 데이터로 화면을 만들고 연결 부분만 교체</li></ul></div><div class="pr"><p class="tag">결과</p><ul data-list="결과"><li>키오스크 발권 현황 연결 · 실시간 관람 현황 화면</li><li>고도화 2건 추가 계약</li></ul></div><div class="pr"><p class="tag">성과</p><ul class="pr__m" data-list="결과 수치"><li><p class="pm__v"><span class="mt__b">6주</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">0일</span></p><p class="pm__k">연결 일정 지연<span>예상 → 실제</span></p></li><li><p class="pm__v"><span class="mt__b">15건</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">4건</span></p><p class="pm__k">주말 현장 발권 문의 · 주<span>개편 전후 주말 3개월</span></p></li><li><p class="pm__v"><span class="mt__b">60%</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">80%</span></p><p class="pm__k">주말 매진율<span>같은 기준 · 온라인 예매 증가</span></p></li></ul></div></div><div class="pn__shot"><img src="img/images_%EA%B5%AD%EB%A6%BD%EB%B6%80%EC%97%AC.webp" alt="국립부여박물관 누리집의 백제대향로관 소개 화면" width="1400" height="700" loading="lazy" decoding="async"><div class="pn__tcards"><p class="pn__lab"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>사용 툴</p><ul data-list="사용 툴"><li><img src="images/icons/ppt.png" alt="" width="36" height="36"><span class="tc__n">PowerPoint</span><span class="tc__c">문서</span></li><li><img src="images/icons/excel.png" alt="" width="36" height="36"><span class="tc__n">Excel</span><span class="tc__c">문서</span></li><li><img src="images/icons/hwp.png" alt="" width="36" height="36"><span class="tc__n">한글</span><span class="tc__c">문서</span></li><li><img src="images/icons/claude.png" alt="" width="36" height="36"><span class="tc__n">Claude</span><span class="tc__c">AI · skill</span></li><li><img src="images/icons/vscode.png" alt="" width="36" height="36"><span class="tc__n">VS Code</span><span class="tc__c">AI 코딩</span></li><li><img src="images/icons/figma.png" alt="" width="36" height="36"><span class="tc__n">Figma</span><span class="tc__c">디자인 · 시안</span></li></ul></div></div><p class="pgno" data-nc>국립부여박물관 · 19 / 27</p></div></section>
+<section class="pg" id="p20" aria-label="20쪽 · 국립부여박물관 배경과 판단" data-type="프로젝트 상세" data-label="국립부여박물관 · 배경과 판단"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">국립부여박물관 · 배경과 판단</h3><p class="hd__s">운영 중인 누리집에 키오스크 발권 현황을 연결한 유지보수 사업입니다. 박물관, 키오스크사, 예매사의 일정과 담당 창구가 모두 달라 외부 합의를 기다리지 않고 내부 마감일을 먼저 알렸습니다. 키오스크사 연결 안내 문서가 3주 늦어지자 기존 발권 데이터로 화면부터 만들었습니다. 고도화 2건은 운영 데이터로 제안해 계약했습니다.</p></header><div class="dsum ab" style="left:160px;top:208px;width:1600px;"><div class="dsum__c"><p class="tag tag--ink">문제</p><p class="dsum__t">3사의 일정이 모이지 않아 연결 작업이 6주 밀릴 상황이었습니다</p></div><div class="dsum__c"><p class="tag">판단</p><p class="dsum__t">외부를 기다리지 않고 내부 일정을 먼저 고정했습니다</p></div><div class="dsum__c"><p class="tag tag--line">팀 구성</p><p class="dsum__t">고객사 담당 1 · PL 1(본인) · 개발 1 · 외부 협력사 2곳(키오스크 · 예매)</p></div></div><div class="dgrid dgrid--lg ab" style="left:160px;top:326px;width:1600px;height:650px;"><div class="dcol"><h4 class="dcol__h">막힌 지점 2번, 결정 3번</h4><ol class="dtr" data-list="판단 흐름"><li><p class="tag tag--ink">막힘</p><div><p class="dt__t">일정 합의 실패</p><p class="dt__d">3사 일정 회의 2회 모두 합의하지 못함</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">내부 마감일 통보</p><p class="dt__d">일정표로 우리 쪽 마감을 먼저 고정</p></div></li><li><p class="tag tag--ink">막힘</p><div><p class="dt__t">연결 안내 문서 지연</p><p class="dt__d">키오스크사 문서가 3주 늦음</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">화면 먼저 구현</p><p class="dt__d">기존 발권 데이터로 화면을 만들고 연결 부분만 교체</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">계획 일정 안에 연결</p><p class="dt__d">운영 데이터로 고도화 2건 제안·계약</p></div></li></ol></div><div class="dcol"><h4 class="dcol__h">일정을 맞춘 이해관계자 3곳</h4><ul class="drs" data-list="이해관계자"><li><p class="dr__k">이해관계자 1 · 박물관</p><p class="dt__t">요구를 정리하고 검수하는 주체</p><p class="dt__d">요구사항을 접수 단위로 정리하고 마감일을 먼저 제시해 과업이 멈추지 않게 했습니다.</p></li><li><p class="dr__k">이해관계자 2 · 키오스크사</p><p class="dt__t">연결 안내 문서 3주 지연</p><p class="dt__d">문서를 기다리지 않고 기존 데이터로 화면을 먼저 구현했습니다. 문서가 온 뒤 연결 부분만 바꿨습니다.</p></li><li><p class="dr__k">이해관계자 3 · 예매사</p><p class="dt__t">연결 확인 일정이 따로 있음</p><p class="dt__d">필요 데이터 정의서와 연결 안내 문서를 미리 요청해 연결 확인을 내부 일정에 넣었습니다.</p></li></ul></div><div class="dcol"><h4 class="dcol__h">회고</h4><ul class="drt" data-list="회고"><li><p class="tag">잘한 점</p><p class="dt__d">외부 일정과 상관없는 내부 일정을 먼저 고정했습니다.</p></li><li><p class="tag tag--ink">아쉬운 점</p><p class="dt__d">협력사별 담당 창구를 늦게 정리해 초반 연락에 시간을 썼습니다.</p></li><li><p class="tag tag--line">다음엔</p><p class="dt__d">착수 회의에서 창구와 응답 기한부터 합의합니다.</p></li></ul><div class="dg"><p class="dg__k"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>게임 사업에 쓰면</p><p class="dg__t">외부 합의를 기다리지 않고 내부 마감일부터 고정하는 방식을 퍼블리셔·제휴사와 맞물리는 업데이트 일정 관리에 쓸 수 있습니다.</p><p class="dg__m"><b>볼 지표</b> 업데이트 일정 지연 · 점검 연장 시간</p></div></div></div><p class="pgno" data-nc>국립부여박물관 · 20 / 27</p></div></section>
+<section class="pg" id="p21" aria-label="21쪽 · 국립부여박물관 단계별 역할과 지표" data-type="프로젝트 상세" data-label="국립부여박물관 · 단계별 역할과 지표"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">국립부여박물관 · 단계별 역할과 지표</h3><p class="hd__s">누리집 개편 4개월과 운영 · 고도화를 단계별 역할로 나눴습니다. 이후 2026. 10. 31.까지 유지보수를 맡았습니다. 주말 지표는 개편 전후 주말을 비교했습니다.</p></header><table class="hier hier--lg" style="left:160px;top:190px;width:1600px;" data-list="단계별 역할"><colgroup><col style="width:240px"><col style="width:220px"><col style="width:480px"><col><col></colgroup><thead><tr><th scope="col">단계</th><th scope="col">시기</th><th scope="col">PL(본인)</th><th scope="col">개발</th><th scope="col">외부 협력사</th></tr></thead><tbody><tr><th scope="row">착수 · 요구 정의</th><td class="pl__when">2025. 5.</td><td>요구사항 접수 · 내부 마감일 통보</td><td>개발 범위 검토</td><td>정의서 요청 · 창구 확인</td></tr><tr><th scope="row">화면 먼저 구현</th><td class="pl__when">2025. 6. – 7.</td><td>화면 정의 · 주 1회 진척 점검</td><td>기존 발권 데이터로 구현</td><td>연결 안내 문서 대기(3주)</td></tr><tr><th scope="row">연결 · 검수</th><td class="pl__when">2025. 8.</td><td>검수 · 완료계 · 대금청구</td><td>연결 부분 교체</td><td>연결 확인</td></tr><tr><th scope="row">운영 · 고도화</th><td class="pl__when">2025. 9. – 2026. 2.</td><td>운영 데이터로 고도화 2건 제안 · 착수 · 완료</td><td>고도화 구현</td><td>발권 현황 연결 유지</td></tr></tbody></table><h4 class="sub2 sub2--lg" style="left:160px;top:552px;">결과를 나눠 본 지표와 후속 조치</h4><table class="hier fw hier--lg" style="left:160px;top:604px;width:1600px;" data-list="지표와 후속 조치"><colgroup><col style="width:300px"><col style="width:140px"><col style="width:220px"><col><col></colgroup><thead><tr><th scope="col">지표</th><th scope="col">구분</th><th scope="col">결과</th><th scope="col">해석</th><th scope="col">후속 조치</th></tr></thead><tbody><tr><th scope="row">연결 일정 지연</th><td><span class="tag">성공</span></td><td class="fw__v">0일</td><td>외부 일정과 상관없는 내부 마감일을 고정</td><td>착수 회의에서 창구와 응답 기한부터 합의</td></tr><tr><th scope="row">주말 매진율</th><td><span class="tag">성공</span></td><td class="fw__v">60% → 80%</td><td>발권 현황 노출 후 온라인 예매로 이동</td><td>운영 데이터로 고도화 2건 제안</td></tr><tr><th scope="row">주말 현장 발권 문의 · 주</th><td><span class="tag tag--line">모니터링</span></td><td class="fw__v">15건 → 4건</td><td>발권 현황을 온라인에서 확인</td><td>문의 유형을 월 업무보고에 정리</td></tr></tbody></table><p class="pgno" data-nc>국립부여박물관 · 21 / 27</p></div></section>
+<section class="pg" id="p22" aria-label="22쪽 · 신세계DF 프로젝트" data-type="프로젝트" data-label="신세계DF · 프로젝트"><div class="sl"><div class="plane" style="left:940px;" aria-hidden="true"></div><p class="cv__hdr">대표 프로젝트 04 · 이커머스 · 운영 기획 실무</p><h2 class="pn__name">신세계DF 면세 이커머스</h2><div class="pn__tags"><span class="tag tag--pen">운영</span></div><div class="pn__box pn__box--v2 ab"><dl><div><dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>업무</dt><dd>프로모션<br>쿠폰 정책 기획</dd></div><div><dt><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>기간</dt><dd>2024. 1. – 11.<br>(11개월)</dd></div></dl><div class="pn__parts"><p class="pn__lab"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>담당 파트</p><ul data-list="담당 파트"><li><span class="pp__k"><small aria-hidden=true>&nbsp;</small>기획</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>퍼블리싱</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>디자인</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small>구현</small>개발</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li><li><span class="pp__k"><small aria-hidden=true>&nbsp;</small>고객사 CS</span><b>100%</b><span class="pp__b" aria-hidden="true"><i></i></span></li></ul></div></div><div class="prs prs--v2 ab"><div class="pr"><p class="tag tag--ink">문제</p><ul data-list="문제"><li>운영 중인 이벤트마다 참여 조건을 문서 없이 구두 협의</li><li>기획 착수부터 오픈까지 2주</li></ul></div><div class="pr"><p class="tag">해결</p><ul data-list="해결"><li>참여 · 회차 · 당첨 · 지급 운영 규칙을 양식으로 정리</li><li>중복 지급 · 기간 만료 예외를 화면보다 먼저 정의</li><li>이벤트 오픈일 기준으로 관리자 화면 작업 일정 조정</li></ul></div><div class="pr"><p class="tag">결과</p><ul data-list="결과"><li>이벤트 정책 정의 양식</li><li>프로모션 24건(11개월 동안 기획 · 운영)</li></ul></div><div class="pr"><p class="tag">성과</p><ul class="pr__m" data-list="결과 수치"><li><p class="pm__v"><span class="mt__b">2주</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">1주</span></p><p class="pm__k">이벤트 준비 기간<span>협의 단계 단축</span></p></li><li><p class="pm__v"><span class="mt__b">5건</span><span class="mt__ar" aria-label="에서">→</span><span class="mt__a">0건</span></p><p class="pm__k">중복 지급 오류 · 월<span>양식 적용 후 7개월</span></p></li></ul></div></div><div class="pn__shot"><img src="img/images_%EC%8B%A0%EC%84%B8%EA%B3%84%20%EC%9D%B4%EB%B2%A4%ED%8A%B8.webp" alt="신세계DF 면세몰 혜택 페이지의 주요 혜택 영역" width="1400" height="1150" loading="lazy" decoding="async"><p class="pn__note">수행 기간 이후 캡처</p><div class="pn__tcards"><p class="pn__lab"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></svg>사용 툴</p><ul data-list="사용 툴"><li><img src="images/icons/ppt.png" alt="" width="36" height="36"><span class="tc__n">PowerPoint</span><span class="tc__c">문서</span></li><li><img src="images/icons/excel.png" alt="" width="36" height="36"><span class="tc__n">Excel</span><span class="tc__c">문서</span></li><li><img src="images/icons/hwp.png" alt="" width="36" height="36"><span class="tc__n">한글</span><span class="tc__c">문서</span></li><li><img src="images/icons/figma.png" alt="" width="36" height="36"><span class="tc__n">Figma</span><span class="tc__c">디자인</span></li></ul></div></div><p class="pgno" data-nc>신세계DF · 22 / 27</p></div></section>
+<section class="pg" id="p23" aria-label="23쪽 · 신세계DF 배경과 판단" data-type="프로젝트 상세" data-label="신세계DF · 배경과 판단"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">신세계DF · 배경과 판단</h3><p class="hd__s">고객사 이벤트 일정이 먼저 정해지고 개발 일정이 뒤따르는 구조였습니다. 참여 조건과 지급 규칙은 한 양식에 모으고, 관리자 화면 작업 일정은 이벤트 오픈일에 맞췄습니다.</p></header><div class="dsum ab" style="left:160px;top:208px;width:1600px;"><div class="dsum__c"><p class="tag tag--ink">문제</p><p class="dsum__t">이벤트마다 규칙을 구두로 정해 준비에 2주가 걸리고 중복 지급 오류가 반복됐습니다</p></div><div class="dsum__c"><p class="tag">판단</p><p class="dsum__t">예외 케이스부터 표로 정하고 오픈일에 작업 일정을 묶었습니다</p></div><div class="dsum__c"><p class="tag tag--line">팀 구성</p><p class="dsum__t">기획 1(본인) · 개발 1 · 운영팀</p></div></div><div class="dgrid dgrid--lg ab" style="left:160px;top:326px;width:1600px;height:650px;"><div class="dcol"><h4 class="dcol__h">막힌 지점 1번, 결정 3번</h4><ol class="dtr" data-list="판단 흐름"><li><p class="tag tag--ink">막힘</p><div><p class="dt__t">구두로 정한 규칙</p><p class="dt__d">이벤트마다 조건을 말로 정해 중복 지급 월 5건</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">예외부터 정의</p><p class="dt__d">중복 지급·기간 만료 예외를 표로 먼저 작성</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">표준 양식 도입</p><p class="dt__d">참여 조건·회차 제한·당첨 판정을 한 양식에</p></div></li><li><p class="tag">결정</p><div><p class="dt__t">일정 역산</p><p class="dt__d">이벤트 오픈일 기준으로 관리자 화면 작업 일정 조정</p></div></li></ol></div><div class="dcol"><h4 class="dcol__h">미리 막은 위험 3가지</h4><ul class="drs" data-list="위험"><li><p class="dr__k">위험 1 · 중복 지급</p><p class="dt__t">같은 고객에게 혜택이 두 번 지급됨</p><p class="dt__d">회차 제한과 지급 조건을 양식 항목으로 고정해 개발에 전달하기 전에 확인했습니다.</p></li><li><p class="dr__k">위험 2 · 기간 만료</p><p class="dt__t">만료된 쿠폰·포인트 처리</p><p class="dt__d">만료 시점 처리 규칙을 예외 케이스 표에 넣어 함께 전달했습니다.</p></li><li><p class="dr__k">위험 3 · 일정 충돌</p><p class="dt__t">고객사 이벤트 일정이 먼저 확정됨</p><p class="dt__d">오픈일에서 역산해 관리자 화면 작업 일정을 먼저 잡았습니다.</p></li></ul></div><div class="dcol"><h4 class="dcol__h">회고</h4><ul class="drt" data-list="회고"><li><p class="tag">잘한 점</p><p class="dt__d">예외 케이스를 표로 먼저 정하고 개발과 합의했습니다.</p></li><li><p class="tag tag--ink">아쉬운 점</p><p class="dt__d">실무 담당이라 판매 전략 판단에는 참여하지 못했습니다.</p></li><li><p class="tag tag--line">다음엔</p><p class="dt__d">판매·수익 모델 지표를 직접 확인하고 기획 근거로 씁니다.</p></li></ul><div class="dg"><p class="dg__k"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>게임 사업에 쓰면</p><p class="dg__t">참여 조건과 지급 예외를 한 양식으로 정하고 오픈일에서 일정을 역산하는 방식을 이벤트 보상 정책서와 업데이트·이벤트 일정에 쓸 수 있습니다.</p><p class="dg__m"><b>볼 지표</b> 보상 중복 지급 건수 · 이벤트 준비 기간</p></div></div></div><p class="pgno" data-nc>신세계DF · 23 / 27</p></div></section>
+<section class="pg" id="p24" aria-label="24쪽 · 04 산출물" data-type="간지" data-label="04 산출물"><div class="sl"><div class="deco" aria-hidden="true" data-nc><p class="ghost ghost--dv">DELIVERABLES</p></div><div class="plane" style="left:960px;" aria-hidden="true"></div><div class="runhd"><p>산출물</p><p>2026</p></div><p class="dv__n" aria-hidden="true"><span>04</span></p><h2 class="dv__h">산출물</h2><p class="dv__s">사업 관리 문서와 기획 · 데이터 문서를 직접 썼습니다</p><nav class="dv__l" aria-label="산출물 쪽 목록"><ul data-list="간지 04"><li><a href="#p25"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 12h-5"/><path d="M15 8h-5"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3"/></svg><span class="dv__t2">산출물</span><span class="dv__p">25</span></a></li><li><a href="#p26"><svg class="emo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg><span class="dv__t2">AI 활용</span><span class="dv__p">26</span></a></li></ul></nav><p class="pgno" data-nc>24 / 27</p></div></section>
+<section class="pg" id="p25" aria-label="25쪽 · 산출물" data-type="산출물" data-label="산출물"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">산출물</h3><p class="hd__s">사업 관리 문서와 기획 · 데이터 문서를 직접 썼습니다. 아래 발췌는 갈래마다 고른 실제 문서의 일부입니다.</p></header><div class="c3 c3--d" style="left:160px;"><h4 class="c3__h"><span>관리 문서 <em>발췌 3장</em></span></h4><p class="c3__s">사업 일정과 담당 배분을 일정표로 관리했습니다</p><p class="c3__k">일정표 · 일정 관리 · 착수계 · 완료계 · 대금청구 기안 · 월 업무보고 · 유지보수 보고서 · 회의록</p></div><div class="c3__card c3__card--d" style="left:160px;"><div class="wk"><div class="fr fr--c" style="height:234px"><button type="button" class="shot shot--doc" data-doc-open="mgmt" data-doc-page="1" aria-haspopup="dialog" aria-label="일정표 발췌. 작업별 시작일과 종료일, 진행률, 일정 막대 · 문서 전체 보기"><img src="img/images_work-wbs.webp" alt="일정표 발췌. 작업별 시작일과 종료일, 진행률, 일정 막대" style="max-height:234px" loading="lazy" decoding="async"></button></div><div class="fr fr--c" style="height:234px"><button type="button" class="shot shot--doc" data-doc-open="mgmt" data-doc-page="3" aria-haspopup="dialog" aria-label="주간 업무 현황판 발췌. 담당자별 프로젝트와 날짜별 작업 배분 · 문서 전체 보기"><img src="img/images_pm-schedule.webp" alt="주간 업무 현황판 발췌. 담당자별 프로젝트와 날짜별 작업 배분" style="max-height:234px" loading="lazy" decoding="async"><span class="shot__go np" data-nc><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span></button></div></div></div><div class="c3 c3--d" style="left:704px;"><h4 class="c3__h"><span>기획 문서 <em>화면설계서 20쪽</em></span></h4><p class="c3__s">환불계좌 등록 창의 입력 항목과 경고 문구를 정의했습니다. 화면설계서는 화성시문화관광재단 대관 관리자 문서입니다</p><p class="c3__k">화면기획서 · 화면정의서 · 요구사항정의서 · 정책 문서</p></div><div class="c3__card c3__card--d" style="left:704px;"><div class="wk"><div class="fr fr--c" style="height:234px"><button type="button" class="shot shot--doc" data-doc-open="screen" data-doc-page="1" aria-haspopup="dialog" aria-label="화면기획서 발췌. 환불계좌 등록 창의 입력 항목과 경고 문구 정의 · 문서 전체 보기"><img src="img/images_work-screen.webp" alt="화면기획서 발췌. 환불계좌 등록 창의 입력 항목과 경고 문구 정의" style="max-height:234px" loading="lazy" decoding="async"></button></div><div class="fr fr--c" style="height:234px"><button type="button" class="shot shot--doc" data-doc-open="rental" data-doc-page="18" aria-haspopup="dialog" aria-label="화성시문화관광재단 화면설계서 18쪽 · 신청자 등록 · 불승인·취소 사유 분기 · 문서 전체 보기"><img src="img/docs_rental-cms_18.webp" alt="화성시문화관광재단 화면설계서 18쪽 · 신청자 등록 · 불승인·취소 사유 분기" style="max-height:234px" loading="lazy" decoding="async"><span class="shot__go np" data-nc><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span></button></div></div></div><div class="c3 c3--d" style="left:1248px;"><h4 class="c3__h"><span>데이터 문서 <em>흐름도 1장</em></span></h4><p class="c3__s">화성시문화관광재단 대관 신청의 승인·입금 흐름을 흐름도로 그렸습니다</p><p class="c3__k">시스템 연결 기획서 · 필요 데이터 정의서 · 저장 구조 설계서 · 통계 화면 정의</p></div><div class="c3__card c3__card--d" style="left:1248px;"><div class="wk"><div class="fr fr--c" style="height:484px"><button type="button" class="shot shot--doc" data-doc-open="flow" data-doc-page="1" aria-haspopup="dialog" aria-label="흐름도 발췌. 대관 신청의 승인과 입금 흐름 · 문서 전체 보기"><img src="img/images_work-data.webp" alt="흐름도 발췌. 대관 신청의 승인과 입금 흐름" style="max-height:484px" loading="lazy" decoding="async"><span class="shot__go np" data-nc><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span></button></div></div></div><p class="po prn">전 쪽 펼침 · 25-1 ~ 25-5쪽</p><p class="pgno" data-nc>산출물 · 25 / 27</p></div></section><section class="pgp po" data-nc aria-hidden="true"><div class="sl"><header class="hd"><h3 class="hd__k">관리 문서 발췌</h3><p class="hd__s">산출물 펼쳐 보기 · 전 3쪽 중 1 – 3쪽</p></header><div class="pgp__g" style="grid-template-columns:repeat(2, 583px)"><figure class="pgp__c" style="width:583px"><div class="pgp__f" style="height:328px"><img src="images/work-wbs.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>01쪽</b>일정표 발췌. 작업별 시작일과 종료일, 진행률, 일정 막대</figcaption></figure><figure class="pgp__c" style="width:583px"><div class="pgp__f" style="height:328px"><img src="images/pm-contract.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>02쪽</b>내부 기안 목록 발췌. 사업별 월 업무보고와 대금청구 기안 목록이며 문서 제목과 기안자는 흐리게 가림</figcaption></figure><figure class="pgp__c" style="width:583px"><div class="pgp__f" style="height:328px"><img src="images/pm-schedule.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>03쪽</b>주간 업무 현황판 발췌. 담당자별 프로젝트와 날짜별 작업 배분</figcaption></figure></div><p class="pgno">산출물 · 25-1 / 27</p></div></section><section class="pgp po" data-nc aria-hidden="true"><div class="sl"><header class="hd"><h3 class="hd__k">기획 문서 발췌</h3><p class="hd__s">산출물 펼쳐 보기 · 전 1쪽 중 1쪽</p></header><div class="pgp__g" style="grid-template-columns:repeat(1, 1100px)"><figure class="pgp__c" style="width:1100px"><div class="pgp__f" style="height:619px"><img src="images/work-screen.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>01쪽</b>화면기획서 발췌. 환불계좌 등록 창의 입력 항목과 경고 문구 정의</figcaption></figure></div><p class="pgno">산출물 · 25-2 / 27</p></div></section><section class="pgp po" data-nc aria-hidden="true"><div class="sl"><header class="hd"><h3 class="hd__k">화성시문화관광재단 화면설계서 · 대관 신청 관리자 화면 (2026)</h3><p class="hd__s">산출물 펼쳐 보기 · 전 20쪽 중 1 – 12쪽</p></header><div class="pgp__g" style="grid-template-columns:repeat(4, 358px)"><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/01.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>01쪽</b>표지 · 관리자 화면설계서</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/02.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>02쪽</b>제·개정 이력</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/03.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>03쪽</b>GNB · 관리자 메뉴 구조</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/04.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>04쪽</b>기본 기능 가이드</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/05.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>05쪽</b>공연 정보 관리</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/06.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>06쪽</b>공연 목록 (PF01-001)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/07.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>07쪽</b>공연 목록 · 상세 설정 펼침 (PF01-001)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/08.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>08쪽</b>공연 등록 1/2 (PF01-002)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/09.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>09쪽</b>공연 등록 2/2 (PF01-002)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/10.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>10쪽</b>시설대관 관리(A)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/11.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>11쪽</b>시설대관 목록 (FL01-001)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/12.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>12쪽</b>시설대관 등록 (FL01-002)</figcaption></figure></div><p class="pgno">산출물 · 25-3 / 27</p></div></section><section class="pgp po" data-nc aria-hidden="true"><div class="sl"><header class="hd"><h3 class="hd__k">화성시문화관광재단 화면설계서 · 대관 신청 관리자 화면 (2026)</h3><p class="hd__s">산출물 펼쳐 보기 · 전 20쪽 중 13 – 20쪽</p></header><div class="pgp__g" style="grid-template-columns:repeat(4, 358px)"><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/13.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>13쪽</b>시설대관 수정 (FL01-003)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/14.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>14쪽</b>신청자 목록 (FL02-001)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/15.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>15쪽</b>신청자 목록 (FL02-001)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/16.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>16쪽</b>신청자 등록 (FL02-002)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/17.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>17쪽</b>신청자 등록 (FL02-002)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/18.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>18쪽</b>신청자 등록 · 불승인·취소 사유 분기 (FL02-002)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/19.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>19쪽</b>신청자 수정 (FL02-003)</figcaption></figure><figure class="pgp__c" style="width:358px"><div class="pgp__f" style="height:201px"><img src="docs/rental-cms/20.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>20쪽</b>신청자 수정 (FL02-003)</figcaption></figure></div><p class="pgno">산출물 · 25-4 / 27</p></div></section><section class="pgp po" data-nc aria-hidden="true"><div class="sl"><header class="hd"><h3 class="hd__k">데이터 문서 발췌 · 화성시문화관광재단</h3><p class="hd__s">산출물 펼쳐 보기 · 전 1쪽 중 1쪽</p></header><div class="pgp__g" style="grid-template-columns:repeat(1, 1100px)"><figure class="pgp__c" style="width:1100px"><div class="pgp__f" style="height:619px"><img src="images/work-data.png" alt="" loading="lazy" decoding="async"></div><figcaption><b>01쪽</b>흐름도 발췌. 대관 신청의 승인과 입금 흐름</figcaption></figure></div><p class="pgno">산출물 · 25-5 / 27</p></div></section>
+<section class="pg" id="p26" aria-label="26쪽 · 산출물 AI 활용" data-type="산출물" data-label="산출물 · AI 활용"><div class="sl"><header class="hd hd--w"><h3 class="hd__k">AI 활용 · 문서와 보고 작업의 AI 활용 순서</h3><p class="hd__s">하네스 · skill을 적용하고 Git · Vercel로 배포하며, 로컬 파일을 연결한 대시보드를 구성해 정리했습니다. 키오스크 연결과 콘텐츠 페이지 일부는 AI 도구로 직접 고쳤습니다.</p></header><ol class="stp" style="left:160px;top:230px;width:1600px;grid-template-columns:repeat(4,1fr);" data-list="AI 활용 순서"><li><span class="stp__n" aria-hidden="true">1</span><p class="stp__t">계획</p></li><li><span class="stp__n" aria-hidden="true">2</span><p class="stp__t">계획 검수</p><p class="stp__d">페르소나 배정</p></li><li><span class="stp__n" aria-hidden="true">3</span><p class="stp__t">구현</p></li><li><span class="stp__n" aria-hidden="true">4</span><p class="stp__t">구현 검증</p></li></ol><div data-list="AI 활용"><div class="skc skc--ai ab" style="left:160px;top:480px;width:512px;height:192px;"><svg class="skc__e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg><div><p class="skc__n" aria-hidden="true">01</p><h4 class="skc__t">AI 도구 연결</h4></div></div><div class="skc skc--ai ab" style="left:704px;top:480px;width:512px;height:192px;"><svg class="skc__e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><div><p class="skc__n" aria-hidden="true">02</p><h4 class="skc__t">개인 작업 도구 제작</h4></div></div><div class="skc skc--ai ab" style="left:1248px;top:480px;width:512px;height:192px;"><svg class="skc__e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg><div><p class="skc__n" aria-hidden="true">03</p><h4 class="skc__t">반복 작업 자동화</h4></div></div><div class="skc skc--ai ab" style="left:160px;top:696px;width:512px;height:192px;"><svg class="skc__e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><div><p class="skc__n" aria-hidden="true">04</p><h4 class="skc__t">폴더 관리</h4></div></div><div class="skc skc--ai ab" style="left:704px;top:696px;width:512px;height:192px;"><svg class="skc__e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg><div><p class="skc__n" aria-hidden="true">05</p><h4 class="skc__t">데이터 분석</h4></div></div><div class="skc skc--ai ab" style="left:1248px;top:696px;width:512px;height:192px;"><svg class="skc__e" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/></svg><div><p class="skc__n" aria-hidden="true">06</p><h4 class="skc__t">보고자료 정리</h4></div></div></div><p class="pgno" data-nc>산출물 · 26 / 27</p></div></section>
+<section class="pg" id="p27" aria-label="27쪽 · 마무리" data-type="마무리" data-label="마무리"><div class="sl"><div class="runhd"><p>포트폴리오</p><p>2026</p></div><p class="end__en" lang="en"><span>THANK YOU</span></p><h2 class="end__h">끝까지 봐 주셔서 감사합니다.</h2><div class="end__ct"><h3>연락처</h3><ul class="end__list" data-list="연락처"><li class="li-ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><a href="tel:01072220473">010-7222-0473</a></li><li class="li-ic"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><a href="mailto:sun8070vvv20@gmail.com">sun8070vvv20@gmail.com</a></li></ul></div><div class="deco" aria-hidden="true" data-nc><div class="rbn rbn--ink" style="top:918px;transform:rotate(-4deg);" aria-hidden="true"><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i><span>GAME BUSINESS PM</span><i>×</i><span>BUSINESS MANAGEMENT</span><i>×</i><span>PROJECTS</span><i>×</i><span>DELIVERABLES</span><i>×</i></div></div><p class="pgno" data-nc>27 / 27</p></div></section>
+</main>
+<div class="fab" id="fab">
+  <ul class="fab__menu" id="fab-menu" hidden>
+    <li><a class="fab__item" href="#p14"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg><span>대표 프로젝트 4건</span></a></li>
+    <li><button type="button" class="fab__item" data-live-open data-live-tab="0" aria-haspopup="dialog"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m10 7 5 3-5 3Z"/></svg><span>시연 화면 4종</span></button></li>
+    <li><button type="button" class="fab__item" data-doc-open="rental" data-doc-page="1" aria-haspopup="dialog"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/></svg><span>화면설계서 20쪽</span></button></li>
+  </ul>
+  <button type="button" class="fab__btn" id="fab-btn" aria-expanded="false" aria-controls="fab-menu"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>자료모음</span></button>
+</div>
+<div class="lvmodal" id="lvmodal" hidden role="dialog" aria-modal="true" aria-label="시연 화면">
+  <div class="mscrim" data-lv-close></div>
+  <div class="mpanel">
+    <div class="mbar">
+      <nav class="lvtabs" role="tablist" aria-label="시연 화면 선택"><button type="button" class="lvtab" role="tab" aria-selected="true" data-src="demo/sfc-office.html">서울영화센터<small>공유오피스 대관 신청</small></button><button type="button" class="lvtab" role="tab" aria-selected="false" data-src="demo/sfc-coupon.html">서울영화센터<small>쿠폰 관리 화면</small></button><button type="button" class="lvtab" role="tab" aria-selected="false" data-src="demo/buyeo-ticket.html">국립부여박물관<small>실시간 관람 현황</small></button><button type="button" class="lvtab" role="tab" aria-selected="false" data-src="demo/bike-cert.html">자전거행복나눔<small>관리자 로그인 · 본인인증</small></button></nav>
+      <button type="button" class="mx" data-lv-close aria-label="닫기"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <div class="mstage"><iframe id="lv-frame" title="시연 화면"></iframe></div>
+    <div class="mfoot">
+      <span>시연용 재현 화면 · 실제 서비스와 연결되지 않으며 데이터 전송·저장이 일어나지 않습니다.</span>
+      <button type="button" class="btn btn--weak btn--sm" id="lv-replay">설명 다시 보기</button>
+      <a id="lv-new" href="demo/sfc-office.html" target="_blank" rel="noopener">새 탭에서 열기</a>
+    </div>
+  </div>
+</div>
+<div class="docmodal" id="docmodal" hidden role="dialog" aria-modal="true" aria-labelledby="dm-title">
+  <div class="mscrim" data-dm-close></div>
+  <div class="mpanel">
+    <div class="mbar">
+      <div class="dmhead"><p id="dm-eyebrow">화면설계서</p><h3 id="dm-title">표지</h3></div>
+      <p class="dmcount"><b id="dm-cur">1</b> / <span id="dm-total">20</span></p>
+      <button type="button" class="btn btn--weak btn--sm" id="dm-all" hidden><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>문서 전체</button>
+      <button type="button" class="mx" data-dm-close aria-label="문서 닫기"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <div class="mstage mstage--doc is-grid"><img id="dm-img" alt="">
+      <button type="button" class="dmarrow dmarrow--p" id="dm-prev" aria-label="이전 장"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button type="button" class="dmarrow dmarrow--n" id="dm-next" aria-label="다음 장"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+      <div class="dmgrid" id="dm-grid"></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var root = document.documentElement, first = document.querySelector('.pg');
+  /* 1920×1080 장표를 쪽 폭에 맞춰 축소 */
+  function fit(){ if (first) root.style.setProperty('--s', (first.clientWidth / 1920).toFixed(5)); }
+  fit(); addEventListener('resize', fit);
+  if ('ResizeObserver' in window && first) new ResizeObserver(fit).observe(first);
+
+  /* 상단 바: 지금 보는 쪽 */
+  var pgs = [].slice.call(document.querySelectorAll('.pg')), hNo = document.getElementById('here-no'), hNm = document.getElementById('here-nm');
+  var TOTAL = ('0' + pgs.length).slice(-2), tick = false;
+  function here(){
+    tick = false; var y = innerHeight * .4, cur = pgs[0];
+    pgs.forEach(function(p){ if (p.getBoundingClientRect().top <= y) cur = p; });
+    var no = cur.id.slice(1) + ' / ' + TOTAL, nm = cur.dataset.label || '';
+    if (hNo.textContent !== no) hNo.textContent = no;
+    if (hNm.textContent !== nm) hNm.textContent = nm;
+  }
+  here(); addEventListener('scroll', function(){ if (!tick){ tick = true; requestAnimationFrame(here); } }, { passive:true });
+
+  var opener = null;
+  function lockBody(on){ document.body.style.overflow = on ? 'hidden' : ''; }
+
+  /* 자료모음(1000px 이하) */
+  var fab = document.getElementById('fab'), fabBtn = document.getElementById('fab-btn'), fabMenu = document.getElementById('fab-menu');
+  function fabSet(on){ fabMenu.hidden = !on; fabBtn.setAttribute('aria-expanded', on ? 'true' : 'false'); }
+  fabBtn.addEventListener('click', function(e){ e.stopPropagation(); fabSet(fabMenu.hidden); });
+  fabMenu.addEventListener('click', function(){ fabSet(false); });
+  document.addEventListener('click', function(e){ if (!fab.contains(e.target)) fabSet(false); });
+
+  /* 바이브코딩 시연 화면 모달 */
+  var lv = document.getElementById('lvmodal'), lvTabs = [].slice.call(lv.querySelectorAll('.lvtab')),
+      lvFrame = document.getElementById('lv-frame'), lvNew = document.getElementById('lv-new');
+  function lvSelect(i){
+    lvTabs.forEach(function(t, k){ t.setAttribute('aria-selected', k === i ? 'true' : 'false'); t.tabIndex = k === i ? 0 : -1; });
+    var src = lvTabs[i].dataset.src;
+    if (lvFrame.getAttribute('src') !== src) lvFrame.setAttribute('src', src);
+    lvNew.href = src;
+  }
+  function lvOpen(i){ opener = document.activeElement; lv.hidden = false; lockBody(true); lvSelect(i || 0); lv.querySelector('.mx').focus(); }
+  function lvClose(){ lv.hidden = true; lockBody(false); if (opener && opener.focus) opener.focus(); }
+  lvTabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ lvSelect(i); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (d){ e.preventDefault(); var n = (i + d + lvTabs.length) % lvTabs.length; lvSelect(n); lvTabs[n].focus(); }
+    });
+  });
+  document.querySelectorAll('[data-live-open]').forEach(function(b){
+    b.addEventListener('click', function(){ lvOpen(parseInt(b.dataset.liveTab || '0', 10)); });
+  });
+  lv.querySelectorAll('[data-lv-close]').forEach(function(b){ b.addEventListener('click', lvClose); });
+  document.getElementById('lv-replay').addEventListener('click', function(){ try { lvFrame.contentWindow.postMessage('tut:restart', '*'); } catch(e){} });
+
+  /* 문서 모달(사용자 11-05): 열면 문서 전체를 한 화면에 격자로, 쪽을 누르면 크게 */
+  var DOCS = {"rental": {"eyebrow": "화성시문화관광재단 화면설계서 · 대관 신청 관리자 화면 (2026)", "base": "docs/rental-cms/", "pages": [["01.png", "표지 · 관리자 화면설계서"], ["02.png", "제·개정 이력"], ["03.png", "GNB · 관리자 메뉴 구조"], ["04.png", "기본 기능 가이드"], ["05.png", "공연 정보 관리"], ["06.png", "공연 목록 (PF01-001)"], ["07.png", "공연 목록 · 상세 설정 펼침 (PF01-001)"], ["08.png", "공연 등록 1/2 (PF01-002)"], ["09.png", "공연 등록 2/2 (PF01-002)"], ["10.png", "시설대관 관리(A)"], ["11.png", "시설대관 목록 (FL01-001)"], ["12.png", "시설대관 등록 (FL01-002)"], ["13.png", "시설대관 수정 (FL01-003)"], ["14.png", "신청자 목록 (FL02-001)"], ["15.png", "신청자 목록 (FL02-001)"], ["16.png", "신청자 등록 (FL02-002)"], ["17.png", "신청자 등록 (FL02-002)"], ["18.png", "신청자 등록 · 불승인·취소 사유 분기 (FL02-002)"], ["19.png", "신청자 수정 (FL02-003)"], ["20.png", "신청자 수정 (FL02-003)"]]}, "mgmt": {"eyebrow": "관리 문서 발췌", "base": "images/", "pages": [["work-wbs.png", "일정표 발췌. 작업별 시작일과 종료일, 진행률, 일정 막대"], ["pm-contract.png", "내부 기안 목록 발췌. 사업별 월 업무보고와 대금청구 기안 목록이며 문서 제목과 기안자는 흐리게 가림"], ["pm-schedule.png", "주간 업무 현황판 발췌. 담당자별 프로젝트와 날짜별 작업 배분"]]}, "screen": {"eyebrow": "기획 문서 발췌", "base": "images/", "pages": [["work-screen.png", "화면기획서 발췌. 환불계좌 등록 창의 입력 항목과 경고 문구 정의"]]}, "flow": {"eyebrow": "데이터 문서 발췌 · 화성시문화관광재단", "base": "images/", "pages": [["work-data.png", "흐름도 발췌. 대관 신청의 승인과 입금 흐름"]]}};
+  var dm = document.getElementById('docmodal'), dmImg = document.getElementById('dm-img'), dmCur = document.getElementById('dm-cur'),
+      dmTot = document.getElementById('dm-total'), dmTit = document.getElementById('dm-title'), dmEye = document.getElementById('dm-eyebrow'),
+      dmPrev = document.getElementById('dm-prev'), dmNext = document.getElementById('dm-next'), dmGrid = document.getElementById('dm-grid'),
+      dmAll = document.getElementById('dm-all'), dmStage = dm.querySelector('.mstage--doc'), dmCount = dm.querySelector('.dmcount'), doc = null, idx = 0, inGrid = true;
+  function go(i){
+    idx = Math.max(0, Math.min(doc.pages.length - 1, i));
+    var pg = doc.pages[idx];
+    dmImg.src = doc.base + pg[0]; dmImg.alt = doc.eyebrow + ' ' + (idx + 1) + '쪽 · ' + pg[1];
+    dmCur.textContent = idx + 1; dmTit.textContent = pg[1];
+    dmPrev.disabled = idx === 0; dmNext.disabled = idx === doc.pages.length - 1;
+  }
+  /* 쪽 수와 화면 크기에 맞춰 스크롤 없이 가장 크게 들어가는 열 수를 고른다 */
+  function dmFit(){
+    var cs = getComputedStyle(dmGrid), n = doc.pages.length, gap = parseFloat(cs.columnGap) || 0,
+        W = dmGrid.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight),
+        H = dmGrid.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom), best = 1, bw = 0;
+    for (var c = 1; c <= n; c++){
+      var r = Math.ceil(n / c), w = Math.min((W - gap * (c - 1)) / c, (H - gap * (r - 1)) / r * 16 / 9);
+      if (w > bw){ bw = w; best = c; }
+    }
+    dmGrid.style.gridTemplateColumns = 'repeat(' + best + ', ' + Math.floor(bw) + 'px)';
+  }
+  function dmShowGrid(k){
+    inGrid = true; dmStage.classList.add('is-grid'); dmAll.hidden = true; dmCount.hidden = true;
+    dmTit.textContent = '문서 전체 ' + doc.pages.length + '쪽'; dmFit();
+    var t = dmGrid.children[k] || dmGrid.children[0]; if (t) t.focus();
+  }
+  function dmShowPage(k){
+    inGrid = false; dmStage.classList.remove('is-grid'); dmAll.hidden = false; dmCount.hidden = false; go(k); dmAll.focus();
+  }
+  function dmUnfold(){
+    var g = dmGrid.getBoundingClientRect(), cx = g.left + g.width / 2, cy = g.top + g.height / 2, n = dmGrid.children.length;
+    [].forEach.call(dmGrid.children, function(b, k){
+      var r = b.getBoundingClientRect();
+      b.style.setProperty('--dx', (cx - r.left - r.width / 2) + 'px');
+      b.style.setProperty('--dy', (cy - r.top - r.height / 2) + 'px');
+      b.style.setProperty('--dl', Math.round(k / Math.max(n - 1, 1) * 220) + 'ms');
+      b.classList.add('is-unfold');
+    });
+  }
+  function dmOpen(key, page){
+    opener = document.activeElement; doc = DOCS[key];
+    dmEye.textContent = doc.eyebrow; dmTot.textContent = doc.pages.length; dmGrid.innerHTML = '';
+    doc.pages.forEach(function(pg, k){
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'dmthumb'; b.setAttribute('aria-label', (k + 1) + '쪽 크게 보기 · ' + pg[1]);
+      var im = new Image(); im.alt = ''; im.decoding = 'async'; im.src = doc.tbase ? doc.tbase + pg[0].replace(/\.\w+$/, '.webp') : doc.base + pg[0];
+      var no = document.createElement('b'); no.textContent = k + 1;
+      b.appendChild(im); b.appendChild(no);
+      b.addEventListener('click', function(){ dmShowPage(k); }); dmGrid.appendChild(b);
+    });
+    dm.hidden = false; lockBody(true); dmShowGrid((page || 1) - 1); dmUnfold();
+  }
+  function dmClose(){ dm.hidden = true; lockBody(false); if (opener && opener.focus) opener.focus(); }
+  document.querySelectorAll('[data-doc-open]').forEach(function(b){
+    b.addEventListener('click', function(){ dmOpen(b.dataset.docOpen, parseInt(b.dataset.docPage || '1', 10)); });
+  });
+  dm.querySelectorAll('[data-dm-close]').forEach(function(b){ b.addEventListener('click', dmClose); });
+  dmAll.addEventListener('click', function(){ dmShowGrid(idx); });
+  dmPrev.addEventListener('click', function(){ go(idx - 1); });
+  dmNext.addEventListener('click', function(){ go(idx + 1); });
+  window.addEventListener('resize', function(){ if (!dm.hidden && inGrid) dmFit(); });
+
+  /* 사용 툴 칸: 칸 어디를 눌러도 툴 이름을 펼치고 접음 */
+  document.querySelectorAll('.pn__toolw').forEach(function(w){
+    var b = w.querySelector('.pn__toolbtn');
+    w.addEventListener('click', function(){ var on = !w.classList.contains('is-open'); w.classList.toggle('is-open', on); b.setAttribute('aria-expanded', on ? 'true' : 'false'); });
+  });
+
+  /* 키보드: Esc 닫기 · 문서 ←→ · 모달 안 Tab 순환 */
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){ if (!lv.hidden) lvClose(); else if (!dm.hidden){ if (inGrid) dmClose(); else dmShowGrid(idx); } else { if (!fabMenu.hidden) fabBtn.focus(); fabSet(false); } return; }
+    if (!dm.hidden && !inGrid && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')){ e.preventDefault(); go(idx + (e.key === 'ArrowRight' ? 1 : -1)); return; }
+    if (e.key !== 'Tab') return;
+    var m = !lv.hidden ? lv : !dm.hidden ? dm : null; if (!m) return;
+    var f = [].slice.call(m.querySelectorAll('button:not([disabled]), a[href], iframe')).filter(function(x){ return x.getClientRects().length && x.tabIndex !== -1; });
+    if (!f.length) return;
+    var a = f[0], z = f[f.length - 1];
+    if (e.shiftKey && (document.activeElement === a || !m.contains(document.activeElement))){ e.preventDefault(); z.focus(); }
+    else if (!e.shiftKey && (document.activeElement === z || !m.contains(document.activeElement))){ e.preventDefault(); a.focus(); }
+  });
+})();
+/* 쪽 진입: 내용이 올라오고 형광펜이 그어짐(사용자 11-04). 벗어났다 돌아오면 다시.
+   움직임 줄이기 설정과 무관하게 재생: 사용자 PC가 이 설정이라 예외를 두면 안 보임(자전거 시연과 같은 방식, 움직임은 18px · .45s) */
+(function(){
+  var pgs = [].slice.call(document.querySelectorAll('.pg'));
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('anim');
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      var c = e.target.classList;
+      if (!e.isIntersecting){ c.remove('is-in'); c.remove('is-pen'); return; }
+      if (e.intersectionRatio >= .08) c.add('is-in');     /* 쪽이 조금만 보여도 내용을 올림(빈 쪽으로 보이지 않게) */
+      if (e.intersectionRect.height >= Math.min(e.boundingClientRect.height * .45, innerHeight * .5)) c.add('is-pen');   /* 태그가 보일 만큼 들어오면 긋기 */
+    });
+  }, { threshold: [0, .08, .2, .3, .45] });
+  pgs.forEach(function(p){ io.observe(p); });
+})();
+/* 2쪽 그림 ↔ 실물 사진: 마우스는 CSS :hover, 터치 · 키보드는 눌러서 전환 (최초 포폴과 같음) */
+(function(){
+  var f = document.getElementById('face');
+  if (!f) return;
+  f.addEventListener('click', function(){
+    var on = !f.classList.contains('is-real');
+    f.classList.toggle('is-real', on);
+    f.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+})();
+
+</script>
+<script>
+/* 2026-11-10 사용자: "최소 폰트 14로 맞추고 이에 맞춰 최적화 및 app(MO) 브레이크 포인트에서 가독성 있게 반응형 최적화"
+   720px 이하(MO)에서는 1920×1080 장표를 줄이지 않고, 쪽 안 요소를 위에서 아래로 다시 흘린다(html.mo).
+   - 겹쳐 놓인(absolute) 요소 → 흐름 배치(.mo-flow). 장식(aria-hidden 면 · 띠 · 외곽선 글자) → 숨김(.mo-hide)
+   - 글자: 장표 기준 크기를 MO 크기로 바꾸되 14px 아래로는 내려가지 않음(--mofs · --molh)
+   - 넓은 여러 칸 격자 → 1칸(.mo-g1) 또는 2칸(.mo-g2), 넘치는 가로 줄 → 줄바꿈(.mo-wrap)
+   PC · 태블릿(721px 이상)과 인쇄(PDF)는 그대로. 화면 폭이 기준선을 넘나들면 새로 불러 원래 배치로 돌아감 */
+(function(){
+  var mq = window.matchMedia('(max-width:720px)'), root = document.documentElement;
+  function moSize(fs, el){
+    if (el.classList.contains('dv__n')) return 72;
+    if (el.classList.contains('end__en')) return 56;
+    if (fs <= 15) return Math.max(14, fs);
+    if (fs <= 20) return 15 + (fs - 15) * .4;
+    if (fs <= 32) return 17 + (fs - 20) * .35;
+    return Math.min(21.2 + (fs - 32) * .25, 34);
+  }
+  function tracks(v){ return v && v !== 'none' ? v.split(' ').map(parseFloat).filter(function(n){ return !isNaN(n); }) : []; }
+  function apply(){
+    if (!mq.matches || root.classList.contains('mo')) return;
+    var els = [].slice.call(document.querySelectorAll('.sl, .sl *')).filter(function(e){ return !(e instanceof SVGElement) || e.tagName.toLowerCase() === 'svg'; });
+    var rows = els.map(function(e){ var cs = getComputedStyle(e); return [e, parseFloat(cs.fontSize), cs.position, cs.display, cs.gridTemplateColumns]; });
+    rows.forEach(function(r){
+      var e = r[0];
+      if (e.classList.contains('sl')) return;
+      if (r[2] === 'absolute' || r[2] === 'fixed'){
+        /* 쪽 바로 아래가 아닌 작은 요소(돋보기 단추 · 표식 등)는 부모 안 제자리에 둠 */
+        var small = e.parentElement && !e.parentElement.classList.contains('sl') && e.offsetWidth < 120 && e.offsetHeight < 120;
+        if (!small){
+          var deco = (e.closest('[aria-hidden="true"]') || e.matches('.plane,.band,.cline,.deco')) && !e.querySelector('img') && !e.matches('.dv__n');
+          e.classList.add(deco ? 'mo-hide' : 'mo-flow');
+        }
+      }
+      var m = moSize(r[1], e);
+      /* 제목 요소는 2px 더 키워, 줄어든 MO 크기에서도 아래 내용과 크기로 구분되게(2026-11-10 사용자 '타이틀과 내용 구분') */
+      if (e.matches('h1,h2,h3,h4,h5,.sub2,.sub3,.hd__k,.icar__h,.pn__lab,.xcard__h,.iskl__t,.icar__co,.ccard__co') && !e.classList.contains('dv__n')) m = Math.min(m + 2, 36);
+      e.style.setProperty('--mofs', m.toFixed(1) + 'px');
+      e.style.setProperty('--molh', m >= 22 ? '1.3' : '1.6');
+      if (r[3] === 'grid' || r[3] === 'inline-grid'){
+        var t = tracks(r[4]);
+        if (t.length >= 3){ var mn = Math.min.apply(null, t); if (mn >= 200) e.classList.add('mo-g1'); else if (mn >= 80) e.classList.add('mo-g2'); }
+      }
+    });
+    root.classList.add('mo');
+    /* 다시 흘린 뒤에도 가로로 넘치는 줄은 줄바꿈 */
+    els.forEach(function(e){
+      if (e instanceof SVGElement || !e.isConnected) return;
+      if (e.scrollWidth > e.clientWidth + 1){
+        var cs = getComputedStyle(e);
+        if (cs.display.indexOf('flex') > -1) e.classList.add('mo-wrap');
+        if (cs.whiteSpace === 'nowrap' || cs.whiteSpace === 'pre') e.classList.add('mo-ws');
+      }
+    });
+  }
+  apply();
+  var was = mq.matches;
+  (mq.addEventListener ? mq.addEventListener.bind(mq, 'change') : mq.addListener.bind(mq))(function(){ if (mq.matches !== was) location.reload(); });
+})();
+</script>
+</body>
+</html>
